@@ -305,6 +305,12 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            /* Make image grids responsive */
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
         }
     </style>
 </head>
@@ -416,6 +422,25 @@
 
             <div class="highlight-box">
                 <p><strong>Design Philosophy:</strong> We kept external communication in Discord while focusing the app on core game mechanics. This created clear separation between social strategy (Discord) and game actions (web app), reducing interface complexity while maintaining rich social dynamics.</p>
+            </div>
+
+            <h4>Visual Design & Branding</h4>
+            <div style="margin: 2rem 0; text-align: center;">
+                <img src="peckingOrderLogo.jpg" alt="Pecking Order game logo design" style="max-width: 300px; border-radius: 8px; margin-bottom: 2rem;">
+                <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 2rem;">Custom logo design establishing the game's visual identity</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                <div>
+                    <h4 style="color: #A43D52; margin-bottom: 1rem;">Game Interface Design</h4>
+                    <img src="peckingOrder01.jpg" alt="Survivor social game interface showing player dashboard and game mechanics" style="width: 100%; border-radius: 8px; border: 2px solid #CE7B91;">
+                    <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem; text-align: center;">Clean interface balancing complex game mechanics with user accessibility</p>
+                </div>
+                <div>
+                    <h4 style="color: #A43D52; margin-bottom: 1rem;">Strategic Gameplay Elements</h4>
+                    <img src="peckingOrder02.jpg" alt="Game strategy interface showing voting mechanics and alliance features" style="width: 100%; border-radius: 8px; border: 2px solid #CE7B91;">
+                    <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem; text-align: center;">Strategic voting and alliance mechanics designed for week-long social gameplay</p>
+                </div>
             </div>
         </section>
 

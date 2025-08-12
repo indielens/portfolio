@@ -359,6 +359,12 @@
             .data-views {
                 grid-template-columns: 1fr;
             }
+
+            /* Make image grids responsive */
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
         }
     </style>
 </head>
@@ -481,6 +487,19 @@
             <h3>Strategic Team Optimization Engine</h3>
             <div class="highlight-box">
                 <p><strong>Custom Team Builder:</strong> Leadership could slot in any number of teammates and instantly see aggregated skill strengths, capability gaps, role distribution, and service delivery capacity across all 120+ competencies.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                <div>
+                    <h4 style="color: #2970A3; margin-bottom: 1rem;">Skills Assessment Interface</h4>
+                    <img src="skillsAssessment01.jpg" alt="Skills assessment tool interface showing comprehensive skill evaluation matrix" style="width: 100%; border-radius: 8px; border: 2px solid #6DAEDB;">
+                    <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem; text-align: center;">Individual skill assessment with expertise and interest ratings across 120 UX competencies</p>
+                </div>
+                <div>
+                    <h4 style="color: #2970A3; margin-bottom: 1rem;">Team Analysis Dashboard</h4>
+                    <img src="skillsAssessment02.jpg" alt="Team analysis dashboard showing aggregated skill data and optimization insights" style="width: 100%; border-radius: 8px; border: 2px solid #6DAEDB;">
+                    <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem; text-align: center;">Advanced QUERY-powered analytics providing leadership with team optimization insights</p>
+                </div>
             </div>
 
             <p>The weighted ranking system automatically scored team members' fit for different contexts. High skill matches received positive weights, while skill gaps were flagged as potential weaknesses, enabling data-driven staffing decisions.</p>
