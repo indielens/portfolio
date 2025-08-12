@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grant Thomas - UX Designer & Product Strategist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Portfolio Homepage Header - Warm red gradient */
+        header[role="banner"] {
+            background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header[role="banner"]::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="0.5" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.3" fill="white" opacity="0.08"/><circle cx="10" cy="50" r="0.4" fill="white" opacity="0.09"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: grain 20s linear infinite;
+        }
+
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -5%); }
+            20% { transform: translate(-10%, 5%); }
+            30% { transform: translate(5%, -10%); }
+            40% { transform: translate(-5%, 15%); }
+            50% { transform: translate(-10%, 5%); }
+            60% { transform: translate(15%, 0%); }
+            70% { transform: translate(0%, 10%); }
+            80% { transform: translate(-15%, 0%); }
+            90% { transform: translate(10%, 5%); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.95);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px 30px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Case Studies Section - Homepage */
+        .case-studies {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .case-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .case-card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            height: 100%;
+        }
+
+        .case-card-link:hover {
+            color: inherit;
+        }
+
+        .case-image {
+            height: 240px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Updated image handling with autumnal fallbacks */
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .case-card:hover .case-image img {
+            transform: scale(1.05);
+        }
+
+        /* Fallback styles with cool colors */
+        .case-image.emoji-fallback {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .case-image.emoji-fallback.survivor {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+
+        .case-image.emoji-fallback.skills {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+
+        .case-image.emoji-fallback.design-system {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        }
+
+        /* Image overlay for better text readability if needed */
+        .case-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%);
+            pointer-events: none;
+        }
+
+        .case-content {
+            padding: 2rem;
+        }
+
+        .case-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .case-description {
+            color: #475569;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: #e2e8f0;
+            color: #475569;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .case-link {
+            color: #c2410c;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .case-link:hover {
+            color: #92400e;
+        }
+
+        .case-link::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .case-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* About Section - Homepage */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .about-text p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .skill-category {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            color: #64748b;
+        }
+
+        .skill-category li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .contact-link {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Loading animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .case-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">Grant Thomas</div>
+                <ul class="nav-links">
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header role="banner">
+        <div class="container">
+            <div class="header-content">
+                <h1>Grant Thomas</h1>
+                <h2 class="subtitle">UX Designer & Product Strategist</h2>
+                <p class="bio">Building better experiences through research, design systems, and strategic thinking. I transform complex problems into elegant solutions, from enterprise design systems serving 100k+ users to innovative social gaming experiences. My background spans quantitative research, product strategy, and full-stack design thinking.</p>
+                <a href="#work" class="cta-button" aria-label="Navigate to portfolio work section">View My Work</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Case Studies Section -->
+    <main id="main-content">
+        <section id="work" class="case-studies" aria-labelledby="work-heading">
+            <div class="container">
+                <h2 id="work-heading" class="section-title fade-in">Featured Work</h2>
+                <p class="section-subtitle fade-in">From social gaming to enterprise systems, here's how I solve complex design challenges</p>
+                
+                <div class="case-grid">
+                    <!-- Survivor Game Case Study -->
+                    <article class="case-card fade-in">
+                        <a href="survivor-game.html" class="case-card-link" aria-label="View Survivor Social Game case study">
+                            <div class="case-image">
+                                <!-- Replace this src with your actual image path -->
+                                <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/images/survivor-game-preview.jpg" 
+                                     alt="Survivor Social Game interface showing voting dashboard and player interactions" 
+                                     onerror="handleImageError(this, '🎮', 'survivor')" />
+                            </div>
+                            <div class="case-content">
+                                <h3 class="case-title">Survivor Social Game</h3>
+                                <p class="case-description">Designed and built a week-long social gaming experience from Google Sheets prototype to full web application. Created engaging social mechanics that fostered real relationships—two players even got engaged!</p>
+                                <div class="case-tags" role="list" aria-label="Project technologies and skills">
+                                    <span class="tag" role="listitem">Game Design</span>
+                                    <span class="tag" role="listitem">Social UX</span>
+                                    <span class="tag" role="listitem">Product Development</span>
+                                    <span class="tag" role="listitem">Figma</span>
+                                    <span class="tag" role="listitem">Laravel</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Skills Assessment Tool -->
+                    <article class="case-card fade-in">
+                        <a href="skills-assessment.html" class="case-card-link" aria-label="View UX Team Skills Assessment Tool case study">
+                            <div class="case-image">
+                                <!-- Replace this src with your actual image path -->
+                                <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/images/skills-assessment-preview.jpg" 
+                                     alt="Skills assessment dashboard showing team analytics and data visualization" 
+                                     onerror="handleImageError(this, '📊', 'skills')" />
+                            </div>
+                            <div class="case-content">
+                                <h3 class="case-title">UX Team Skills Assessment Tool</h3>
+                                <p class="case-description">Built a sophisticated SQL-powered analytics system in Google Sheets to optimize team composition for 21 UX professionals across 120+ skills. Enabled data-driven staffing decisions and revealed hidden team capabilities.</p>
+                                <div class="case-tags" role="list" aria-label="Project technologies and skills">
+                                    <span class="tag" role="listitem">Data Analysis</span>
+                                    <span class="tag" role="listitem">Google Sheets</span>
+                                    <span class="tag" role="listitem">Team Optimization</span>
+                                    <span class="tag" role="listitem">SQL Queries</span>
+                                    <span class="tag" role="listitem">System Design</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Design System Documentation -->
+                    <article class="case-card fade-in">
+                        <a href="design-system.html" class="case-card-link" aria-label="View Design System Documentation Portal case study">
+                            <div class="case-image">
+                                <!-- Replace this src with your actual image path -->
+                                <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/images/design-system-preview.jpg" 
+                                     alt="Design system documentation portal showing component library and guidelines" 
+                                     onerror="handleImageError(this, '📋', 'design-system')" />
+                            </div>
+                            <div class="case-content">
+                                <h3 class="case-title">Design System Documentation Portal</h3>
+                                <p class="case-description">Led comprehensive research and redesign of enterprise design system documentation serving 100k+ employees across 50+ pharmaceutical brands. Reduced support requests and accelerated development cycles.</p>
+                                <div class="case-tags" role="list" aria-label="Project technologies and skills">
+                                    <span class="tag" role="listitem">Enterprise UX</span>
+                                    <span class="tag" role="listitem">Design Systems</span>
+                                    <span class="tag" role="listitem">User Research</span>
+                                    <span class="tag" role="listitem">Information Architecture</span>
+                                    <span class="tag" role="listitem">Accessibility</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- About Section -->
+    <section id="about" class="about" aria-labelledby="about-heading">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2 id="about-heading">About Me</h2>
+                    <p>I'm a UX Designer and Product Strategist who bridges analytical thinking with human empathy to solve complex design challenges. My unique background spans enterprise design systems serving 100k+ users, innovative social gaming platforms, and data-driven team optimization.</p>
+                    
+                    <p>What sets me apart is my systematic approach to discovery—I dive deep into constraints, user needs, and technical requirements before designing solutions. My experience as both a Scrum Master and designer gives me strong facilitation skills and the ability to align cross-functional teams around user-centered outcomes.</p>
+
+                    <p>I'm passionate about accessibility, design systems, and working closely with developers to ensure designs are both beautiful and feasible in production. I thrive in collaborative environments where I can contribute to product strategy while delivering high-quality design solutions.</p>
+                </div>
+                
+                <div class="skills-grid fade-in">
+                    <div class="skill-category">
+                        <h4>Research & Strategy</h4>
+                        <ul>
+                            <li>Quantitative & Qualitative Research</li>
+                            <li>User Interviews & Surveys</li>
+                            <li>Data Analysis & SQL</li>
+                            <li>Product Strategy</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Design & Systems</h4>
+                        <ul>
+                            <li>Design Systems</li>
+                            <li>Information Architecture</li>
+                            <li>Figma & Prototyping</li>
+                            <li>Visual Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Product & Leadership</h4>
+                        <ul>
+                            <li>Product Ownership</li>
+                            <li>Scrum Master</li>
+                            <li>Stakeholder Management</li>
+                            <li>Cross-functional Collaboration</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Technical</h4>
+                        <ul>
+                            <li>Front-end Development</li>
+                            <li>Google Sheets/SQL</li>
+                            <li>API Specification</li>
+                            <li>Analytics & Metrics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+        <div class="container">
+            <h2 id="contact-heading">Let's Work Together</h2>
+            <p>Ready to tackle complex design challenges? I'd love to hear about your next project.</p>
+            <div class="contact-links">
+                <a href="mailto:grantrileythomas@gmail.com" class="contact-link" aria-label="Send email to Grant Thomas">Email Me</a>
+                <a href="https://www.linkedin.com/in/grantrileythomas/" class="contact-link" aria-label="View Grant Thomas LinkedIn profile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="grant-thomas-resume.pdf" class="contact-link" aria-label="Download Grant Thomas resume PDF" target="_blank">Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Handle image loading errors safely
+        function handleImageError(img, emoji, className) {
+            const parent = img.parentElement;
+            if (parent) {
+                parent.innerHTML = emoji;
+                parent.classList.add('emoji-fallback', className);
+            }
+        }
+
+        // Smooth scroll animation trigger
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.case-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survivor Social Game - Case Study</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .case-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        .case-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .case-header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Overview */
+        .overview {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .overview-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .overview-content p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-details {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            height: fit-content;
+        }
+
+        .project-details h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .detail-item {
+            margin-bottom: 1rem;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #475569;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: #374151;
+        }
+
+        .content-section h4 {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .content-section p, .content-section li {
+            font-size: 1.05rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .content-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #f093fb20, #f5576c20);
+            border-left: 4px solid #f5576c;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        /* Two column layout for some sections */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .phase-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            border-top: 4px solid #f5576c;
+        }
+
+        .phase-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Results grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .result-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 4px solid #f5576c;
+        }
+
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f5576c;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-description {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Skills section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .skill-tag {
+            background: #f1f5f9;
+            padding: 0.8rem 1rem;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 500;
+            color: #475569;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: #f5576c;
+            background: #f5576c10;
+        }
+
+        /* Navigation */
+        .case-nav {
+            background: #2c3e50;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .case-nav h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .case-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="case-header">
+        <a href="/" class="back-link">← Back to Portfolio</a>
+        <div class="container">
+            <h1>Survivor Social Game</h1>
+            <p class="subtitle">From Spreadsheet to Social Experience: Designing a Week-Long Survivor Game</p>
+        </div>
+    </div>
+
+    <div class="overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>Project Overview</h2>
+                    <p>During COVID-19, my friend with a board game passion project recruited several of us for playtesting and prototyping. We discovered a gap: existing digital social games lacked the strategic depth and week-long social dynamics that make Survivor compelling.</p>
+                    <p>Most social games were either too simple (one-session party games) or too complex (MMORPGs requiring huge time investments). We wanted something that captured real social strategy over multiple days while being accessible to casual players.</p>
+                </div>
+                <div class="project-details">
+                    <h3>Project Details</h3>
+                    <div class="detail-item">
+                        <div class="detail-label">ROLE</div>
+                        <div class="detail-value">Game Designer, UX Designer, Technical Contributor</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">DURATION</div>
+                        <div class="detail-value">~1 year from concept to web app launch</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">TEAM</div>
+                        <div class="detail-value">Core group of friends, rotating cast of ~50 players</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">TOOLS</div>
+                        <div class="detail-value">Google Sheets, Figma, Laravel, Tailwind CSS</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">PRODUCT OWNER</div>
+                        <div class="detail-value">John (friend with board game background)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="content-section">
+            <h2>The Challenge</h2>
+            <p>We set out to solve a specific problem in the digital social gaming space. During the pandemic, people craved meaningful social interaction, but existing games fell into two extremes: shallow party games that lasted minutes, or complex MMORPGs requiring massive time investments.</p>
+            
+            <div class="highlight-box">
+                <p><strong>The Gap:</strong> No games captured the strategic depth and genuine social dynamics that make Survivor compelling—the week-long relationship building, alliance formation, and strategic gameplay that creates authentic human connections.</p>
+            </div>
+
+            <h3>Initial Constraints</h3>
+            <ul>
+                <li>Limited development resources (friends working in spare time)</li>
+                <li>Need for real-time social interaction and voting</li>
+                <li>Managing complex game economics and player progression</li>
+                <li>Week-long engagement without losing player interest</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Research & Discovery</h2>
+            <h3>Understanding the Source Material</h3>
+            <p>We analyzed what makes Survivor compelling: social voting dynamics, resource management, alliance formation, and the balance between strategic gameplay and social relationships.</p>
+
+            <h3>Daily Challenge Integration</h3>
+            <p>The game operated on a consistent daily rhythm:</p>
+            <ul>
+                <li><strong>Daily Challenge:</strong> Varied objectives like "be part of the biggest tribe" or "predict which player receives the most upvotes"</li>
+                <li><strong>Voting Ballot:</strong> Core upvote/downvote mechanics that determined player rankings</li>
+                <li><strong>Tribal Challenges:</strong> Periodic team-based competitions that could shift alliances and power dynamics</li>
+            </ul>
+
+            <p>These elements created multiple strategic layers—players had to balance individual performance, social positioning, and team dynamics simultaneously. Challenges integrated directly with the currency system, providing rewards that funded the economic actions that drove social gameplay.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Solution Evolution</h2>
+            
+            <div class="two-column">
+                <div class="phase-card">
+                    <h4>Phase 1: Google Sheets Prototype</h4>
+                    <p><strong>Why we started here:</strong> Google Sheets offered the perfect rapid prototyping environment—real-time collaboration, built-in data structure, and zero development overhead.</p>
+                    <p><strong>The "Probst" System:</strong> One player served as the game master, managing the master spreadsheet while other players accessed individual sheets with 4-digit password protection.</p>
+                </div>
+                
+                <div class="phase-card">
+                    <h4>Phase 2: Web App Development</h4>
+                    <p><strong>Why we made the transition:</strong> Google Sheets became increasingly fragile as we added complex logic for scoreboard validity and game mechanics. A single typo could break the entire spreadsheet.</p>
+                    <p><strong>Technical Solution:</strong> Migrated to Laravel web application with proper error handling and robust architecture.</p>
+                </div>
+            </div>
+
+            <h3>Phase 3: Complete UX Redesign in Figma</h3>
+            <p>From the Google Sheets prototype through the Laravel web app, I designed the entire user experience from scratch:</p>
+            
+            <h4>Core User Flows:</h4>
+            <ul>
+                <li><strong>Authentication & Onboarding:</strong> Login system and new player introduction</li>
+                <li><strong>Daily Mechanics Interface:</strong> Streamlined voting, challenge participation, and action selection</li>
+                <li><strong>Live Scoreboard:</strong> Real-time player rankings and status updates</li>
+                <li><strong>Social Feed:</strong> Public activity stream for announcements and game events</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Design Philosophy:</strong> We kept external communication in Discord while focusing the app on core game mechanics. This created clear separation between social strategy (Discord) and game actions (web app), reducing interface complexity while maintaining rich social dynamics.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Key Design Decisions</h2>
+            
+            <h3>Game Economics Design</h3>
+            <p>The currency system created rich strategic depth through multiple spending options:</p>
+            
+            <div class="two-column">
+                <div>
+                    <h4>Offensive Actions:</h4>
+                    <ul>
+                        <li><strong>Vote Blocking:</strong> Prevent another player's vote from counting</li>
+                        <li><strong>Vote Amplification:</strong> Cast multiple votes in a single round</li>
+                        <li><strong>Public Shaming:</strong> Post callouts in the public feed</li>
+                    </ul>
+                    
+                    <h4>Information Warfare:</h4>
+                    <ul>
+                        <li><strong>Identity Spying:</strong> Reveal other players' hidden roles</li>
+                        <li><strong>Intelligence Gathering:</strong> Access voting intentions</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Defensive Tools:</h4>
+                    <ul>
+                        <li><strong>Immunity Purchases:</strong> Protection from elimination votes</li>
+                        <li><strong>Counter-Intelligence:</strong> Block spying attempts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>The economy had to balance power (expensive actions felt impactful) with accessibility (everyone could participate meaningfully). Early versions suffered from runaway leaders until we implemented diminishing returns on consecutive actions.</p>
+
+            <h3>Social Interaction Framework</h3>
+            <div class="highlight-box">
+                <p><strong>Meaningful Connection Through Mutual Need:</strong> Rather than forcing social features, the game design created natural interdependencies. Players needed alliances to succeed in challenges, votes to avoid elimination, and strategic cooperation to maximize their position.</p>
+            </div>
+
+            <p>The challenges provided a "cradle for mutual need" that allowed authentic relationship building to emerge organically. Most remarkably, <strong>two players who didn't know each other before the game developed a relationship through gameplay and are now engaged to be married</strong>—demonstrating that the game mechanics successfully created conditions for genuine human connection.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Results & Impact</h2>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">~50</div>
+                    <div class="result-label">Total Players</div>
+                    <div class="result-description">Rotating cast across multiple game seasons</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">95%+</div>
+                    <div class="result-label">Completion Rate</div>
+                    <div class="result-description">Almost everyone finished their full week-long games</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">2</div>
+                    <div class="result-label">Players Engaged</div>
+                    <div class="result-description">Strangers who met through the game and are now engaged to be married</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">100%</div>
+                    <div class="result-label">Still Active</div>
+                    <div class="result-description">Platform still live today as conference engagement tool</div>
+                </div>
+            </div>
+
+            <h3>Memorable Game Moments</h3>
+            <ul>
+                <li><strong>The "HugeInfoDumps" Incident:</strong> Players created fake accounts to blast information and create chaos, leading to new identity verification systems</li>
+                <li><strong>Blood Oath Alliances:</strong> Secret partnerships formed in the final hours, with dramatic last-minute promises and betrayals</li>
+                <li><strong>The Great Economic Upset:</strong> Unknown players rocketed from last place to first in the final round through strategic currency deployment</li>
+            </ul>
+
+            <h3>Current Evolution: Conference Engagement Tool</h3>
+            <p>The platform was successfully adapted for John's product consulting company as a conference engagement tool. The streamlined version focuses on core voting and challenges, removing the complex economic advantages for the professional environment while keeping Blood Oaths as an optional "expansion" game mode that players can choose upfront for more intense gameplay.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Challenges & Solutions</h2>
+            
+            <div class="two-column">
+                <div>
+                    <h4>Technical Constraints</h4>
+                    <p><strong>Challenge:</strong> Google Sheets couldn't handle increasingly complex features without becoming fragile—a single typo could crash the entire game mid-session</p>
+                    <p><strong>Solution:</strong> Migrated to Laravel web application with proper error handling, data validation, and robust architecture</p>
+                </div>
+                <div>
+                    <h4>Balancing Game Economics</h4>
+                    <p><strong>Challenge:</strong> The original voting economy created dramatic endgame swings that felt disconnected from week-long strategic play</p>
+                    <p><strong>Solution:</strong> Simplified automatic vote mechanics and added diminishing returns to prevent dramatic last-minute position changes</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>What I'd Do Differently</h2>
+            <ul>
+                <li><strong>Simplify Advantage Complexity:</strong> The economic advantages were overwhelming for non-competitive players. I'd design clearer onboarding and possibly tier the complexity</li>
+                <li><strong>Address "King Making" Dynamics:</strong> Competitive players would secure votes from others by promising reciprocity in future games, creating frustration for excluded players</li>
+                <li><strong>Balance Social Drama vs. Accessibility:</strong> While emergent social gameplay was entertaining, clearer guidelines about acceptable behavior would help maintain inclusive participation</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Skills Demonstrated</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Game Design</div>
+                <div class="skill-tag">UX Design</div>
+                <div class="skill-tag">Product Development</div>
+                <div class="skill-tag">Social Systems Design</div>
+                <div class="skill-tag">User Psychology</div>
+                <div class="skill-tag">Figma Prototyping</div>
+                <div class="skill-tag">Data Analysis</div>
+                <div class="skill-tag">Project Management</div>
+                <div class="skill-tag">Stakeholder Management</div>
+                <div class="skill-tag">Technical Implementation</div>
+                <div class="skill-tag">Change Management</div>
+                <div class="skill-tag">Business Strategy</div>
+            </div>
+        </section>
+    </div>
+
+    <div class="case-nav">
+        <div class="container">
+            <h3>View More Case Studies</h3>
+            <div class="nav-links">
+                <a href="/skills-assessment.html" class="nav-link">Skills Assessment Tool</a>
+                <a href="/design-system.html" class="nav-link">Design System Portal</a>
+                <a href="/" class="nav-link">Back to Portfolio</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

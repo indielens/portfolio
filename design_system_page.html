@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System Documentation Portal - Case Study</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .case-header {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        .case-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .case-header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Overview */
+        .overview {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .overview-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .overview-content p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-details {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            height: fit-content;
+        }
+
+        .project-details h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .detail-item {
+            margin-bottom: 1rem;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #475569;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: #374151;
+        }
+
+        .content-section h4 {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .content-section p, .content-section li {
+            font-size: 1.05rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .content-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #43e97b20, #38f9d720);
+            border-left: 4px solid #43e97b;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        /* Problem cards */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .problem-card {
+            background: #fff5f5;
+            border-left: 4px solid #ef4444;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .problem-card h4 {
+            color: #ef4444;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card .impact {
+            background: #fef2f2;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+
+        .problem-card .solution {
+            background: #f0fdf4;
+            border-left: 3px solid #22c55e;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        /* Before/After comparison */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .before, .after {
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .before {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+        }
+
+        .after {
+            background: #f0fdf4;
+            border: 2px solid #bbf7d0;
+        }
+
+        .before h4 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+        }
+
+        .after h4 {
+            color: #16a34a;
+            margin-bottom: 1rem;
+        }
+
+        /* Research methodology */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .research-method {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-top: 4px solid #43e97b;
+            text-align: center;
+        }
+
+        .research-method h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .research-method p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Results grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .result-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 4px solid #43e97b;
+        }
+
+        .result-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-description {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Skills section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .skill-tag {
+            background: #f1f5f9;
+            padding: 0.8rem 1rem;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 500;
+            color: #475569;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: #43e97b;
+            background: #43e97b10;
+        }
+
+        /* Navigation */
+        .case-nav {
+            background: #2c3e50;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .case-nav h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .case-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="case-header">
+        <a href="/" class="back-link">← Back to Portfolio</a>
+        <div class="container">
+            <h1>Design System Documentation Portal</h1>
+            <p class="subtitle">Transforming Design System Documentation: From Chaos to Clarity</p>
+        </div>
+    </div>
+
+    <div class="overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>Project Overview</h2>
+                    <p>The design system faced a perfect storm of challenges following the merger of disparate UX/Design groups into one Enterprise UX organization. <strong>Documentation hadn't been updated since 2018</strong>, creating a massive knowledge gap serving 100,000+ employees across 50+ pharmaceutical brands.</p>
+                    <p>Through comprehensive research and systematic redesign, I transformed outdated, development-focused documentation into a user-centered system that accelerated deployment cycles and reduced support requests.</p>
+                </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Research & Discovery</h2>
+            
+            <div class="research-grid">
+                <div class="research-method">
+                    <h4>Survey Research</h4>
+                    <p>Comprehensive assessment to 30+ teammates across disciplines using Microsoft Forms</p>
+                </div>
+                <div class="research-method">
+                    <h4>User Interviews</h4>
+                    <p>1:1 moderated interviews with designers, developers, and design system users</p>
+                </div>
+                <div class="research-method">
+                    <h4>Card Sort Analysis</h4>
+                    <p>Hybrid card sort to reveal user-preferred organizational models</p>
+                </div>
+                <div class="research-method">
+                    <h4>Industry Research</h4>
+                    <p>Competitive analysis of documentation patterns from leading design systems</p>
+                </div>
+            </div>
+
+            <h3>Critical Documentation Gaps Identified</h3>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h4>Missing Component States</h4>
+                    <p>Component interaction states weren't documented anywhere</p>
+                    <div class="impact">Impact: Designers had to inspect code and manually convert RGB values to hex to understand hover, focus, and disabled states</div>
+                    <div class="solution">Solution: Complete visual state documentation for every component</div>
+                </div>
+                
+                <div class="problem-card">
+                    <h4>No Anatomical Alignment</h4>
+                    <p>Designers and developers used different terminology for component elements</p>
+                    <div class="impact">Impact: Confusion and misalignment during handoffs, with no shared vocabulary</div>
+                    <div class="solution">Solution: Comprehensive anatomical labeling with numbered callouts</div>
+                </div>
+                
+                <div class="problem-card">
+                    <h4>Structural Specifications Missing</h4>
+                    <p>Internal and external component structure wasn't documented</p>
+                    <div class="impact">Impact: Designers had to reverse engineer or guess when customizing components</div>
+                    <div class="solution">Solution: Responsive spacing documentation with precise measurements</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Solution Strategy</h2>
+            
+            <h3>Comprehensive Documentation Redesign</h3>
+            <p>I redesigned the entire documentation approach to serve both audiences effectively while maintaining the system's integrity across pharmaceutical brands.</p>
+
+            <div class="comparison">
+                <div class="before">
+                    <h4>Before: Legacy Portal Problems</h4>
+                    <ul>
+                        <li>Dense, text-heavy documentation</li>
+                        <li>Poor visual hierarchy</li>
+                        <li>Confusing navigation structure</li>
+                        <li>No component visualization</li>
+                        <li>Development-focused content</li>
+                        <li>"Got time for some light reading?"</li>
+                    </ul>
+                </div>
+                <div class="after">
+                    <h4>After: Redesigned Portal</h4>
+                    <ul>
+                        <li>Clean, scannable interface</li>
+                        <li>Visual component examples</li>
+                        <li>Clear anatomical breakdowns</li>
+                        <li>Multiple button states shown</li>
+                        <li>Structured sections with tabs</li>
+                        <li>Quick navigation sidebar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Specific Improvements Delivered</h3>
+            
+            <h4>Content Guidelines Transformation</h4>
+            <div class="comparison">
+                <div class="before">
+                    <h4>❌ Before</h4>
+                    <p>"Learn how [Brand] might be able to benefit you" - vague, confusing calls-to-action</p>
+                </div>
+                <div class="after">
+                    <h4>✅ After</h4>
+                    <p>"Learn about [Brand]" with clear, specific action items and visual examples</p>
+                </div>
+            </div>
+
+            <h4>Component State Documentation</h4>
+            <div class="comparison">
+                <div class="before">
+                    <h4>❌ Before</h4>
+                    <p>Required manual code inspection, RGB to hex conversion, no documentation for interaction states</p>
+                </div>
+                <div class="after">
+                    <h4>✅ After</h4>
+                    <p>Complete visual reference showing default, hover, active, focus, and disabled states for every component</p>
+                </div>
+            </div>
+
+            <h4>Information Architecture Overhaul</h4>
+            <div class="comparison">
+                <div class="before">
+                    <h4>❌ Before</h4>
+                    <p>Dense, paragraph-heavy documentation with poor scanability</p>
+                </div>
+                <div class="after">
+                    <h4>✅ After</h4>
+                    <p>Structured content with clear section anchors, quick navigation, and visual hierarchy</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Results & Business Impact</h2>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">🚀</div>
+                    <div class="result-label">Faster Deployment</div>
+                    <div class="result-description">Accelerated marketing websites across pharmaceutical brands</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">📞</div>
+                    <div class="result-label">Reduced Support</div>
+                    <div class="result-description">Significant decrease in support requests from design teams</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">👥</div>
+                    <div class="result-label">Positive Reception</div>
+                    <div class="result-description">Well-received by both designers and developers</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">📊</div>
+                    <div class="result-label">Built-in Analytics</div>
+                    <div class="result-description">Design system usage tracking and adoption insights</div>
+                </div>
+            </div>
+
+            <h3>Enterprise-Scale Impact</h3>
+            <ul>
+                <li><strong>Multi-Brand Consistency:</strong> Streamlined design implementation across 50+ international pharmaceutical brands</li>
+                <li><strong>Developer-Designer Alignment:</strong> Eliminated terminology confusion through shared anatomical vocabulary</li>
+                <li><strong>International Design Support:</strong> Comprehensive RTL and localization guidance</li>
+                <li><strong>Compliance Integration:</strong> Pharmaceutical industry-specific considerations built into guidelines</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Role Evolution Through Project</h2>
+            
+            <div class="comparison">
+                <div class="before">
+                    <h4>Research Phase</h4>
+                    <p>Led comprehensive user research including surveys, interviews, card sorts, and heuristic analysis to identify critical documentation gaps</p>
+                </div>
+                <div class="after">
+                    <h4>Design & Product Phase</h4>
+                    <p>Transitioned to product owner during maternity leave, managing backlog and stakeholder alignment while continuing design work</p>
+                </div>
+            </div>
+
+            <p>This role evolution demonstrated adaptability and growth from researcher to strategic leader, managing both the tactical execution and the broader product strategy simultaneously.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Challenges & Solutions</h2>
+            
+            <h3>Balancing Multi-Brand Requirements</h3>
+            <p><strong>Challenge:</strong> Serving dozens of pharmaceutical brands with different visual needs while maintaining system consistency</p>
+            <p><strong>Solution:</strong> Created flexible documentation framework that showed brand variations within consistent structural patterns</p>
+
+            <h3>Bridging Design-Development Gap</h3>
+            <p><strong>Challenge:</strong> Two audiences with different information needs and technical vocabularies</p>
+            <p><strong>Solution:</strong> Parallel documentation paths with shared anatomical specifications that served both perspectives</p>
+
+            <h3>Stakeholder Alignment During Role Transitions</h3>
+            <p><strong>Challenge:</strong> Maintaining project momentum while transitioning between research, design, and product owner responsibilities</p>
+            <p><strong>Solution:</strong> Clear documentation and communication protocols that enabled smooth handoffs and continued progress</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Post-Launch Strategy & Sustainability</h2>
+            
+            <h3>Continuous Improvement Framework</h3>
+            <ul>
+                <li><strong>User Feedback Collection:</strong> Systematic gathering and analysis of feedback to identify areas for ongoing improvement</li>
+                <li><strong>Content Maintenance Program:</strong> Regular documentation updates to keep pace with component evolution</li>
+                <li><strong>Training and Adoption Support:</strong> Structured training sessions and ongoing support for the 100,000+ employee organization</li>
+                <li><strong>Analytics-Driven Optimization:</strong> Built-in design system analytics enabling data-driven decisions about usage patterns</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Skills Demonstrated</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">UX Research</div>
+                <div class="skill-tag">Information Architecture</div>
+                <div class="skill-tag">Design Systems</div>
+                <div class="skill-tag">Product Management</div>
+                <div class="skill-tag">Content Strategy</div>
+                <div class="skill-tag">Stakeholder Management</div>
+                <div class="skill-tag">User Interviews</div>
+                <div class="skill-tag">Card Sort Analysis</div>
+                <div class="skill-tag">Heuristic Analysis</div>
+                <div class="skill-tag">Enterprise UX</div>
+                <div class="skill-tag">Cross-functional Collaboration</div>
+                <div class="skill-tag">Change Management</div>
+                <div class="skill-tag">Accessibility</div>
+                <div class="skill-tag">Technical Writing</div>
+                <div class="skill-tag">International Design</div>
+                <div class="skill-tag">Component Documentation</div>
+            </div>
+        </section>
+    </div>
+
+    <div class="case-nav">
+        <div class="container">
+            <h3>View More Case Studies</h3>
+            <div class="nav-links">
+                <a href="/survivor-game.html" class="nav-link">Survivor Social Game</a>
+                <a href="/skills-assessment.html" class="nav-link">Skills Assessment Tool</a>
+                <a href="/" class="nav-link">Back to Portfolio</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+                <div class="project-details">
+                    <h3>Project Details</h3>
+                    <div class="detail-item">
+                        <div class="detail-label">ROLE</div>
+                        <div class="detail-value">UX Researcher → Designer → Product Owner</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">CONTEXT</div>
+                        <div class="detail-value">Global pharmaceutical company with 50+ brands, 100,000+ employees</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">RESEARCH SCOPE</div>
+                        <div class="detail-value">30+ teammates across disciplines</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">CHALLENGE</div>
+                        <div class="detail-value">Documentation outdated since 2018, tribal knowledge loss</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">IMPACT</div>
+                        <div class="detail-value">Faster deployment, reduced support requests, improved consistency</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="content-section">
+            <h2>The Challenge</h2>
+            
+            <h3>Critical Scale Challenges</h3>
+            <ul>
+                <li><strong>50+ international brands</strong> requiring consistent yet flexible design guidance</li>
+                <li><strong>100,000+ global employees</strong> potentially impacted by design system decisions</li>
+                <li><strong>Outdated tooling</strong> (Sketch) incompatible with enterprise collaboration needs</li>
+                <li><strong>Security constraints</strong> around cloud-based design tools in pharmaceutical industry</li>
+                <li><strong>Leadership bandwidth</strong> focused on team dynamics rather than system infrastructure</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p><strong>The Perfect Storm:</strong> Documentation from 2018, development-focused portal alienating designers, tribal knowledge being lost as team members left, and enterprise-scale complexity across pharmaceutical brands.</p>

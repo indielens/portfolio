@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Team Skills Assessment Tool - Case Study</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .case-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        .case-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .case-header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Overview */
+        .overview {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .overview-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .overview-content p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-details {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            height: fit-content;
+        }
+
+        .project-details h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .detail-item {
+            margin-bottom: 1rem;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #475569;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: #374151;
+        }
+
+        .content-section h4 {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .content-section p, .content-section li {
+            font-size: 1.05rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .content-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #4facfe20, #00f2fe20);
+            border-left: 4px solid #4facfe;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        /* Gaming background highlight */
+        .gaming-section {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            border-left: 4px solid #667eea;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+        }
+
+        .gaming-section h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Data structure visual */
+        .data-structure {
+            background: #f1f5f9;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 2px solid #e2e8f0;
+        }
+
+        .data-structure h4 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .data-views {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .data-view {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #4facfe;
+        }
+
+        .data-view h5 {
+            color: #4facfe;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-view p {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        /* Results grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .result-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 4px solid #4facfe;
+        }
+
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4facfe;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-description {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Two column layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .insight-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .skill-tag {
+            background: #f1f5f9;
+            padding: 0.8rem 1rem;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 500;
+            color: #475569;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: #4facfe;
+            background: #4facfe10;
+        }
+
+        /* Navigation */
+        .case-nav {
+            background: #2c3e50;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .case-nav h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .case-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .data-views {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="case-header">
+        <a href="/" class="back-link">← Back to Portfolio</a>
+        <div class="container">
+            <h1>UX Team Skills Assessment Tool</h1>
+            <p class="subtitle">From Basic Survey to Strategic Team Optimization: Building a Skills Assessment System</p>
+        </div>
+    </div>
+
+    <div class="overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>Project Overview</h2>
+                    <p>When two UX teams merged, leadership conducted a basic skills survey to understand the combined team capabilities. The survey was surface-level and provided little actionable insight for project assignments or identifying skill gaps.</p>
+                    <p><strong>Team assignments were essentially based on guesswork</strong> rather than data-driven understanding of individual strengths, interests, and optimal team compositions.</p>
+                </div>
+                <div class="project-details">
+                    <h3>Project Details</h3>
+                    <div class="detail-item">
+                        <div class="detail-label">ROLE</div>
+                        <div class="detail-value">Data Analyst, UX Researcher, System Designer</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">DURATION</div>
+                        <div class="detail-value">2-3 months from basic survey to full optimization system</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">TEAM SIZE</div>
+                        <div class="detail-value">21 UX professionals across merged teams</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">TOOLS</div>
+                        <div class="detail-value">Google Sheets, Advanced QUERY functions, Weighted analysis formulas</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">SKILLS ASSESSED</div>
+                        <div class="detail-value">120 UX competencies across multiple dimensions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="content-section">
+            <h2>The Challenge</h2>
+            <p>The merged UX organization faced a critical knowledge gap. With team assignments based on intuition rather than data, leadership couldn't effectively:</p>
+            <ul>
+                <li>Identify optimal team compositions for projects</li>
+                <li>Understand individual capabilities and growth areas</li>
+                <li>Make strategic hiring or training decisions</li>
+                <li>Leverage hidden strengths within the team</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p><strong>The Core Problem:</strong> We needed to transform superficial skills inventory into actionable team optimization insights that could drive real business decisions.</p>
+            </div>
+        </section>
+
+        <section class="gaming-section">
+            <h3>The Unexpected Foundation: Gaming Analytics</h3>
+            <h4>From Overwatch to UX Team Optimization</h4>
+            <p>My expertise with Google Sheets' QUERY function came from an unexpected source: analyzing my own Overwatch gameplay statistics. I had built complex spreadsheets to track damage output, kill ratios, and survival metrics to identify improvement areas in my gaming performance.</p>
+            
+            <h4>Key Skills Transfer:</h4>
+            <ul>
+                <li><strong>Multi-dimensional analysis:</strong> Gaming stats (damage/kills/survival) → UX skills (expertise/interest/role fit)</li>
+                <li><strong>Performance optimization:</strong> Personal gameplay improvement → Team composition optimization</li>
+                <li><strong>Pattern recognition:</strong> Identifying gameplay weaknesses → Discovering organizational skill gaps</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Solution Architecture</h2>
+            
+            <h3>Comprehensive Skills Database</h3>
+            <p>I created a centralized data system that captured comprehensive skills assessment across <strong>120 different UX competencies</strong>. Each team member rated their expertise level and interest level for every skill, creating a rich multi-dimensional dataset.</p>
+            
+            <div class="data-structure">
+                <h4>Assessment Framework</h4>
+                <p><strong>Expertise Scale:</strong> No Experience | Working Knowledge | Mastered</p>
+                <p><strong>Interest Scale:</strong> Interested | Not Interested</p>
+                <p><strong>Scope:</strong> 120 UX skills covering technical, strategic, and domain expertise</p>
+            </div>
+
+            <h3>SQL-Powered Analysis Views</h3>
+            <p>Using Google Sheets' QUERY function extensively, I built multiple analytical views that could slice and dice the data:</p>
+
+            <div class="data-views">
+                <div class="data-view">
+                    <h5>Individual View</h5>
+                    <p>Complete skill profiles for each team member</p>
+                </div>
+                <div class="data-view">
+                    <h5>Skill Analysis</h5>
+                    <p>How all teammates ranked across specific skills</p>
+                </div>
+                <div class="data-view">
+                    <h5>Role Definition</h5>
+                    <p>Weighted skill matching against role requirements</p>
+                </div>
+                <div class="data-view">
+                    <h5>Service Capability</h5>
+                    <p>Team capacity for four core service offerings</p>
+                </div>
+                <div class="data-view">
+                    <h5>Team Comparison</h5>
+                    <p>Custom team builder with strength analysis</p>
+                </div>
+                <div class="data-view">
+                    <h5>Project-Specific</h5>
+                    <p>Flexible skill matching beyond traditional roles</p>
+                </div>
+            </div>
+
+            <h3>Strategic Team Optimization Engine</h3>
+            <div class="highlight-box">
+                <p><strong>Custom Team Builder:</strong> Leadership could slot in any number of teammates and instantly see aggregated skill strengths, capability gaps, role distribution, and service delivery capacity across all 120+ competencies.</p>
+            </div>
+
+            <p>The weighted ranking system automatically scored team members' fit for different contexts. High skill matches received positive weights, while skill gaps were flagged as potential weaknesses, enabling data-driven staffing decisions.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Key Design Decisions</h2>
+            
+            <h3>Self-Assessment Challenges & Psychology</h3>
+            <div class="two-column">
+                <div class="insight-card">
+                    <h4>The Dunning-Kruger Effect in Practice</h4>
+                    <p>Team members with limited expertise often overrated their abilities, while highly skilled individuals who understood the depth of their knowledge gaps rated themselves more conservatively. This created data distortions where true experts appeared less capable than novices on paper.</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Calibration Considerations</h4>
+                    <p>While I didn't implement peer validation in this version, recognizing these psychological patterns informed how leadership interpreted the results and highlighted the need for managerial context when making staffing decisions.</p>
+                </div>
+            </div>
+
+            <h3>Query Interface Design</h3>
+            <p>Rather than forcing non-technical stakeholders to write QUERY formulas, I created pre-built analytical views that automatically surfaced insights. Leadership could simply navigate between sheets to find answers like:</p>
+            <ul>
+                <li>"Which team members have mastered accessibility but aren't interested in research?"</li>
+                <li>"What's our team's overall capacity for usability testing projects?"</li>
+                <li>"How do these three potential team configurations compare for a complex research project?"</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Results & Impact</h2>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">21</div>
+                    <div class="result-label">Team Members</div>
+                    <div class="result-description">UX professionals assessed across merged teams</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">120</div>
+                    <div class="result-label">Skills Analyzed</div>
+                    <div class="result-description">Comprehensive competencies across all UX disciplines</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">6</div>
+                    <div class="result-label">Analytical Views</div>
+                    <div class="result-description">Different ways to slice and analyze the team data</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">2x</div>
+                    <div class="result-label">Assessment Cycles</div>
+                    <div class="result-description">Bi-annual updates with archived historical data</div>
+                </div>
+            </div>
+
+            <h3>Organizational Insights Uncovered</h3>
+            <div class="two-column">
+                <div class="insight-card">
+                    <h4>Hidden Technical Capabilities</h4>
+                    <p>The assessment revealed that several team members had stronger development backgrounds than leadership realized, opening up new possibilities for technical UX work and cross-functional collaboration.</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Strategic Decision Support</h4>
+                    <p>Assessment results informed Nielsen Norman Group course selections for the team, demonstrating how individual skill gaps could drive organizational learning investments.</p>
+                </div>
+            </div>
+
+            <h3>System Evolution & Stakeholder Response</h3>
+            <p><strong>Iterative Development:</strong> The system evolved based on stakeholder feedback, with leadership requesting additional views like the project-specific skills analysis that allowed custom skill combinations beyond traditional role definitions.</p>
+            
+            <p><strong>Autonomous Usage:</strong> Leadership operated the system independently, demonstrating the success of creating accessible analytical tools for non-technical stakeholders.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Challenges & Solutions</h2>
+            
+            <div class="two-column">
+                <div class="insight-card">
+                    <h4>System Lifecycle & Transition</h4>
+                    <p><strong>Challenge:</strong> Maintaining data currency as team members' skills evolved and project priorities shifted</p>
+                    <p><strong>Solution:</strong> Implemented bi-annual assessment cycles with archived historical data, though system eventually became outdated when I transitioned to different projects</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Creating Self-Service Analytics</h4>
+                    <p><strong>Challenge:</strong> Enabling non-technical leadership to perform complex team analysis independently</p>
+                    <p><strong>Solution:</strong> Built intuitive sheet-based interfaces that abstracted QUERY complexity behind user-friendly views</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>What I'd Do Differently</h2>
+            
+            <h3>Enhanced System Design</h3>
+            <ul>
+                <li><strong>Automated Data Refresh:</strong> Implement more sustainable data maintenance processes, possibly integrating with HR systems rather than relying on manual bi-annual surveys</li>
+                <li><strong>Dual Assessment Framework:</strong> Build a system where both employees and managers complete assessments, then use the comparison view to facilitate career development conversations around discrepancies</li>
+                <li><strong>Enhanced Validation:</strong> Consider peer validation for critical skills or implement calibration exercises to help team members understand skill level definitions more consistently</li>
+            </ul>
+
+            <h3>Career Development Integration</h3>
+            <div class="highlight-box">
+                <p><strong>Unrealized Potential:</strong> We could have used this for career progression conversations where both you and your manager assessed you, then used the comparison view to come together and discuss any differences—but I never built this feature.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Personal Learning Outcomes</h2>
+            
+            <h3>Small-Scale Iteration Impact</h3>
+            <p>This project taught me the critical importance of testing changes at small scale where you can clearly observe their impact. With 21 engaged team members, we could immediately see how system adjustments affected behavior—insights I've applied to enterprise design system work where testing component changes requires similar careful observation.</p>
+
+            <h3>Domain Transfer Potential</h3>
+            <p>This project demonstrated that analytical skills developed in personal contexts (gaming statistics) can solve complex organizational problems. The key is recognizing underlying data structure similarities across seemingly unrelated domains.</p>
+
+            <h3>Self-Service Tool Design</h3>
+            <p>Creating systems that stakeholders can operate independently requires balancing analytical power with interface simplicity—a lesson I've applied to subsequent design system documentation and component specification work.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Skills Demonstrated</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Advanced Spreadsheet Engineering</div>
+                <div class="skill-tag">Data Architecture</div>
+                <div class="skill-tag">Google Sheets QUERY Functions</div>
+                <div class="skill-tag">Stakeholder Research</div>
+                <div class="skill-tag">System Design</div>
+                <div class="skill-tag">Strategic HR Analytics</div>
+                <div class="skill-tag">Self-Directed Learning</div>
+                <div class="skill-tag">Weighted Algorithm Design</div>
+                <div class="skill-tag">Multi-dimensional Analysis</div>
+                <div class="skill-tag">Organizational Problem-Solving</div>
+                <div class="skill-tag">Change Management</div>
+                <div class="skill-tag">Data-Driven Decision Making</div>
+            </div>
+        </section>
+    </div>
+
+    <div class="case-nav">
+        <div class="container">
+            <h3>View More Case Studies</h3>
+            <div class="nav-links">
+                <a href="/survivor-game.html" class="nav-link">Survivor Social Game</a>
+                <a href="/design-system.html" class="nav-link">Design System Portal</a>
+                <a href="/" class="nav-link">Back to Portfolio</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>d {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            border-top: 4px solid #4facfe;
+        }
+
+        .insight-car
