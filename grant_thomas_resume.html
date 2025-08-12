@@ -398,8 +398,8 @@
             }
             
             body {
-                font-size: 11pt;
-                line-height: 1.4;
+                font-size: 10pt;
+                line-height: 1.3;
             }
 
             .resume-header {
@@ -407,31 +407,127 @@
                 color: white !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+                padding: 30px 0 20px;
+            }
+
+            .resume-content {
+                padding: 40px 20px 20px;
             }
 
             .name {
-                font-size: 24pt;
+                font-size: 20pt;
+                margin-bottom: 0.3rem;
             }
 
             .title {
-                font-size: 14pt;
+                font-size: 12pt;
+                margin-bottom: 1rem;
+            }
+
+            .contact-info {
+                gap: 1rem;
+                font-size: 9pt;
+            }
+
+            .section {
+                margin-bottom: 2.5rem;
             }
 
             .section-title {
-                font-size: 16pt;
+                font-size: 14pt;
+                margin-bottom: 1rem;
             }
 
             .job-title {
-                font-size: 12pt;
+                font-size: 11pt;
             }
 
-            .experience-item, .skill-category, .cert-section, .edu-section {
+            .company {
+                font-size: 10pt;
+            }
+
+            .job-dates {
+                font-size: 8pt;
+                padding: 0.3rem 0.8rem;
+            }
+
+            .experience-item {
                 border: 1px solid #e2e8f0;
                 page-break-inside: avoid;
+                padding: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .achievements {
+                margin-top: 0.5rem;
+            }
+
+            .achievements li {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+                line-height: 1.3;
             }
 
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .skill-category {
+                border: 1px solid #e2e8f0;
+                padding: 1rem;
+            }
+
+            .skill-category h4 {
+                font-size: 10pt;
+                margin-bottom: 0.5rem;
+            }
+
+            .skill-category p {
+                font-size: 8pt;
+                line-height: 1.3;
+            }
+
+            .cert-edu-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .cert-section, .edu-section {
+                border: 1px solid #e2e8f0;
+                padding: 1rem;
+            }
+
+            .subsection-title {
+                font-size: 11pt;
+                margin-bottom: 0.5rem;
+            }
+
+            .cert-list li {
+                font-size: 9pt;
+                margin-bottom: 0.3rem;
+            }
+
+            .degree {
+                font-size: 10pt;
+            }
+
+            .school {
+                font-size: 9pt;
+            }
+
+            .edu-dates {
+                font-size: 8pt;
+            }
+
+            .additional-section {
+                padding: 1rem;
+                border: 1px solid #e2e8f0;
+            }
+
+            .additional-section p {
+                font-size: 9pt;
+                line-height: 1.3;
             }
         }
 
@@ -515,11 +611,10 @@
                     <div class="job-dates">2020 - Present</div>
                 </div>
                 <ul class="achievements">
-                    <li><strong>Led design system evolution</strong> for global pharmaceutical brand house, conducting research and redesigning portal to improve designer workflow efficiency and component adoption</li>
-                    <li><strong>Managed product development lifecycle</strong> as acting Product Owner for 4 months, defining roadmap and aligning stakeholder requirements with user needs</li>
-                    <li><strong>Architected design-development alignment</strong> by creating API specifications bridging Figma components and development implementation</li>
-                    <li><strong>Simplified complex design systems</strong> by restructuring Figma components for 12+ pharmaceutical products, improving designer productivity</li>
-                    <li><strong>Established design operations processes</strong> to streamline project delivery across cross-functional agile teams of 15+ members</li>
+                    <li><strong>Led design system evolution</strong> for global pharmaceutical brand house, conducting research and redesigning portal to improve workflow efficiency</li>
+                    <li><strong>Managed product development</strong> as acting Product Owner for 4 months, defining roadmap and aligning stakeholder requirements</li>
+                    <li><strong>Architected design-development alignment</strong> by creating API specifications bridging Figma components and development</li>
+                    <li><strong>Simplified design systems</strong> by restructuring Figma components for 12+ pharmaceutical products</li>
                 </ul>
             </div>
 
@@ -532,10 +627,9 @@
                     <div class="job-dates">2017 - 2020</div>
                 </div>
                 <ul class="achievements">
-                    <li><strong>Conducted end-to-end user research</strong> including quantitative and qualitative studies to validate digital experience problems and opportunities</li>
-                    <li><strong>Delivered actionable research insights</strong> by synthesizing user data into strategic narratives, informing global marketing initiatives</li>
+                    <li><strong>Conducted end-to-end user research</strong> including quantitative and qualitative studies to validate digital experience problems</li>
+                    <li><strong>Delivered actionable research insights</strong> by synthesizing user data into strategic narratives for global marketing initiatives</li>
                     <li><strong>Improved information architecture</strong> resulting in 207% increase in resource findability through comprehensive UX audit</li>
-                    <li><strong>Championed inclusive design practices</strong> through qualitative research, leading to improved team diversity outcomes</li>
                 </ul>
             </div>
 
@@ -548,9 +642,8 @@
                     <div class="job-dates">2020 - 2021</div>
                 </div>
                 <ul class="achievements">
-                    <li><strong>Led complete product design from 0-1</strong> including user research, interaction design, and product strategy for social gaming platform with 95%+ engagement retention</li>
-                    <li><strong>Validated product-market fit</strong> through iterative user testing, resulting in successful pivot to corporate conference engagement tool</li>
-                    <li><strong>Designed complex interaction systems</strong> balancing game mechanics, social dynamics, and user accessibility across mobile-responsive interfaces</li>
+                    <li><strong>Led complete product design from 0-1</strong> including user research and product strategy for social gaming platform with 95%+ engagement</li>
+                    <li><strong>Validated product-market fit</strong> through iterative user testing, resulting in successful pivot to corporate conference tool</li>
                 </ul>
             </div>
 
@@ -563,8 +656,7 @@
                     <div class="job-dates">2015 - 2017</div>
                 </div>
                 <ul class="achievements">
-                    <li><strong>Designed 0-1 products</strong> working with CEOs and architects to validate business concepts and create investor-ready design artifacts</li>
-                    <li><strong>Supported executive communications</strong> by creating presentation materials and design assets for Salesforce leadership</li>
+                    <li><strong>Designed 0-1 products</strong> working with CEOs and architects to validate business concepts and create investor-ready artifacts</li>
                     <li><strong>Led design sprints</strong> independently, facilitating cross-functional collaboration under tight deadlines</li>
                 </ul>
             </div>
