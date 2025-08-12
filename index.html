@@ -61,34 +61,19 @@
         .header-content {
             position: relative;
             z-index: 2;
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 5rem;
-            align-items: center;
-            max-width: 1200px;
+            text-align: center;
+            max-width: 800px;
             margin: 0 auto;
         }
         
-        .hero-text {
-            order: 1;
-        }
-        
         .hero-image {
-            order: 2;
-            position: relative;
-            width: 350px;
-            height: 350px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0 30px 60px rgba(255, 255, 255, 0.2);
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.4s ease;
-            justify-self: end;
-        }
-        
-        .hero-image:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 40px 80px rgba(255, 255, 255, 0.3);
+            margin: 0 auto 2rem;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
         
         .hero-image img {
@@ -96,6 +81,40 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+        }
+        
+        .hero-image::before {
+            content: 'GT';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .hero-image img:not([src]), 
+        .hero-image img[src=""],
+        .hero-image img:not([src]):not([srcset]) {
+            opacity: 0;
+        }
+        
+        .hero-image img[src*="GT_Profile"] {
+            opacity: 1 !important;
+            display: block !important;
+        }
+        
+        .hero-image img:not([src])::before,
+        .hero-image img[src=""]::before {
+            opacity: 1;
         }
 
         /* Typography */
@@ -510,21 +529,10 @@
                 gap: 2rem;
             }
             
-            .header-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-            }
-            
-            .hero-text {
-                order: 2;
-            }
-            
             .hero-image {
-                order: 1;
-                justify-self: center;
-                width: 280px;
-                height: 280px;
+                width: 150px;
+                height: 150px;
+                margin-bottom: 1.5rem;
             }
 
             .nav-links {
@@ -584,16 +592,14 @@
     <header role="banner">
         <div class="container">
             <div class="header-content">
-                <div class="hero-text">
-                    <h1>Grant Thomas</h1>
-                    <h2 class="subtitle">UX Designer & Product Strategist</h2>
-                    <p class="bio">Building better experiences through research, design systems, and strategic thinking. I transform complex problems into elegant solutions, from enterprise design systems serving 100k+ users to innovative social gaming experiences. My background spans quantitative research, product strategy, and full-stack design thinking.</p>
-                    <a href="#work" class="cta-button" aria-label="Navigate to portfolio work section">View My Work</a>
+                <div class="hero-image">
+                    <img src="GT_Profile.JPG?v=2" alt="Grant Thomas - UX Designer & Product Strategist" />
                 </div>
                 
-                <div class="hero-image">
-                    <img src="GT_Profile.JPG" alt="Grant Thomas - UX Designer & Product Strategist" />
-                </div>
+                <h1>Grant Thomas</h1>
+                <h2 class="subtitle">UX Designer & Product Strategist</h2>
+                <p class="bio">Building better experiences through research, design systems, and strategic thinking. I transform complex problems into elegant solutions, from enterprise design systems serving 100k+ users to innovative social gaming experiences. My background spans quantitative research, product strategy, and full-stack design thinking.</p>
+                <a href="#work" class="cta-button" aria-label="Navigate to portfolio work section">View My Work</a>
             </div>
         </div>
     </header>
