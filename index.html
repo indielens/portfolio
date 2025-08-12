@@ -135,9 +135,14 @@
         }
 
         .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #667eea;
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
         }
 
         .nav-links {
@@ -479,7 +484,9 @@
     <nav role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-container">
-                <div class="logo">Grant Thomas</div>
+                <div class="logo">
+                    <img src="GThomas_Logo_v01.svg" alt="Grant Thomas Logo" />
+                </div>
                 <ul class="nav-links">
                     <li><a href="#work">Work</a></li>
                     <li><a href="#about">About</a></li>
