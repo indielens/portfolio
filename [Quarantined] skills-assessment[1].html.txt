@@ -1,0 +1,5 @@
+File was quarantined by Zscaler Data Protection.
+Machine name : Mac
+Username : grant.thomas@encora.com
+Quarantine path: /Library/Application Support/Zscaler/ZDP/User Files/gthomas/Lost and Found/Mobile Documents/com~apple~CloudDocs/Portfolio Website/skills-assessment[1].html
+45b7ddda30b699b5d86c0a2ccd3df377f970f245baa08a6eb4edb9cd0f735667

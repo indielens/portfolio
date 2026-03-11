@@ -1,0 +1,5 @@
+File was quarantined by Zscaler Data Protection.
+Machine name : Mac
+Username : grant.thomas@encora.com
+Quarantine path: /Library/Application Support/Zscaler/ZDP/User Files/gthomas/Lost and Found/Mobile Documents/com~apple~CloudDocs/Portfolio Website/styles[1].css
+e59ac60816bdcac89f78c197e27181d9dbe3764391029e4f273318561780daf9
