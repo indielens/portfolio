@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survivor Social Game — Grant Thomas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <nav class="cs-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="cs-back">← Back to work</a>
+            <span class="cs-nav-title">Survivor Social Game</span>
+            <a href="index.html" class="nav-logo">GT</a>
+        </div>
+    </nav>
+
+    <div class="cs-stripe cs-stripe--survivor"></div>
+
+    <main id="main">
+        <!-- HERO -->
+        <div class="cs-hero">
+            <div class="cs-hero-top">
+                <span class="cs-index">01</span>
+                <span class="cs-category">0→1 Product · Social UX · Game Design</span>
+            </div>
+            <h1>Survivor<br>Social Game</h1>
+            <p style="font-size:1.1rem; color:var(--dim); max-width:600px; line-height:1.7;">
+                From a fragile Google Sheets prototype to a full web application — designing week-long social dynamics that created real human connection. Two strangers who played the game are now engaged.
+            </p>
+            <div class="cs-hero-meta">
+                <div class="cs-meta-item">
+                    <div class="cs-meta-label">Role</div>
+                    <div class="cs-meta-value">UX Designer, Game Designer,<br>Technical Contributor</div>
+                </div>
+                <div class="cs-meta-item">
+                    <div class="cs-meta-label">Duration</div>
+                    <div class="cs-meta-value">~1 year, concept<br>to web app launch</div>
+                </div>
+                <div class="cs-meta-item">
+                    <div class="cs-meta-label">Tools</div>
+                    <div class="cs-meta-value">Google Sheets · Figma<br>Laravel · Tailwind CSS</div>
+                </div>
+                <div class="cs-meta-item">
+                    <div class="cs-meta-label">Status</div>
+                    <div class="cs-meta-value">Live — adapted as<br>conference engagement tool</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cs-body">
+
+            <!-- RESULTS UP FRONT -->
+            <div class="cs-section">
+                <div class="cs-section-label">Impact</div>
+                <div class="cs-section-content">
+                    <h2>Results</h2>
+                    <div class="cs-results">
+                        <div class="cs-result">
+                            <div class="cs-result-num cs-result-num--survivor">~50</div>
+                            <div class="cs-result-label">Total Players</div>
+                            <div class="cs-result-desc">Rotating cast across multiple seasons</div>
+                        </div>
+                        <div class="cs-result">
+                            <div class="cs-result-num cs-result-num--survivor">95%+</div>
+                            <div class="cs-result-label">Completion Rate</div>
+                            <div class="cs-result-desc">Full week-long games finished</div>
+                        </div>
+                        <div class="cs-result">
+                            <div class="cs-result-num cs-result-num--survivor">2</div>
+                            <div class="cs-result-label">Players Engaged</div>
+                            <div class="cs-result-desc">Strangers who met through gameplay</div>
+                        </div>
+                        <div class="cs-result">
+                            <div class="cs-result-num cs-result-num--survivor">Live</div>
+                            <div class="cs-result-label">Still Active</div>
+                            <div class="cs-result-desc">Now a B2B conference tool</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THE CHALLENGE -->
+            <div class="cs-section">
+                <div class="cs-section-label">Challenge</div>
+                <div class="cs-section-content">
+                    <h2>The Problem</h2>
+                    <p>During COVID-19, my friend with a board game background recruited a group of us for playtesting. We quickly identified a gap: existing digital social games fell into two extremes — shallow party games that lasted 20 minutes, or MMORPGs requiring massive time investment.</p>
+                    <div class="cs-callout cs-callout--survivor">
+                        <p>No game captured the strategic depth and genuine social dynamics of Survivor — the week-long relationship building, alliance formation, and strategic gameplay that creates authentic human connections.</p>
+                    </div>
+                    <h4>Initial Constraints</h4>
+                    <ul>
+                        <li>Limited dev resources — friends working spare time</li>
+                        <li>Real-time social interaction and voting required</li>
+                        <li>Complex game economics and player progression</li>
+                        <li>Week-long engagement without losing player interest</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SOLUTION EVOLUTION -->
+            <div class="cs-section">
+                <div class="cs-section-label">Process</div>
+                <div class="cs-section-content">
+                    <h2>Three Phases</h2>
+                    <div class="cs-phases">
+                        <div class="cs-phase">
+                            <div class="cs-phase-num">01</div>
+                            <h4>Google Sheets Prototype</h4>
+                            <p>Real-time collaboration, zero dev overhead. One player served as "Probst" — the game master — managing the master sheet while others accessed individual sheets with 4-digit password protection. Fast to iterate, immediately revealing.</p>
+                        </div>
+                        <div class="cs-phase">
+                            <div class="cs-phase-num">02</div>
+                            <h4>Web App Migration</h4>
+                            <p>Sheets became too fragile — a single typo could crash the entire game mid-session. Migrated to Laravel with proper error handling, real-time updates, and authentication replacing the clunky password system.</p>
+                        </div>
+                        <div class="cs-phase">
+                            <div class="cs-phase-num">03</div>
+                            <h4>Full UX Redesign</h4>
+                            <p>Designed the entire user experience in Figma: auth &amp; onboarding, daily mechanics interface, live scoreboard, social feed. Discord kept for social strategy; the app stayed focused on game actions.</p>
+                        </div>
+                        <div class="cs-phase">
+                            <div class="cs-phase-num">04</div>
+                            <h4>B2B Pivot</h4>
+                            <p>Adapted for John's product consulting company as a conference engagement tool — stripped complex economics, kept core voting and challenges, made Blood Oaths an optional expansion mode.</p>
+                        </div>
+                    </div>
+
+                    <h3>Key Design Decisions</h3>
+                    <h4>Game Economics</h4>
+                    <p>The currency system created strategic depth through offensive actions (vote blocking, amplification, public shaming), information warfare (identity spying, intelligence gathering), and defensive tools (immunity, counter-intelligence).</p>
+                    <p>Early versions suffered from runaway leaders. The fix: diminishing returns on consecutive actions, preventing any single player from snowballing their advantage.</p>
+
+                    <h4>Social Scaffolding</h4>
+                    <p>Rather than forcing social features, the design created natural interdependencies. Players needed alliances for challenges, votes to avoid elimination, cooperation to maximize position. The challenges became a "cradle for mutual need."</p>
+                    <div class="cs-callout cs-callout--survivor">
+                        <p>The most powerful validation: two strangers met through the game and are now engaged to be married. Not a designed outcome — an emergent one. Proof the mechanics created real conditions for genuine human connection.</p>
+                    </div>
+
+                    <h4>Engagement Rhythm</h4>
+                    <ul>
+                        <li><strong>Morning Challenges</strong> — new objectives every day</li>
+                        <li><strong>Daily Ballots</strong> — core voting determining rankings and eliminations</li>
+                        <li><strong>Winner Announcements</strong> — public celebration and status updates</li>
+                        <li><strong>Tribal Challenges</strong> — team competitions requiring real coordination</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CHALLENGES -->
+            <div class="cs-section">
+                <div class="cs-section-label">Challenges & Solutions</div>
+                <div class="cs-section-content">
+                    <h2>What We Solved</h2>
+                    <div class="cs-two-col">
+                        <div class="cs-col">
+                            <h4>Technical Fragility</h4>
+                            <p>One spreadsheet typo crashed the entire game. Migrated to Laravel with proper validation, error handling, and scalable architecture.</p>
+                        </div>
+                        <div class="cs-col">
+                            <h4>Economic Imbalance</h4>
+                            <p>Last-place players could rocket to first in the final round through currency deployment. Simplified automatic vote mechanics and added diminishing returns.</p>
+                        </div>
+                        <div class="cs-col">
+                            <h4>Security &amp; Identity</h4>
+                            <p>Players hacked 4-digit passwords; others leaked their own. The "HugeInfoDumps" fake account incident forced proper authentication systems.</p>
+                        </div>
+                        <div class="cs-col">
+                            <h4>Onboarding Complexity</h4>
+                            <p>The economic system was overwhelming for casual players. Addressed in the B2B pivot by removing complex advantages entirely for the professional context.</p>
+                        </div>
+                    </div>
+
+                    <h3>What I'd Do Differently</h3>
+                    <ul>
+                        <li><strong>Tier the complexity</strong> — basic mode for casual players, advanced mode for strategists, rather than one system for all</li>
+                        <li><strong>Address king-making mechanics</strong> — competitive players securing votes from trailing players by promising future reciprocity excluded others from the meta-game</li>
+                        <li><strong>Clearer behavioral guidelines</strong> — preserve emergent social chaos while setting guardrails for inclusive participation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SKILLS -->
+            <div class="cs-section">
+                <div class="cs-section-label">Skills</div>
+                <div class="cs-section-content">
+                    <h2>Demonstrated</h2>
+                    <div class="cs-skills">
+                        <span class="cs-skill-tag">Game Design</span>
+                        <span class="cs-skill-tag">UX Design</span>
+                        <span class="cs-skill-tag">0→1 Product</span>
+                        <span class="cs-skill-tag">Social Systems Design</span>
+                        <span class="cs-skill-tag">User Psychology</span>
+                        <span class="cs-skill-tag">Figma Prototyping</span>
+                        <span class="cs-skill-tag">Data Analysis</span>
+                        <span class="cs-skill-tag">Technical Implementation</span>
+                        <span class="cs-skill-tag">Business Pivot Strategy</span>
+                        <span class="cs-skill-tag">Stakeholder Management</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="cs-footer-nav">
+        <a href="index.html" class="cs-footer-nav-link">
+            <span>← Home</span>
+            <span>All Work</span>
+        </a>
+        <a href="skills-assessment.html" class="cs-footer-nav-link next">
+            <span>Next Case Study →</span>
+            <span>Skills Assessment Tool</span>
+        </a>
+    </div>
+
+</body>
+</html>
