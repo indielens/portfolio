@@ -1,0 +1,961 @@
+/* =====================================================
+   RESET & BASE
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #667eea;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+a:focus,
+button:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10%  { transform: translate(-5%, -5%); }
+    20%  { transform: translate(-10%, 5%); }
+    30%  { transform: translate(5%, -10%); }
+    40%  { transform: translate(-5%, 15%); }
+    50%  { transform: translate(-10%, 5%); }
+    60%  { transform: translate(15%, 0%); }
+    70%  { transform: translate(0%, 10%); }
+    80%  { transform: translate(-15%, 0%); }
+    90%  { transform: translate(10%, 5%); }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =====================================================
+   NAVIGATION
+   Scoped tightly with "nav ul.nav-links" — never bleeds
+   into .case-nav or any other element
+   ===================================================== */
+
+nav {
+    background: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #667eea;
+    text-decoration: none;
+}
+
+nav ul.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav ul.nav-links a:hover {
+    color: #667eea;
+}
+
+nav ul.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #667eea;
+    transition: width 0.3s ease;
+}
+
+nav ul.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* =====================================================
+   HOMEPAGE — HERO
+   ===================================================== */
+
+header[role="banner"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header[role="banner"]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="0.5" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.3" fill="white" opacity="0.08"/><circle cx="10" cy="50" r="0.4" fill="white" opacity="0.09"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    animation: grain 20s linear infinite;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.header-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+.header-content .subtitle {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease-out 0.15s both;
+}
+
+.header-content .bio {
+    font-size: 1.05rem;
+    max-width: 620px;
+    margin: 0 auto 2rem;
+    color: rgba(255,255,255,0.92);
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.cta-button {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 14px 32px;
+    border: 2px solid rgba(255,255,255,0.35);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 0.8s ease-out 0.45s both;
+}
+
+.cta-button:hover {
+    background: rgba(255,255,255,0.3);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   HOMEPAGE — CASE STUDIES GRID
+   ===================================================== */
+
+.case-studies {
+    padding: 100px 0;
+    background: #f8fafc;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #64748b;
+    max-width: 580px;
+    margin: 0 auto 4rem;
+}
+
+.case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.case-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.case-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 56px rgba(0,0,0,0.14);
+}
+
+.case-image {
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.case-image.survivor      { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.case-image.skills        { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.case-image.design-system { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+.case-image.critterpedia  { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+
+.case-content {
+    padding: 1.75rem 2rem 2rem;
+}
+
+.case-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+}
+
+.case-description {
+    color: #475569;
+    font-size: 0.97rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.65;
+}
+
+.case-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.tag {
+    background: #e2e8f0;
+    color: #475569;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.case-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.25s ease;
+}
+
+.case-link::after {
+    content: '→';
+    transition: transform 0.25s ease;
+}
+
+.case-link:hover { color: #4c51bf; }
+.case-link:hover::after { transform: translateX(4px); }
+
+/* =====================================================
+   HOMEPAGE — ABOUT
+   .about .skills-grid is scoped to homepage only —
+   never touches case study .content-section .skills-grid
+   ===================================================== */
+
+.about {
+    padding: 100px 0;
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.about-text p {
+    color: #64748b;
+    font-size: 1.05rem;
+    margin-bottom: 1.4rem;
+}
+
+.about .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.skill-category {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 14px;
+    border-left: 4px solid #667eea;
+}
+
+.skill-category h4 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.skill-category ul {
+    list-style: none;
+    color: #64748b;
+}
+
+.skill-category li {
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+/* =====================================================
+   HOMEPAGE — CONTACT
+   ===================================================== */
+
+.contact {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.contact > .container > p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background: rgba(255,255,255,0.32);
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   CASE STUDY PAGES — HEADER BANNER
+   position: relative is required so .back-link anchors here
+   instead of escaping to the viewport
+   ===================================================== */
+
+.case-header {
+    color: white;
+    padding: 100px 0 60px;
+    text-align: center;
+    position: relative;
+}
+
+.case-header.survivor      { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.case-header.skills        { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.case-header.design-system { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+.case-header.critterpedia  { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #2c3e50; }
+
+.case-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.case-header .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.92;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.back-link {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0.85;
+    transition: opacity 0.25s ease;
+}
+
+.back-link:hover { opacity: 1; }
+
+/* =====================================================
+   CASE STUDY PAGES — OVERVIEW
+   ===================================================== */
+
+.overview {
+    background: white;
+    padding: 72px 0;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 4rem;
+}
+
+.overview-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    color: #2c3e50;
+}
+
+.overview-content p {
+    font-size: 1.05rem;
+    color: #64748b;
+    margin-bottom: 1.25rem;
+}
+
+.project-details {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 14px;
+    height: fit-content;
+}
+
+.project-details h3 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+}
+
+.detail-item {
+    margin-bottom: 1rem;
+}
+
+.detail-label {
+    font-weight: 700;
+    color: #475569;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+
+.detail-value {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* =====================================================
+   CASE STUDY PAGES — CONTENT SECTIONS
+   ===================================================== */
+
+.content-section {
+    padding: 56px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.content-section:last-child {
+    border-bottom: none;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.75rem;
+    color: #2c3e50;
+}
+
+.content-section h3 {
+    font-size: 1.4rem;
+    margin: 2rem 0 0.9rem;
+    color: #374151;
+}
+
+.content-section h4 {
+    font-size: 1.1rem;
+    margin: 1.4rem 0 0.7rem;
+    color: #475569;
+    font-weight: 600;
+}
+
+.content-section p,
+.content-section li {
+    font-size: 1.03rem;
+    color: #64748b;
+    margin-bottom: 0.9rem;
+}
+
+.content-section ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.4rem;
+}
+
+.content-section li {
+    margin-bottom: 0.45rem;
+}
+
+/* =====================================================
+   HIGHLIGHT BOXES
+   ===================================================== */
+
+.highlight-box {
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+}
+
+.highlight-box p {
+    margin-bottom: 0;
+    font-weight: 500;
+    color: #374151;
+    font-size: 1.03rem;
+}
+
+.highlight-box.survivor      { background: rgba(245,87,108,0.07);   border-left: 4px solid #f5576c; }
+.highlight-box.skills        { background: rgba(79,172,254,0.07);   border-left: 4px solid #4facfe; }
+.highlight-box.design-system { background: rgba(67,233,123,0.07);   border-left: 4px solid #43e97b; }
+.highlight-box.critterpedia  { background: rgba(168,237,234,0.18);  border-left: 4px solid #7dd3d0; }
+
+/* =====================================================
+   RESULTS GRID
+   ===================================================== */
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.75rem;
+    margin: 2rem 0;
+}
+
+.result-card {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    text-align: center;
+}
+
+.result-card.survivor      { border-top: 4px solid #f5576c; }
+.result-card.skills        { border-top: 4px solid #4facfe; }
+.result-card.design-system { border-top: 4px solid #43e97b; }
+.result-card.critterpedia  { border-top: 4px solid #7dd3d0; }
+
+.result-number {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.result-number.survivor      { color: #f5576c; }
+.result-number.skills        { color: #4facfe; }
+.result-number.design-system { color: #43e97b; }
+.result-number.critterpedia  { color: #7dd3d0; }
+
+.result-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.result-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.4rem;
+    font-size: 0.97rem;
+}
+
+.result-description {
+    color: #64748b;
+    font-size: 0.88rem;
+}
+
+/* =====================================================
+   TWO COLUMN LAYOUT
+   ===================================================== */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin: 2rem 0;
+}
+
+.phase-card,
+.insight-card {
+    background: #f8fafc;
+    padding: 1.75rem;
+    border-radius: 14px;
+}
+
+.phase-card.survivor,       .insight-card.survivor       { border-top: 4px solid #f5576c; }
+.phase-card.skills,         .insight-card.skills         { border-top: 4px solid #4facfe; }
+.phase-card.design-system,  .insight-card.design-system  { border-top: 4px solid #43e97b; }
+.phase-card.critterpedia,   .insight-card.critterpedia   { border-top: 4px solid #7dd3d0; }
+
+.phase-card h4,
+.insight-card h4 {
+    color: #2c3e50;
+    margin-bottom: 0.9rem;
+}
+
+/* =====================================================
+   BEFORE / AFTER COMPARISON
+   ===================================================== */
+
+.comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.before,
+.after {
+    padding: 1.75rem;
+    border-radius: 12px;
+}
+
+.before { background: #fef2f2; border: 2px solid #fecaca; }
+.after  { background: #f0fdf4; border: 2px solid #bbf7d0; }
+
+.before h4 { color: #dc2626; margin-bottom: 0.9rem; }
+.after  h4 { color: #16a34a; margin-bottom: 0.9rem; }
+
+/* =====================================================
+   PROBLEM CARDS
+   ===================================================== */
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+    margin: 2rem 0;
+}
+
+.problem-card {
+    background: #fff5f5;
+    border-left: 4px solid #ef4444;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.problem-card h4 { color: #ef4444; margin-bottom: 0.9rem; }
+
+.problem-card .impact {
+    background: #fef2f2;
+    padding: 0.9rem;
+    border-radius: 6px;
+    margin: 0.9rem 0;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+.problem-card .solution {
+    background: #f0fdf4;
+    border-left: 3px solid #22c55e;
+    padding: 0.9rem;
+    border-radius: 6px;
+    margin-top: 0.9rem;
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+/* =====================================================
+   RESEARCH METHODOLOGY
+   ===================================================== */
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.research-method {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-top: 4px solid #43e97b;
+    text-align: center;
+}
+
+.research-method h4 { color: #2c3e50; margin-bottom: 0.75rem; }
+.research-method p  { color: #64748b; font-size: 0.93rem; margin-bottom: 0; }
+
+/* =====================================================
+   DATA STRUCTURE / GAMING SECTION (Skills Assessment)
+   ===================================================== */
+
+.gaming-section {
+    background: rgba(102,126,234,0.07);
+    border-left: 4px solid #667eea;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 12px;
+}
+
+.gaming-section h3 { color: #667eea; margin-bottom: 0.9rem; margin-top: 0; }
+
+.data-structure {
+    background: #f1f5f9;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 2px solid #e2e8f0;
+}
+
+.data-structure h4 { color: #1e293b; margin-bottom: 1rem; text-align: center; }
+
+.data-views {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.data-view {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #4facfe;
+}
+
+.data-view h5 { color: #4facfe; font-size: 0.88rem; margin-bottom: 0.4rem; }
+.data-view p  { font-size: 0.8rem; color: #64748b; margin: 0; }
+
+/* =====================================================
+   SKILL TAGS (Case Study Pages Only)
+   Scoped to .content-section — zero collision with
+   .about .skills-grid on the homepage.
+   Hover: .skill-tag.theme:hover (correct selector order)
+   ===================================================== */
+
+.content-section .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 0.9rem;
+    margin: 2rem 0;
+}
+
+.skill-tag {
+    background: #f1f5f9;
+    padding: 0.75rem 1rem;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.92rem;
+    color: #475569;
+    border: 2px solid #e2e8f0;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.skill-tag.survivor:hover      { border-color: #f5576c; background: rgba(245,87,108,0.06); }
+.skill-tag.skills:hover        { border-color: #4facfe; background: rgba(79,172,254,0.06); }
+.skill-tag.design-system:hover { border-color: #43e97b; background: rgba(67,233,123,0.06); }
+.skill-tag.critterpedia:hover  { border-color: #7dd3d0; background: rgba(125,211,208,0.08); }
+
+/* =====================================================
+   CASE STUDY BOTTOM NAV
+   Uses .case-nav-links (not .nav-links) — completely
+   isolated from the main nav, no mobile hide bug possible
+   ===================================================== */
+
+.case-nav {
+    background: #2c3e50;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.case-nav h3 {
+    color: white;
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.case-nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.case-nav-links .nav-link {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    padding: 11px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.25s ease;
+}
+
+.case-nav-links .nav-link:hover {
+    background: rgba(255,255,255,0.22);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+    .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content h1 { font-size: 2.4rem; }
+    .case-header h1    { font-size: 2rem; }
+
+    .case-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .comparison {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Hides main nav links on mobile only — case-nav-links unaffected */
+    nav ul.nav-links {
+        display: none;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .case-nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .data-views    { grid-template-columns: 1fr; }
+    .problems-grid { grid-template-columns: 1fr; }
+    .research-grid { grid-template-columns: 1fr; }
+}

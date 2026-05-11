@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survivor Social Game - Case Study | Grant Thomas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="case-header survivor">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        <div class="container">
+            <h1>Survivor Social Game</h1>
+            <p class="subtitle">From Spreadsheet to Social Experience: Designing a Week-Long Survivor Game</p>
+        </div>
+    </div>
+
+    <div class="overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>Project Overview</h2>
+                    <p>During COVID-19, my friend with a board game passion project recruited several of us for playtesting and prototyping. We discovered a gap: existing digital social games lacked the strategic depth and week-long social dynamics that make Survivor compelling.</p>
+                    <p>Most social games were either too simple (one-session party games) or too complex (MMORPGs requiring massive time investments). We wanted something that captured real social strategy over multiple days while being accessible to casual players.</p>
+                </div>
+                <div class="project-details">
+                    <h3>Project Details</h3>
+                    <div class="detail-item">
+                        <div class="detail-label">Role</div>
+                        <div class="detail-value">Game Designer, UX Designer, Technical Contributor</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Duration</div>
+                        <div class="detail-value">~1 year from concept to web app launch</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Team</div>
+                        <div class="detail-value">Core group of friends, rotating cast of ~50 players</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Tools</div>
+                        <div class="detail-value">Google Sheets, Figma, Laravel, Tailwind CSS</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Product Owner</div>
+                        <div class="detail-value">John (friend with board game background)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="content-section">
+            <h2>The Challenge</h2>
+            <p>We set out to solve a specific problem in the digital social gaming space. During the pandemic, people craved meaningful social interaction, but existing games fell into two extremes: shallow party games that lasted minutes, or complex MMORPGs requiring massive time investments.</p>
+
+            <div class="highlight-box survivor">
+                <p><strong>The Gap:</strong> No games captured the strategic depth and genuine social dynamics that make Survivor compelling — the week-long relationship building, alliance formation, and strategic gameplay that creates authentic human connections.</p>
+            </div>
+
+            <h3>Initial Constraints</h3>
+            <ul>
+                <li>Limited development resources (friends working in spare time)</li>
+                <li>Need for real-time social interaction and voting</li>
+                <li>Managing complex game economics and player progression</li>
+                <li>Week-long engagement without losing player interest</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Research & Discovery</h2>
+            <h3>Understanding the Source Material</h3>
+            <p>We analyzed what makes Survivor compelling: social voting dynamics, resource management, alliance formation, and the balance between strategic gameplay and social relationships.</p>
+
+            <h3>Daily Challenge Integration</h3>
+            <p>The game operated on a consistent daily rhythm:</p>
+            <ul>
+                <li><strong>Daily Challenge:</strong> Varied objectives like "be part of the biggest tribe" or "predict which player receives the most upvotes"</li>
+                <li><strong>Voting Ballot:</strong> Core upvote/downvote mechanics that determined player rankings</li>
+                <li><strong>Tribal Challenges:</strong> Periodic team-based competitions that could shift alliances and power dynamics</li>
+            </ul>
+            <p>These elements created multiple strategic layers — players had to balance individual performance, social positioning, and team dynamics simultaneously.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Solution Evolution</h2>
+
+            <div class="two-column">
+                <div class="phase-card survivor">
+                    <h4>Phase 1: Google Sheets Prototype</h4>
+                    <p><strong>Why we started here:</strong> Google Sheets offered the perfect rapid prototyping environment — real-time collaboration, built-in data structure, and zero development overhead.</p>
+                    <p><strong>The "Probst" System:</strong> One player served as game master, managing the master spreadsheet while others accessed individual sheets with 4-digit password protection.</p>
+                </div>
+
+                <div class="phase-card survivor">
+                    <h4>Phase 2: Web App Development</h4>
+                    <p><strong>Why we made the transition:</strong> Google Sheets became increasingly fragile as we added complex logic. A single typo could break the entire game mid-session.</p>
+                    <p><strong>Technical Solution:</strong> Migrated to Laravel web application with proper error handling, data validation, and robust architecture.</p>
+                </div>
+            </div>
+
+            <h3>Phase 3: Complete UX Redesign in Figma</h3>
+            <p>From the Google Sheets prototype through the Laravel web app, I designed the entire user experience from scratch:</p>
+            <ul>
+                <li><strong>Authentication & Onboarding:</strong> Login system and new player introduction</li>
+                <li><strong>Daily Mechanics Interface:</strong> Streamlined voting, challenge participation, and action selection</li>
+                <li><strong>Live Scoreboard:</strong> Real-time player rankings and status updates</li>
+                <li><strong>Social Feed:</strong> Public activity stream for announcements and game events</li>
+            </ul>
+
+            <div class="highlight-box survivor">
+                <p><strong>Design Philosophy:</strong> We kept external communication in Discord while focusing the app on core game mechanics — clear separation between social strategy (Discord) and game actions (web app), reducing interface complexity while maintaining rich social dynamics.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Key Design Decisions</h2>
+
+            <h3>Game Economics Design</h3>
+            <p>The currency system created rich strategic depth through multiple spending options:</p>
+
+            <div class="two-column">
+                <div>
+                    <h4>Offensive Actions</h4>
+                    <ul>
+                        <li><strong>Vote Blocking:</strong> Prevent another player's vote from counting</li>
+                        <li><strong>Vote Amplification:</strong> Cast multiple votes in a single round</li>
+                        <li><strong>Public Shaming:</strong> Post callouts in the public feed to influence opinion</li>
+                    </ul>
+                    <h4>Information Warfare</h4>
+                    <ul>
+                        <li><strong>Identity Spying:</strong> Reveal other players' hidden roles or allegiances</li>
+                        <li><strong>Intelligence Gathering:</strong> Access voting intentions or alliance information</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Defensive Tools</h4>
+                    <ul>
+                        <li><strong>Immunity Purchases:</strong> Protection from elimination votes</li>
+                        <li><strong>Counter-Intelligence:</strong> Block spying attempts on your actions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>The economy had to balance power (expensive actions felt impactful) with accessibility (everyone could participate meaningfully). Early versions suffered from runaway leaders until we implemented diminishing returns on consecutive actions.</p>
+
+            <h3>Social Interaction Framework</h3>
+            <div class="highlight-box survivor">
+                <p><strong>Meaningful Connection Through Mutual Need:</strong> Rather than forcing social features, the game design created natural interdependencies. Players needed alliances to succeed in challenges, votes to avoid elimination, and strategic cooperation to maximize their position. The challenges provided a "cradle for mutual need" that allowed authentic relationship building to emerge organically.</p>
+            </div>
+
+            <p>The most powerful validation of the social design was that <strong>two strangers met through the game and are now engaged to be married</strong> — demonstrating that the game mechanics successfully created conditions for genuine human connection.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Results & Impact</h2>
+
+            <div class="results-grid">
+                <div class="result-card survivor">
+                    <div class="result-number survivor">~50</div>
+                    <div class="result-label">Total Players</div>
+                    <div class="result-description">Rotating cast across multiple game seasons</div>
+                </div>
+                <div class="result-card survivor">
+                    <div class="result-number survivor">95%+</div>
+                    <div class="result-label">Completion Rate</div>
+                    <div class="result-description">Almost everyone finished their full week-long game</div>
+                </div>
+                <div class="result-card survivor">
+                    <div class="result-number survivor">2</div>
+                    <div class="result-label">Players Engaged</div>
+                    <div class="result-description">Strangers who met through the game and are now engaged to be married</div>
+                </div>
+                <div class="result-card survivor">
+                    <div class="result-number survivor">Still Live</div>
+                    <div class="result-label">Conference Tool</div>
+                    <div class="result-description">Adapted and still running today as a professional engagement tool</div>
+                </div>
+            </div>
+
+            <h3>Memorable Game Moments</h3>
+            <ul>
+                <li><strong>The "HugeInfoDumps" Incident:</strong> Players created fake accounts specifically to blast information and create chaos, leading to new identity verification systems</li>
+                <li><strong>Blood Oath Alliances:</strong> Secret partnerships formed in the final hours, with players making dramatic last-minute promises and betrayals</li>
+                <li><strong>The Great Economic Upset:</strong> Due to voting economy imbalances, unknown players could rocket from last place to first in the final round through strategic currency deployment</li>
+            </ul>
+
+            <h3>Current Evolution: Conference Engagement Tool</h3>
+            <p>The platform was successfully adapted for John's product consulting company as a conference engagement tool. The streamlined version focuses on core voting and challenges, removing complex economic advantages for the professional environment while keeping Blood Oaths as an optional "expansion" game mode.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Challenges & Solutions</h2>
+
+            <div class="two-column">
+                <div class="phase-card survivor">
+                    <h4>Technical Constraints</h4>
+                    <p><strong>Challenge:</strong> Google Sheets couldn't handle increasingly complex features — a single typo could crash the entire game mid-session.</p>
+                    <p><strong>Solution:</strong> Migrated to Laravel web application with proper error handling, data validation, and robust architecture that could scale with feature complexity.</p>
+                </div>
+                <div class="phase-card survivor">
+                    <h4>Balancing Game Economics</h4>
+                    <p><strong>Challenge:</strong> The original voting economy created dramatic endgame swings that felt disconnected from week-long strategic play.</p>
+                    <p><strong>Solution:</strong> Simplified automatic vote mechanics and added diminishing returns to prevent dramatic last-minute position changes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>What I'd Do Differently</h2>
+            <ul>
+                <li><strong>Simplify Advantage Complexity:</strong> The economic advantages were overwhelming for non-competitive players. I'd design clearer onboarding and tier the complexity — basic modes for casual players, advanced modes for strategy enthusiasts.</li>
+                <li><strong>Address "King Making" Dynamics:</strong> Competitive players would secure votes from others by promising reciprocity in future games, creating frustration for excluded players. I'd consider mechanics that give trailing players more agency.</li>
+                <li><strong>Balance Social Drama vs. Accessibility:</strong> While emergent social gameplay was entertaining, clearer guidelines about acceptable behavior would help maintain inclusive participation without killing the spontaneous interactions that made the game special.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Skills Demonstrated</h2>
+            <div class="skills-grid">
+                <div class="skill-tag survivor">Game Design</div>
+                <div class="skill-tag survivor">UX Design</div>
+                <div class="skill-tag survivor">Product Development</div>
+                <div class="skill-tag survivor">Social Systems Design</div>
+                <div class="skill-tag survivor">User Psychology</div>
+                <div class="skill-tag survivor">Figma Prototyping</div>
+                <div class="skill-tag survivor">Data Analysis</div>
+                <div class="skill-tag survivor">Project Management</div>
+                <div class="skill-tag survivor">Stakeholder Management</div>
+                <div class="skill-tag survivor">Technical Implementation</div>
+                <div class="skill-tag survivor">Change Management</div>
+                <div class="skill-tag survivor">Business Strategy</div>
+            </div>
+        </section>
+    </div>
+
+    <div class="case-nav">
+        <div class="container">
+            <h3>View More Case Studies</h3>
+            <div class="case-nav-links">
+                <a href="skills-assessment.html" class="nav-link">Skills Assessment Tool</a>
+                <a href="design-system.html" class="nav-link">Design System Portal</a>
+                <a href="critterpedia.html" class="nav-link">Critterpedia</a>
+                <a href="index.html" class="nav-link">Back to Portfolio</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
