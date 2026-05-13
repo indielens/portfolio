@@ -445,7 +445,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
    ===================================================== */
 
 .case-header {
-    padding: 40px 0 48px;
+    padding: 48px 0 48px;
     border-bottom: 1px solid var(--border);
     position: relative;
     background: var(--off-black);
@@ -461,7 +461,8 @@ nav ul.nav-links a:hover { color: var(--accent); }
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
     transition: color 0.2s ease;
 }
 .case-header .back-link:hover { color: var(--accent); }
@@ -930,7 +931,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 .section-subtitle {
     font-size: 0.9rem;
     color: var(--muted);
-    margin-bottom: 3rem;
+    margin-bottom: 0;
 }
 
 .case-grid {
@@ -939,6 +940,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
     gap: 1.5px;
     background: var(--border);
     border: 1.5px solid var(--border);
+    margin-top: 2rem;
 }
 
 .case-card {
@@ -949,6 +951,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
     color: inherit;
     transition: background 0.2s ease;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .case-card:hover {
