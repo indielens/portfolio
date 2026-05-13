@@ -909,3 +909,204 @@ nav ul.nav-links a:hover { color: var(--accent); }
     .problems-grid { grid-template-columns: 1fr; }
     .research-grid { grid-template-columns: 1fr; }
 }
+
+/* =====================================================
+   HOMEPAGE — CASE STUDY CARDS
+   ===================================================== */
+
+.case-studies {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 3rem;
+}
+
+.case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 1.5px solid var(--border);
+}
+
+.case-card {
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s ease;
+    overflow: hidden;
+}
+
+.case-card:hover {
+    background: var(--off-black);
+}
+
+.case-card:hover .case-image svg {
+    transform: scale(1.03);
+    transition: transform 0.4s ease;
+}
+
+.case-image {
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.case-image svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease;
+}
+
+.case-image.survivor      { background: #1a0a0a; }
+.case-image.skills        { background: #0a1a18; }
+.case-image.design-system { background: #0e0a1a; }
+.case-image.critterpedia  { background: #0a1a0a; }
+
+.case-content {
+    padding: 1.75rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-top: 1.5px solid var(--border);
+}
+
+.case-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+    transition: color 0.2s ease;
+}
+
+.case-card:hover .case-title { color: var(--accent); }
+
+.case-description {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    flex: 1;
+}
+
+.case-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.tag {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.55rem;
+}
+
+.case-link {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: gap 0.2s ease;
+}
+
+.case-card:hover .case-link { gap: 0.7rem; }
+
+/* =====================================================
+   HOMEPAGE — ABOUT SECTION
+   ===================================================== */
+
+.about {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.about-text h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: var(--dim);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+}
+
+.about-text strong { color: var(--white); font-weight: 600; }
+
+.about .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+}
+
+.skill-category {
+    background: var(--dark);
+    padding: 1.25rem;
+}
+
+.skill-category h4 {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.skill-category ul { list-style: none; }
+
+.skill-category li {
+    font-size: 0.85rem;
+    color: var(--dim);
+    margin-bottom: 0.35rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .case-grid { grid-template-columns: 1fr; }
+    .about-content { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about .skills-grid { grid-template-columns: 1fr; }
+}
