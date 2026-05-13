@@ -980,7 +980,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 
 .case-image.survivor      { background: #1a0a0a; }
 .case-image.skills        { background: #0a1a18; }
-.case-image.design-system { background: #0e0a1a; }
+.case-image.design-system { background: #f0f0f0; }
 .case-image.critterpedia  { background: #0a1a0a; }
 
 .case-content {
@@ -1138,7 +1138,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 
 .case-image.survivor      { background: #1a0808; }
 .case-image.skills        { background: #0a1218; }
-.case-image.design-system { background: #0e0a1a; }
+.case-image.design-system { background: #f0f0f0; }
 .case-image.critterpedia  { background: #f5f0e0; }
 .case-image {
     height: 260px;
@@ -1161,7 +1161,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 
 .case-image.survivor      { background: #1a0808; }
 .case-image.skills        { background: #0a1218; }
-.case-image.design-system { background: #0e0a1a; }
+.case-image.design-system { background: #f0f0f0; }
 .case-image.critterpedia  { background: #f5f0e0; }
 
 /* =====================================================
