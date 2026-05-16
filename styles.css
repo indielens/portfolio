@@ -1245,6 +1245,26 @@ nav ul.nav-links a:hover { color: var(--accent); }
     border: 1px solid var(--border);
 }
 
+/* Three-column image row — for mobile screenshot triptychs */
+.cs-image-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.cs-image-row-3 .cs-image-row-item img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .cs-image-row-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Caption — sits below any image type */
 .cs-caption {
     font-family: var(--font-mono);

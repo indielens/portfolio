@@ -13,6 +13,7 @@
     <div class="case-header critterpedia">
         <div class="container">
             <a href="index.html" class="back-link">← Back to Portfolio</a>
+            <p class="case-eyebrow">Hobby Project · Vanilla JS · Mobile-First Design</p>
             <h1>Critterpedia</h1>
             <p class="subtitle">A fan-built critter tracker for Animal Crossing: New Horizons — because I was frustrated the right tool didn't exist yet</p>
         </div>
@@ -51,6 +52,12 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Desktop view — full scope of the interface -->
+    <div class="cs-image-full">
+        <img src="critterpedia01.png" alt="Critterpedia desktop view — filter bar with type tabs, search, hemisphere toggle, and critter grid showing fish with availability months, timing, and bell prices">
+        <p class="cs-caption">Desktop view — filter bar, type tabs, hemisphere toggle, and the critter grid. All 200 critters, filterable to the exact ones relevant right now.</p>
     </div>
 
     <div class="container">
@@ -121,14 +128,32 @@
                 </div>
             </div>
 
+            <!-- Three mobile states: default, month picker open, filtered result -->
+            <div class="cs-image-row-3">
+                <div class="cs-image-row-item">
+                    <img src="critterpedia04.png" alt="Critterpedia mobile — default state showing Bugs tab with all 80 insects, filter controls visible, catch status circles empty">
+                    <p class="cs-caption">Default state — Bugs tab, all months, no filters active. Empty catch circles ready to track.</p>
+                </div>
+                <div class="cs-image-row-item">
+                    <img src="critterpedia02.png" alt="Critterpedia mobile — month picker dropdown open with June selected, showing the month filter interaction pattern">
+                    <p class="cs-caption">Month filter open — native-style picker. June selected, showing which critters are currently in season.</p>
+                </div>
+                <div class="cs-image-row-item">
+                    <img src="critterpedia03.png" alt="Critterpedia mobile — Sea Creatures tab, June, Caught filter active, showing 4 caught sea creatures with green checkmarks and strikethrough names">
+                    <p class="cs-caption">Filtered to Sea Creatures in June, Caught only — green checks and strikethrough names confirm what's been logged.</p>
+                </div>
+            </div>
+
             <h3>Card Design</h3>
             <p>Each critter card needed to communicate at a glance: what it is, when it's available, what it sells for, and whether you've caught it. I went through several iterations in Figma before landing on a compact card format that scanned well on mobile — where most players would be checking it while sitting on their couch with a Switch.</p>
+
+            <p>Caught critters get a green checkmark and a strikethrough on the name — a satisfying visual payoff that makes the completion progress feel tangible. The progress bar at the top of the screen shows total completion across all 200 critters.</p>
 
             <h3>Catch Tracking Without an Account</h3>
             <p>I didn't want to build a login system for a hobby project. Instead, catch status is saved to localStorage — persistent across sessions on the same device, zero friction to start using. The tradeoff is obvious (no cross-device sync) but for a solo player using one device, it works perfectly.</p>
 
             <h3>Mobile-First</h3>
-            <p>The primary use case is a player sitting with their Nintendo Switch, checking their phone. I designed the mobile layout first and worked up to desktop, not the other way around. The filter panel collapses into a bottom sheet on mobile for easy thumb access.</p>
+            <p>The primary use case is a player sitting with their Nintendo Switch, checking their phone. I designed the mobile layout first and worked up to desktop, not the other way around. The filter panel collapses on mobile for easy thumb access.</p>
         </section>
 
         <section class="content-section">
