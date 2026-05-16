@@ -13,6 +13,7 @@
     <div class="case-header design-system">
         <div class="container">
             <a href="index.html" class="back-link">← Back to Portfolio</a>
+            <p class="case-eyebrow">Design Systems · UX Research · Enterprise UX</p>
             <h1>Design System Documentation Portal</h1>
             <p class="subtitle">Transforming Design System Documentation: From Chaos to Clarity</p>
         </div>
@@ -51,6 +52,12 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- New portal — full component page, shows the redesigned end state -->
+    <div class="cs-image-full">
+        <img src="DesignPage.png" alt="Redesigned design system portal showing the Button component page with sidebar navigation, Design and Accessibility tabs, component variants, and right-rail anchor navigation">
+        <p class="cs-caption">The redesigned portal — component overview with visual examples, tabbed Design/Accessibility split, and right-rail anchor navigation for deep pages</p>
     </div>
 
     <div class="container">
@@ -122,6 +129,44 @@
         <section class="content-section">
             <h2>Solution Strategy</h2>
 
+            <p>The before/after contrast across two core documentation areas — usage guidelines and accessibility — shows the full scope of the redesign. Both sections went from dense, developer-first text to structured, visual, audience-aware documentation.</p>
+
+            <h3>Usage Guidelines</h3>
+
+            <div class="cs-image-row" style="margin-top: 1.5rem;">
+                <div class="cs-image-row-item">
+                    <img src="DSP_oldusage01.png" alt="Legacy portal usage tab — dense text, no visual examples, development-focused navigation with deprecated version warning banner">
+                    <p class="cs-caption">Before — legacy portal. Dense prose, no component visualization, deprecated version warning. Designers had to read their way to answers.</p>
+                </div>
+                <div class="cs-image-row-item">
+                    <img src="DSP_newusage01.png" alt="Redesigned portal usage tab — Button component with visual variants, clean sidebar, Design and Accessibility tabs, right-rail anchor navigation">
+                    <p class="cs-caption">After — redesigned portal. Visual component examples above the fold, tabbed Design/Accessibility split, right-rail navigation for long pages.</p>
+                </div>
+            </div>
+
+            <div class="cs-image-full">
+                <img src="DSP_newusage02.png" alt="New usage guidelines showing do and don't cards for icon button usage — green cards for correct patterns, red cards for incorrect patterns">
+                <p class="cs-caption">Do/don't usage cards — a pattern absent from the legacy system entirely. Visual guidance replaced text-only rules, reducing misinterpretation across 50+ brand teams.</p>
+            </div>
+
+            <h3>Accessibility Documentation</h3>
+
+            <div class="cs-image-row">
+                <div class="cs-image-row-item">
+                    <img src="DSP_olda11y01.png" alt="Legacy portal accessibility tab — same dense layout as usage, no structured guidance, deprecated system warning">
+                    <p class="cs-caption">Before — accessibility was an afterthought tab with the same undifferentiated text layout as every other section.</p>
+                </div>
+                <div class="cs-image-row-item">
+                    <img src="DSP_newa11y01.png" alt="Redesigned accessibility tab — structured with right-rail navigation covering ARIA roles, keyboard interactivity, screen reader behavior, and WCAG criteria">
+                    <p class="cs-caption">After — accessibility got full structural treatment: right-rail anchors, WCAG criteria references, and screen reader behavior documented explicitly.</p>
+                </div>
+            </div>
+
+            <div class="cs-image-full">
+                <img src="DSP_newa11y02.png" alt="New accessibility documentation showing anatomy callouts on a Download button with numbered indicators pointing to aria-hidden and icon elements, alongside code example">
+                <p class="cs-caption">Anatomy callouts in accessibility docs — numbered indicators connect visual components to their ARIA attributes and code implementation, bridging the designer-developer gap directly in the documentation.</p>
+            </div>
+
             <div class="comparison">
                 <div class="before">
                     <h4>❌ Before: Legacy Portal</h4>
@@ -139,35 +184,11 @@
                     <ul>
                         <li>Clean, scannable interface</li>
                         <li>Visual component examples</li>
-                        <li>Clear anatomical breakdowns</li>
+                        <li>Do/don't usage cards</li>
                         <li>All button states shown</li>
-                        <li>Structured sections with tabs</li>
-                        <li>Quick navigation sidebar</li>
+                        <li>Structured Design + Accessibility tabs</li>
+                        <li>Right-rail anchor navigation</li>
                     </ul>
-                </div>
-            </div>
-
-            <h3>Content Guidelines Transformation</h3>
-            <div class="comparison">
-                <div class="before">
-                    <h4>❌ Before</h4>
-                    <p>"Learn how [Brand] might be able to benefit you" — vague, confusing calls-to-action that left users uncertain about next steps</p>
-                </div>
-                <div class="after">
-                    <h4>✅ After</h4>
-                    <p>"Learn about [Brand]" with clear, specific action items and visual examples demonstrating proper usage</p>
-                </div>
-            </div>
-
-            <h3>Component State Documentation</h3>
-            <div class="comparison">
-                <div class="before">
-                    <h4>❌ Before</h4>
-                    <p>Required manual code inspection, RGB to hex conversion, no documentation for hover, focus, or disabled interaction states</p>
-                </div>
-                <div class="after">
-                    <h4>✅ After</h4>
-                    <p>Complete visual reference showing default, hover, active, focus, and disabled states for every component in the system</p>
                 </div>
             </div>
         </section>
