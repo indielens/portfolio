@@ -448,6 +448,9 @@ nav ul.nav-links a:hover { color: var(--accent); }
         border-left: none;
         border-top: 1px solid var(--border);
     }
+    .about-hero-photo img {
+        object-position: center center;
+    }
 }
 
 .about-body { padding: 60px 0 80px; }
