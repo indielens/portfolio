@@ -1198,3 +1198,63 @@ nav ul.nav-links a:hover { color: var(--accent); }
     .work-thumb { display: none; }
     .work-arrow { display: none; }
 }
+
+/* =====================================================
+   CASE STUDY — IMAGE TREATMENTS
+   ===================================================== */
+
+/* Full-width image with caption — bleeds to container edges */
+.cs-image-full {
+    margin: 2.5rem 0;
+}
+
+.cs-image-full img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--border);
+}
+
+/* Contained image — centered, max ~600px, for portrait phone screens */
+.cs-image-contained {
+    margin: 2.5rem auto;
+    max-width: 420px;
+}
+
+.cs-image-contained img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--border);
+}
+
+/* Side-by-side image pair — for portrait phone screens */
+.cs-image-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.cs-image-row-item img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--border);
+}
+
+/* Caption — sits below any image type */
+.cs-caption {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-top: 0.75rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .cs-image-row {
+        grid-template-columns: 1fr;
+    }
+    .cs-image-contained {
+        max-width: 100%;
+    }
+}

@@ -13,6 +13,7 @@
     <div class="case-header survivor">
         <a href="index.html" class="back-link">← Back to Portfolio</a>
         <div class="container">
+            <p class="case-eyebrow">Game Design · UX Design · Product Development</p>
             <h1>Survivor Social Game</h1>
             <p class="subtitle">From Spreadsheet to Social Experience: Designing a Week-Long Survivor Game</p>
         </div>
@@ -51,6 +52,12 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Figma project overview — full scope of the work -->
+    <div class="cs-image-full">
+        <img src="PO_Overview.png" alt="Full Figma project overview showing the complete scope of screens, flows, and design decisions for Pecking Order">
+        <p class="cs-caption">Full project scope in Figma — login through end-game, across two platform generations</p>
     </div>
 
     <div class="container">
@@ -103,8 +110,21 @@
                 </div>
             </div>
 
+            <!-- Early web beta — shows the pre-polish Laravel build -->
+            <div class="cs-image-full" style="margin-top: 2rem;">
+                <img src="peckingOrderWeb_beta.png" alt="Early web version of Pecking Order — pre-game lobby in the Laravel beta, light theme">
+                <p class="cs-caption">Early Laravel web build — the pre-game lobby before the full mobile redesign. Players joined via shareable game code and could see the full round schedule.</p>
+            </div>
+
             <h3>Phase 3: Complete UX Redesign in Figma</h3>
-            <p>From the Google Sheets prototype through the Laravel web app, I designed the entire user experience from scratch:</p>
+            <p>From the Google Sheets prototype through the Laravel web app, I designed the entire user experience from scratch — including authentication, daily mechanics, live scoreboard, and social feed. The wireframe flow below maps every decision point in the app.</p>
+
+            <!-- Full UX flow diagram -->
+            <div class="cs-image-full">
+                <img src="peckingOrder-WireframeFlow.png" alt="Complete UX wireframe flow for Pecking Order — from login through ballot submission, quiz, advantages, and top navigation">
+                <p class="cs-caption">Complete UX flow — Login → Game List → Pregame Lobby → Dashboard → Ballot, Quiz, Challenge, and Advantage submission screens</p>
+            </div>
+
             <ul>
                 <li><strong>Authentication & Onboarding:</strong> Login system and new player introduction</li>
                 <li><strong>Daily Mechanics Interface:</strong> Streamlined voting, challenge participation, and action selection</li>
@@ -115,13 +135,31 @@
             <div class="highlight-box survivor">
                 <p><strong>Design Philosophy:</strong> We kept external communication in Discord while focusing the app on core game mechanics — clear separation between social strategy (Discord) and game actions (web app), reducing interface complexity while maintaining rich social dynamics.</p>
             </div>
+
+            <!-- App screens: onboarding + game list -->
+            <div class="cs-image-row">
+                <div class="cs-image-row-item">
+                    <img src="peckingOrderUI-03.png" alt="Pecking Order onboarding screen — 'You should close this app now before you start destroying all of your friendships'">
+                    <p class="cs-caption">Onboarding — tone-setting copy that primes players for competitive social gameplay</p>
+                </div>
+                <div class="cs-image-row-item">
+                    <img src="peckingOrderUI-01.png" alt="Pecking Order game list screen showing current games and archive">
+                    <p class="cs-caption">Game list — current active game plus archive of past seasons</p>
+                </div>
+            </div>
         </section>
 
         <section class="content-section">
             <h2>Key Design Decisions</h2>
 
             <h3>Game Economics Design</h3>
-            <p>The currency system created rich strategic depth through multiple spending options:</p>
+            <p>The currency system created rich strategic depth through multiple spending options. Every advantage had to feel meaningfully different — not just reskinned versions of the same action.</p>
+
+            <!-- Advantages screen — the economic system made visible -->
+            <div class="cs-image-contained">
+                <img src="peckingOrderUI-02.png" alt="Advantages screen showing Blood Oath, Betrayal, Embargo, Wing Clipper, Immunity Idol, Grandstand, and other purchasable actions with token costs">
+                <p class="cs-caption">Advantages screen — the full economic menu. Each action had distinct strategic value and a token cost balanced against weekly earning rates.</p>
+            </div>
 
             <div class="two-column">
                 <div>
@@ -140,8 +178,13 @@
                 <div>
                     <h4>Defensive Tools</h4>
                     <ul>
-                        <li><strong>Immunity Purchases:</strong> Protection from elimination votes</li>
+                        <li><strong>Immunity Idol:</strong> Protection from elimination votes</li>
                         <li><strong>Counter-Intelligence:</strong> Block spying attempts on your actions</li>
+                    </ul>
+                    <h4>Alliance Mechanics</h4>
+                    <ul>
+                        <li><strong>Blood Oath:</strong> Secret binding alliance with mutual benefits and consequences</li>
+                        <li><strong>Embargo:</strong> Cut off another player's token earning for a round</li>
                     </ul>
                 </div>
             </div>
@@ -154,6 +197,16 @@
             </div>
 
             <p>The most powerful validation of the social design was that <strong>two strangers met through the game and are now engaged to be married</strong> — demonstrating that the game mechanics successfully created conditions for genuine human connection.</p>
+
+            <!-- Final app screens — the polished product -->
+            <div class="cs-image-full" style="margin-top: 2.5rem;">
+                <img src="peckingOrder01.jpg" alt="Pecking Order final app — Create Game, Game of Cones dashboard, and feed screens">
+                <p class="cs-caption">Final mobile app — Create Game, live round dashboard, and the social feed showing active challenges and player activity</p>
+            </div>
+            <div class="cs-image-full">
+                <img src="peckingOrder02.jpg" alt="Pecking Order — Blood Oath prompt, ballot submission, quiz, scoreboard, and tribal challenge screens">
+                <p class="cs-caption">Core mechanics in action — Blood Oath alliance prompt, ballot submission with upvote/downvote, quiz challenge, live scoreboard, and tribal selection</p>
+            </div>
         </section>
 
         <section class="content-section">
