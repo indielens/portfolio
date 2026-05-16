@@ -13,6 +13,7 @@
     <div class="case-header skills">
         <div class="container">
             <a href="index.html" class="back-link">← Back to Portfolio</a>
+            <p class="case-eyebrow">Data Systems · UX Research · System Design</p>
             <h1>UX Team Skills Assessment Tool</h1>
             <p class="subtitle">From Basic Survey to Strategic Team Optimization: Building a Skills Assessment System</p>
         </div>
@@ -53,6 +54,11 @@
         </div>
     </div>
 
+    <div class="cs-image-full">
+        <img src="skills-overview.png" alt="Team Talent app — Details tab showing individual skill profile, Skill tab showing teammates ranked by a single skill, and Team Overview tab showing aggregate team capability">
+        <p class="cs-caption">The shipped Team Talent app — Details (individual profile), Skill view (who's strongest at what), and Team Overview (aggregate capability across 120 skills)</p>
+    </div>
+
     <div class="container">
         <section class="content-section">
             <h2>The Challenge</h2>
@@ -66,6 +72,11 @@
 
             <div class="highlight-box skills">
                 <p><strong>The Core Problem:</strong> We needed to transform a superficial skills inventory into actionable team optimization insights that could drive real business decisions.</p>
+            </div>
+
+            <div class="cs-image-full">
+                <img src="skills-rawdata.png" alt="Raw Google Sheets data showing rows 2396–2437 with participant IDs, skill names, proficiency ratings, interest levels, and multiple comparison columns">
+                <p class="cs-caption">The raw data underneath — 2,500+ rows of participant/skill combinations, each rated across expertise, interest, and multiple role dimensions. Useful only once systematically queried.</p>
             </div>
         </section>
 
@@ -95,6 +106,17 @@
                 <p><strong>Expertise Scale:</strong> No Experience | Working Knowledge | Mastered</p>
                 <p><strong>Interest Scale:</strong> Interested | Not Interested</p>
                 <p><strong>Scope:</strong> 120 UX skills covering technical, strategic, and domain expertise</p>
+            </div>
+
+            <div class="cs-image-row">
+                <div class="cs-image-row-item">
+                    <img src="skills-wireframe03.png" alt="Google Sheets individual participant view — Participant 06 showing service offerings interest level, role fit averages, and full skill breakdown across Interested/Not Interested/Regardless columns">
+                    <p class="cs-caption">Individual participant view — service interest, role fit averages, and full 120-skill breakdown across proficiency and interest dimensions</p>
+                </div>
+                <div class="cs-image-row-item">
+                    <img src="skills-wireframe04.png" alt="Google Sheets dropdown showing the full list of 120 UX skills available for selection in the analysis views">
+                    <p class="cs-caption">The 120-skill taxonomy — every competency available as a query parameter across all analytical views</p>
+                </div>
             </div>
 
             <h3>SQL-Powered Analysis Views</h3>
@@ -127,6 +149,17 @@
                 </div>
             </div>
 
+            <div class="cs-image-row">
+                <div class="cs-image-row-item">
+                    <img src="skills-wireframe02.png" alt="Google Sheets skill analysis view — Brand/Logo/Identity Design selected, showing all 21 participants sorted into Interested/Not Interested columns with proficiency sub-columns and team averages">
+                    <p class="cs-caption">Skill analysis view — select any skill to see all 21 teammates sorted by proficiency and interest, with team averages at the top</p>
+                </div>
+                <div class="cs-image-row-item">
+                    <img src="skills-wireframe01.png" alt="Google Sheets team builder — dropdown skill priority selectors for High and Low priority, with teammates automatically ranked by weighted match score">
+                    <p class="cs-caption">Team builder — set high and low priority skills, and teammates are automatically ranked by weighted fit score for that project configuration</p>
+                </div>
+            </div>
+
             <div class="highlight-box skills">
                 <p><strong>Custom Team Builder:</strong> Leadership could slot in any number of teammates and instantly see aggregated skill strengths, capability gaps, role distribution, and service delivery capacity across all 120+ competencies.</p>
             </div>
@@ -147,8 +180,41 @@
                 </div>
             </div>
 
+            <h3>From Spreadsheet to App</h3>
+            <p>As the system matured, I designed a companion mobile app — Team Talent — that made the data accessible to leadership without requiring any Sheets literacy. Three views covered the core use cases.</p>
+
+            <div class="cs-image-row">
+                <div class="cs-image-row-item">
+                    <img src="skills-ui01.png" alt="Team Talent Details tab — Reinhardt Wilhelm profile showing service scores and role scores, with sortable skill list showing proficiency level and interest per skill">
+                    <p class="cs-caption">Details tab — individual profile with service and role scores, searchable and sortable skill list with proficiency level and interest indicator</p>
+                </div>
+                <div class="cs-image-row-item">
+                    <img src="skills-ui03.png" alt="Team Talent Overview tab — Typography skill selected, showing avg skill level 192 and avg interest level 190, with all teammates ranked by proficiency">
+                    <p class="cs-caption">Overview tab — select any skill to see the full team ranked by proficiency, with interest indicators showing who actually wants to use it</p>
+                </div>
+            </div>
+
+            <h3>Comparison View — Design Iteration</h3>
+            <p>The comparison view went through three distinct layouts before landing on the final approach. The challenge was representing two teams' skill levels against each other in a way that was scannable at a glance.</p>
+
+            <div class="cs-image-full">
+                <img src="skills-comparison-iteration.png" alt="Three design iterations A, B, C of the team comparison view — A uses mirrored bar charts from center, B uses single-direction bars, C uses a more compact version of B">
+                <p class="cs-caption">Three comparison view iterations — A (mirrored bars from center), B (single direction with clearer labeling), C (refined spacing). B and C tested better for quick scanning.</p>
+            </div>
+
+            <div class="cs-image-row">
+                <div class="cs-image-row-item">
+                    <img src="skills-ui02.png" alt="Team Talent final comparison tab — Team 1 vs Team 2 with horizontal bar charts showing relative skill levels across multiple competencies">
+                    <p class="cs-caption">Final comparison view — team members stacked per side, skills listed with bar charts showing relative proficiency. Add Teammate+ supports multi-person team comparisons.</p>
+                </div>
+                <div class="cs-image-row-item">
+                    <img src="skills-comparison-final.png" alt="Comparison view with sort filter open — sort by Team 1 or Team 2, Skill Rating, Ascending or Descending">
+                    <p class="cs-caption">Sort and filter interaction — leadership could re-sort by either team's strength, making it easy to identify where one team significantly outperformed the other</p>
+                </div>
+            </div>
+
             <h3>Query Interface Design</h3>
-            <p>Rather than forcing non-technical stakeholders to write QUERY formulas, I created pre-built analytical views that automatically surfaced insights. Leadership could simply navigate between sheets to find answers like:</p>
+            <p>Rather than forcing non-technical stakeholders to write QUERY formulas, I created pre-built analytical views that automatically surfaced insights. Leadership could simply navigate between views to find answers like:</p>
             <ul>
                 <li>"Which team members have mastered accessibility but aren't interested in research?"</li>
                 <li>"What's our team's overall capacity for usability testing projects?"</li>
