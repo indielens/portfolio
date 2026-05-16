@@ -461,8 +461,8 @@ nav ul.nav-links a:hover { color: var(--accent); }
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
+    padding-top: 2.5rem;
     margin-bottom: 2rem;
-    padding-top: 1rem;
     transition: color 0.2s ease;
 }
 .case-header .back-link:hover { color: var(--accent); }
