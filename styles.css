@@ -1214,6 +1214,11 @@ nav ul.nav-links a:hover { color: var(--accent); }
     border: 1px solid var(--border);
 }
 
+/* Caption on full-bleed images needs manual padding to match container */
+.cs-image-full .cs-caption {
+    padding: 0 var(--gutter);
+}
+
 /* Contained image — centered, max ~600px, for portrait phone screens */
 .cs-image-contained {
     margin: 2.5rem auto;
