@@ -177,7 +177,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 }
 
 .hero-bio {
-    font-size: 0.75rem;
+    font-size: 1.1rem;
     color: var(--dim);
     max-width: 520px;
     line-height: 1.7;
@@ -299,7 +299,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 }
 
 .work-desc {
-    font-size: 0.75rem;
+    font-size: 0.93rem;
     color: var(--muted);
     line-height: 1.6;
     max-width: 560px;
@@ -351,7 +351,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 }
 
 .contact-left p {
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: var(--muted);
     max-width: 380px;
     line-height: 1.65;
@@ -396,7 +396,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 .about-hero h1 em { font-style: normal; color: var(--accent); }
 
 .about-hero .lead {
-    font-size: 0.75rem;
+    font-size: 1.1rem;
     color: var(--dim);
     max-width: 600px;
     line-height: 1.7;
@@ -411,7 +411,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
     align-items: start;
 }
 
-.about-text p { font-size: 0.75rem; color: var(--dim); line-height: 1.75; margin-bottom: 1.4rem; }
+.about-text p { font-size: 1.03rem; color: var(--dim); line-height: 1.75; margin-bottom: 1.4rem; }
 .about-text p strong { color: var(--white); font-weight: 600; }
 
 .about-sidebar { display: flex; flex-direction: column; }
@@ -434,7 +434,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 }
 
 .sidebar-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-.sidebar-list li { font-size: 0.75rem; color: var(--dim); line-height: 1.4; }
+.sidebar-list li { font-size: 0.88rem; color: var(--dim); line-height: 1.4; }
 .sidebar-sub { color: var(--muted); font-size: 0.8em; }
 .sidebar-list a { color: var(--accent); }
 .sidebar-list a:hover { text-decoration: underline; }
@@ -492,7 +492,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 }
 
 .case-header .subtitle {
-    font-size: 0.75rem;
+    font-size: 1.05rem;
     color: var(--dim);
     max-width: 640px;
     line-height: 1.6;
@@ -519,7 +519,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
     margin-bottom: 1rem;
 }
 
-.overview-content p { font-size: 0.75rem; color: var(--dim); line-height: 1.7; margin-bottom: 1rem; }
+.overview-content p { font-size: 1rem; color: var(--dim); line-height: 1.7; margin-bottom: 1rem; }
 
 .project-details {
     background: var(--dark);
@@ -549,7 +549,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
     margin-bottom: 0.2rem;
 }
 
-.detail-value { font-size: 0.75rem; color: var(--dim); line-height: 1.4; }
+.detail-value { font-size: 0.9rem; color: var(--dim); line-height: 1.4; }
 
 /* =====================================================
    CASE STUDY — CONTENT SECTIONS
@@ -585,7 +585,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 }
 
 .content-section p,
-.content-section li { font-size: 0.75rem; color: var(--dim); line-height: 1.75; margin-bottom: 0.75rem; }
+.content-section li { font-size: 1rem; color: var(--dim); line-height: 1.75; margin-bottom: 0.75rem; }
 
 .content-section ul { margin-left: 1.5rem; margin-bottom: 1.25rem; }
 .content-section li { margin-bottom: 0.4rem; }
@@ -602,7 +602,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
     background: var(--dark);
 }
 
-.highlight-box p { margin-bottom: 0; font-size: 0.75rem; color: var(--dim); }
+.highlight-box p { margin-bottom: 0; font-size: 1rem; color: var(--dim); }
 
 .highlight-box.survivor      { border-color: var(--red); }
 .highlight-box.skills        { border-color: var(--teal); }
@@ -684,7 +684,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
     margin-bottom: 0.4rem;
 }
 
-.result-description { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+.result-description { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
 
 /* =====================================================
    BEFORE / AFTER
@@ -723,7 +723,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
     padding: 0.75rem 1rem;
     margin: 0.75rem 0;
     font-style: italic;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: var(--muted);
 }
 
@@ -764,7 +764,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
     text-transform: none;
 }
 
-.research-method p { color: var(--muted); font-size: 0.75rem; margin-bottom: 0; }
+.research-method p { color: var(--muted); font-size: 0.88rem; margin-bottom: 0; }
 
 /* =====================================================
    GAMING SECTION (Skills Assessment)
@@ -801,7 +801,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 
 .data-view { background: var(--mid); border: 1px solid var(--teal); padding: 1rem; text-align: center; }
 .data-view h5 { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.06em; color: var(--teal); margin-bottom: 0.35rem; }
-.data-view p  { font-size: 0.75rem; color: var(--muted); margin: 0; }
+.data-view p  { font-size: 0.78rem; color: var(--muted); margin: 0; }
 
 /* =====================================================
    SKILL TAGS
@@ -1004,7 +1004,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 .case-card:hover .case-title { color: var(--accent); }
 
 .case-description {
-    font-size: 0.75rem;
+    font-size: 0.88rem;
     color: var(--muted);
     line-height: 1.6;
     margin-bottom: 1.25rem;
@@ -1102,7 +1102,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 .skill-category ul { list-style: none; }
 
 .skill-category li {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: var(--dim);
     margin-bottom: 0.35rem;
     line-height: 1.4;
@@ -1197,4 +1197,14 @@ nav ul.nav-links a:hover { color: var(--accent); }
     }
     .work-thumb { display: none; }
     .work-arrow { display: none; }
+}
+
+/* =====================================================
+   CS-CAPTION — consistent 12px caption text
+   ===================================================== */
+
+.cs-caption {
+    font-size: 0.75rem;
+    color: var(--dim);
+    line-height: 1.6;
 }
