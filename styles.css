@@ -1203,8 +1203,64 @@ nav ul.nav-links a:hover { color: var(--accent); }
    CS-CAPTION — consistent 12px caption text
    ===================================================== */
 
+/* =====================================================
+   CASE STUDY IMAGE CONTAINERS
+   ===================================================== */
+
+.cs-image-full {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.cs-image-full img {
+    width: 100%;
+    display: block;
+}
+
+.cs-image-contained {
+    margin: 2rem 0;
+    background: var(--dark);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.cs-image-contained img {
+    max-width: 100%;
+    display: block;
+}
+
+.cs-image-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.cs-image-row-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-image-row-item img {
+    width: 100%;
+    display: block;
+}
+
+/* =====================================================
+   CS-CAPTION — consistent 12px caption text
+   ===================================================== */
+
 .cs-caption {
+    font-family: var(--font-body);
     font-size: 0.75rem;
     color: var(--dim);
     line-height: 1.6;
+    padding: 0.6rem var(--gutter) 0;
+    margin: 0;
+}
+
+.cs-image-contained .cs-caption {
+    padding: 0.6rem 0 0;
 }
