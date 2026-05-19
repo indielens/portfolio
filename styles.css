@@ -1199,3 +1199,14 @@ nav ul.nav-links a:hover { color: var(--accent); }
         grid-template-columns: 1fr;
     }
 }
+
+.case-tldr {
+    font-size: 0.85rem;
+    color: var(--muted);
+    max-width: 640px;
+    line-height: 1.65;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-body);
+}
