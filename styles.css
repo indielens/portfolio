@@ -1305,3 +1305,49 @@ nav ul.nav-links a:hover { color: var(--accent); }
 .cs-image-contained .cs-caption {
     padding: 0.6rem var(--gutter) 0;
 }
+
+/* =====================================================
+   CS-IMAGE-ROW-3 — 3-column layout for portrait phone screenshots
+   ===================================================== */
+
+.cs-image-row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.cs-image-row-3 .cs-image-row-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-image-row-3 .cs-image-row-item img {
+    width: 100%;
+    display: block;
+}
+
+/* Single portrait phone — centered, max-width constrained */
+.cs-image-phone {
+    margin: 2rem auto;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-image-phone img {
+    width: 100%;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .cs-image-row-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .cs-image-row-3 {
+        grid-template-columns: 1fr;
+    }
+}
