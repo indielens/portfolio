@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <main id="main-content">
     <div class="case-header survivor">
         <div class="container">
             <a href="index.html" class="back-link">← Back to Portfolio</a>
@@ -24,14 +25,14 @@
             <div class="overview-grid">
                 <div class="overview-content">
                     <h2>Project Overview</h2>
-                    <p>During COVID-19, a friend with a board game background recruited a small group of us to prototype a social game. I quickly moved from playtester to lead designer — owning the visual direction, UX architecture, and game systems design from early prototype through the final shipped mobile app.</p>
-                    <p>What started as a Google Sheets experiment became a full Laravel web application. The gap we were filling: no digital game captured the week-long social dynamics, strategic depth, and relationship-building that make Survivor compelling.</p>
+                    <p>During COVID-19, my friend with a board game passion project recruited several of us for playtesting and prototyping. We discovered a gap: existing digital social games lacked the strategic depth and week-long social dynamics that make Survivor compelling.</p>
+                    <p>Most social games were either too simple (one-session party games) or too complex (MMORPGs requiring massive time investments). We wanted something that captured real social strategy over multiple days while being accessible to casual players.</p>
                 </div>
                 <div class="project-details">
                     <h3>Project Details</h3>
                     <div class="detail-item">
                         <div class="detail-label">Role</div>
-                        <div class="detail-value">Lead Game Designer, UX Designer, Visual Director</div>
+                        <div class="detail-value">Game Designer, UX Designer, Technical Contributor</div>
                     </div>
                     <div class="detail-item">
                         <div class="detail-label">Duration</div>
@@ -54,6 +55,7 @@
         </div>
     </div>
 
+    <!-- Figma project overview — full scope of the work -->
     <div class="cs-image-full">
         <img src="PO_Overview.png" alt="Full Figma project overview showing the complete scope of screens, flows, and design decisions for Pecking Order">
         <p class="cs-caption">Full project scope in Figma — login through end-game, across two platform generations</p>
@@ -62,15 +64,15 @@
     <div class="container">
         <section class="content-section">
             <h2>The Challenge</h2>
-            <p>The pandemic created demand for meaningful social interaction, but existing games fell into two extremes: shallow party games that lasted minutes, or complex MMORPGs requiring massive time investments. Neither captured the week-long relationship arc that makes Survivor compelling.</p>
+            <p>We set out to solve a specific problem in the digital social gaming space. During the pandemic, people craved meaningful social interaction, but existing games fell into two extremes: shallow party games that lasted minutes, or complex MMORPGs requiring massive time investments.</p>
 
             <div class="highlight-box survivor">
-                <p><strong>The Gap:</strong> No games created the conditions for genuine social strategy over multiple days — the alliance formation, shifting loyalties, and relationship-building that create authentic human connection under pressure.</p>
+                <p><strong>The Gap:</strong> No games captured the strategic depth and genuine social dynamics that make Survivor compelling — the week-long relationship building, alliance formation, and strategic gameplay that creates authentic human connections.</p>
             </div>
 
             <h3>Initial Constraints</h3>
             <ul>
-                <li>Limited development resources (friends working in spare time, junior engineer)</li>
+                <li>Limited development resources (friends working in spare time)</li>
                 <li>Need for real-time social interaction and voting</li>
                 <li>Managing complex game economics and player progression</li>
                 <li>Week-long engagement without losing player interest</li>
@@ -80,10 +82,10 @@
         <section class="content-section">
             <h2>Research & Discovery</h2>
             <h3>Understanding the Source Material</h3>
-            <p>I analyzed what makes Survivor compelling at a systems level: social voting dynamics, resource management, alliance formation, and the balance between strategic gameplay and relationship maintenance. The game had to create conditions for those dynamics — not just simulate them.</p>
+            <p>We analyzed what makes Survivor compelling: social voting dynamics, resource management, alliance formation, and the balance between strategic gameplay and social relationships.</p>
 
             <h3>Daily Challenge Integration</h3>
-            <p>The game operated on a consistent daily rhythm I designed to maintain engagement across the full week:</p>
+            <p>The game operated on a consistent daily rhythm:</p>
             <ul>
                 <li><strong>Daily Challenge:</strong> Varied objectives like "be part of the biggest tribe" or "predict which player receives the most upvotes"</li>
                 <li><strong>Voting Ballot:</strong> Core upvote/downvote mechanics that determined player rankings</li>
@@ -97,26 +99,28 @@
 
             <div class="two-column">
                 <div class="phase-card survivor">
-                    <h4>Phase 1: Google Sheets Prototype</h4>
+                    <h3>Phase 1: Google Sheets Prototype</h3>
                     <p><strong>Why we started here:</strong> Google Sheets offered the perfect rapid prototyping environment — real-time collaboration, built-in data structure, and zero development overhead.</p>
                     <p><strong>The "Probst" System:</strong> One player served as game master, managing the master spreadsheet while others accessed individual sheets with 4-digit password protection.</p>
                 </div>
 
                 <div class="phase-card survivor">
-                    <h4>Phase 2: Web App Development</h4>
+                    <h3>Phase 2: Web App Development</h3>
                     <p><strong>Why we made the transition:</strong> Google Sheets became increasingly fragile as we added complex logic. A single typo could break the entire game mid-session.</p>
                     <p><strong>Technical Solution:</strong> Migrated to Laravel web application with proper error handling, data validation, and robust architecture.</p>
                 </div>
             </div>
 
+            <!-- Early web beta — shows the pre-polish Laravel build -->
             <div class="cs-image-full" style="margin-top: 2rem;">
                 <img src="peckingOrderWeb_beta.png" alt="Early web version of Pecking Order — pre-game lobby in the Laravel beta, light theme">
                 <p class="cs-caption">Early Laravel web build — the pre-game lobby before the full mobile redesign. Players joined via shareable game code and could see the full round schedule.</p>
             </div>
 
             <h3>Phase 3: Complete UX Redesign in Figma</h3>
-            <p>I designed the entire user experience from scratch — setting the visual direction through vision boarding before touching a single frame. The dark UI, the competitive tension in the color system, the typographic choices — that aesthetic was mine. From there I mapped every decision point in the app, from authentication through end-game.</p>
+            <p>From the Google Sheets prototype through the Laravel web app, I designed the entire user experience from scratch — including authentication, daily mechanics, live scoreboard, and social feed. The wireframe flow below maps every decision point in the app.</p>
 
+            <!-- Full UX flow diagram -->
             <div class="cs-image-full">
                 <img src="peckingOrder-WireframeFlow.png" alt="Complete UX wireframe flow for Pecking Order — from login through ballot submission, quiz, advantages, and top navigation">
                 <p class="cs-caption">Complete UX flow — Login → Game List → Pregame Lobby → Dashboard → Ballot, Quiz, Challenge, and Advantage submission screens</p>
@@ -130,12 +134,13 @@
             </ul>
 
             <div class="highlight-box survivor">
-                <p><strong>Design Philosophy:</strong> I kept external communication in Discord while focusing the app on core game mechanics — a deliberate separation between social strategy (Discord) and game actions (web app). This reduced interface complexity without sacrificing the social dynamics that made the game work.</p>
+                <p><strong>Design Philosophy:</strong> We kept external communication in Discord while focusing the app on core game mechanics — clear separation between social strategy (Discord) and game actions (web app), reducing interface complexity while maintaining rich social dynamics.</p>
             </div>
 
+            <!-- App screens: onboarding + game list -->
             <div class="cs-image-row">
                 <div class="cs-image-row-item">
-                    <img src="peckingOrderUI-03.png" alt="Pecking Order onboarding screen">
+                    <img src="peckingOrderUI-03.png" alt="Pecking Order onboarding screen — 'You should close this app now before you start destroying all of your friendships'">
                     <p class="cs-caption">Onboarding — tone-setting copy that primes players for competitive social gameplay</p>
                 </div>
                 <div class="cs-image-row-item">
@@ -151,32 +156,33 @@
             <h3>Game Economics Design</h3>
             <p>The currency system created rich strategic depth through multiple spending options. Every advantage had to feel meaningfully different — not just reskinned versions of the same action.</p>
 
-            <div class="cs-image-phone">
+            <!-- Advantages screen — the economic system made visible -->
+            <div class="cs-image-contained">
                 <img src="peckingOrderUI-02.png" alt="Advantages screen showing Blood Oath, Betrayal, Embargo, Wing Clipper, Immunity Idol, Grandstand, and other purchasable actions with token costs">
                 <p class="cs-caption">Advantages screen — the full economic menu. Each action had distinct strategic value and a token cost balanced against weekly earning rates.</p>
             </div>
 
             <div class="two-column">
                 <div>
-                    <h4>Offensive Actions</h4>
+                    <h3>Offensive Actions</h3>
                     <ul>
                         <li><strong>Vote Blocking:</strong> Prevent another player's vote from counting</li>
                         <li><strong>Vote Amplification:</strong> Cast multiple votes in a single round</li>
                         <li><strong>Public Shaming:</strong> Post callouts in the public feed to influence opinion</li>
                     </ul>
-                    <h4>Information Warfare</h4>
+                    <h3>Information Warfare</h3>
                     <ul>
                         <li><strong>Identity Spying:</strong> Reveal other players' hidden roles or allegiances</li>
                         <li><strong>Intelligence Gathering:</strong> Access voting intentions or alliance information</li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Defensive Tools</h4>
+                    <h3>Defensive Tools</h3>
                     <ul>
                         <li><strong>Immunity Idol:</strong> Protection from elimination votes</li>
                         <li><strong>Counter-Intelligence:</strong> Block spying attempts on your actions</li>
                     </ul>
-                    <h4>Alliance Mechanics</h4>
+                    <h3>Alliance Mechanics</h3>
                     <ul>
                         <li><strong>Blood Oath:</strong> Secret binding alliance with mutual benefits and consequences</li>
                         <li><strong>Embargo:</strong> Cut off another player's token earning for a round</li>
@@ -193,6 +199,7 @@
 
             <p>The most powerful validation of the social design was that <strong>two strangers met through the game and are now engaged to be married</strong> — demonstrating that the game mechanics successfully created conditions for genuine human connection.</p>
 
+            <!-- Final app screens — the polished product -->
             <div class="cs-image-full" style="margin-top: 2.5rem;">
                 <img src="peckingOrder01.png" alt="Pecking Order final app — Create Game, Game of Cones dashboard, and feed screens">
                 <p class="cs-caption">Final mobile app — Create Game, live round dashboard, and the social feed showing active challenges and player activity</p>
@@ -200,24 +207,6 @@
             <div class="cs-image-full">
                 <img src="peckingOrder02.png" alt="Pecking Order — Blood Oath prompt, ballot submission, quiz, scoreboard, and tribal challenge screens">
                 <p class="cs-caption">Core mechanics in action — Blood Oath alliance prompt, ballot submission with upvote/downvote, quiz challenge, live scoreboard, and tribal selection</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Design Advocacy</h2>
-            <p>Not every decision I pushed for made it into the final product — and that's worth being honest about, because the constraints themselves shaped the design.</p>
-
-            <div class="two-column">
-                <div class="phase-card survivor">
-                    <h4>The Filter I Lobbied For</h4>
-                    <p>The social feed of player actions could easily become overwhelming as the game scaled. I pushed for filters — by action type, by player, by round — so users could orient to what mattered without wading through noise.</p>
-                    <p>The engineering team saw the value but didn't have the bandwidth to build it. Rather than ship a cluttered unfiltered experience, I simplified the information hierarchy instead — grouping actions by day and reducing feed item density so the stream stayed readable without filtering. The workaround worked. But I'd ship the filter first in a v2.</p>
-                </div>
-                <div class="phase-card survivor">
-                    <h4>Sticky Day Headers — Shipped</h4>
-                    <p>I advocated for clear visual day-breakers in the feed with persistent sticky headers as users scrolled. Week-long games generate a lot of events, and players needed to quickly understand where in the arc any given action sat.</p>
-                    <p>This one shipped. It became one of the small but meaningful details that made the game feel polished — players could always answer "what day are we on?" with a glance.</p>
-                </div>
             </div>
         </section>
 
@@ -249,13 +238,13 @@
 
             <h3>Memorable Game Moments</h3>
             <ul>
-                <li><strong>The "HugeInfoDumps" Incident:</strong> Players created fake accounts to blast information and create chaos, leading to new identity verification systems</li>
+                <li><strong>The "HugeInfoDumps" Incident:</strong> Players created fake accounts specifically to blast information and create chaos, leading to new identity verification systems</li>
                 <li><strong>Blood Oath Alliances:</strong> Secret partnerships formed in the final hours, with players making dramatic last-minute promises and betrayals</li>
-                <li><strong>The Great Economic Upset:</strong> Unknown players rocketed from last place to first through strategic currency deployment — a flaw we fixed, but a memorable moment that showed how much the system mattered</li>
+                <li><strong>The Great Economic Upset:</strong> Due to voting economy imbalances, unknown players could rocket from last place to first in the final round through strategic currency deployment</li>
             </ul>
 
             <h3>Current Evolution: Conference Engagement Tool</h3>
-            <p>The platform was adapted for John's product consulting company as a conference engagement tool. The underlying UX architecture I built was flexible enough to support that pivot without a redesign — which was the point of building systems rather than screens.</p>
+            <p>The platform was successfully adapted for John's product consulting company as a conference engagement tool. The streamlined version focuses on core voting and challenges, removing complex economic advantages for the professional environment while keeping Blood Oaths as an optional "expansion" game mode.</p>
         </section>
 
         <section class="content-section">
@@ -263,12 +252,12 @@
 
             <div class="two-column">
                 <div class="phase-card survivor">
-                    <h4>Technical Constraints</h4>
+                    <h3>Technical Constraints</h3>
                     <p><strong>Challenge:</strong> Google Sheets couldn't handle increasingly complex features — a single typo could crash the entire game mid-session.</p>
                     <p><strong>Solution:</strong> Migrated to Laravel web application with proper error handling, data validation, and robust architecture that could scale with feature complexity.</p>
                 </div>
                 <div class="phase-card survivor">
-                    <h4>Balancing Game Economics</h4>
+                    <h3>Balancing Game Economics</h3>
                     <p><strong>Challenge:</strong> The original voting economy created dramatic endgame swings that felt disconnected from week-long strategic play.</p>
                     <p><strong>Solution:</strong> Simplified automatic vote mechanics and added diminishing returns to prevent dramatic last-minute position changes.</p>
                 </div>
@@ -278,9 +267,9 @@
         <section class="content-section">
             <h2>What I'd Do Differently</h2>
             <ul>
-                <li><strong>Ship the Filter Earlier:</strong> The feed filter I couldn't get built remains the highest-priority item for a v2. The workaround held, but a proper filter would have made the social feed genuinely powerful instead of just manageable.</li>
-                <li><strong>Simplify Advantage Complexity:</strong> The economic advantages were overwhelming for non-competitive players. I'd tier the complexity — basic modes for casual players, advanced modes for strategy enthusiasts.</li>
-                <li><strong>Address "King Making" Dynamics:</strong> Competitive players secured votes from others by promising reciprocity in future games, frustrating excluded players. I'd consider mechanics that give trailing players more agency.</li>
+                <li><strong>Simplify Advantage Complexity:</strong> The economic advantages were overwhelming for non-competitive players. I'd design clearer onboarding and tier the complexity — basic modes for casual players, advanced modes for strategy enthusiasts.</li>
+                <li><strong>Address "King Making" Dynamics:</strong> Competitive players would secure votes from others by promising reciprocity in future games, creating frustration for excluded players. I'd consider mechanics that give trailing players more agency.</li>
+                <li><strong>Balance Social Drama vs. Accessibility:</strong> While emergent social gameplay was entertaining, clearer guidelines about acceptable behavior would help maintain inclusive participation without killing the spontaneous interactions that made the game special.</li>
             </ul>
         </section>
 
@@ -289,19 +278,21 @@
             <div class="skills-grid">
                 <div class="skill-tag survivor">Game Design</div>
                 <div class="skill-tag survivor">UX Design</div>
-                <div class="skill-tag survivor">Visual Direction</div>
                 <div class="skill-tag survivor">Product Development</div>
                 <div class="skill-tag survivor">Social Systems Design</div>
                 <div class="skill-tag survivor">User Psychology</div>
                 <div class="skill-tag survivor">Figma Prototyping</div>
-                <div class="skill-tag survivor">Design Advocacy</div>
-                <div class="skill-tag survivor">Constraint-Led Design</div>
+                <div class="skill-tag survivor">Data Analysis</div>
+                <div class="skill-tag survivor">Project Management</div>
+                <div class="skill-tag survivor">Stakeholder Management</div>
                 <div class="skill-tag survivor">Technical Implementation</div>
-                <div class="skill-tag survivor">Systems Thinking</div>
+                <div class="skill-tag survivor">Change Management</div>
                 <div class="skill-tag survivor">Business Strategy</div>
             </div>
         </section>
     </div>
+
+    </main>
 
     <div class="case-nav">
         <div class="container">

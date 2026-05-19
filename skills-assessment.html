@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <main id="main-content">
     <div class="case-header skills">
         <div class="container">
             <a href="index.html" class="back-link">← Back to Portfolio</a>
@@ -24,8 +25,8 @@
             <div class="overview-grid">
                 <div class="overview-content">
                     <h2>Project Overview</h2>
-                    <p>Nobody asked me to build this. When two UX teams merged, leadership ran a surface-level skills survey that produced little actionable insight. I saw an organizational problem worth solving and built the tool myself — on my own time, using techniques I'd developed for a completely different purpose.</p>
-                    <p><strong>Team assignments were essentially based on guesswork</strong> rather than data-driven understanding of individual strengths, interests, and optimal team compositions. The tool I built changed that — and my manager used it regularly to staff new projects.</p>
+                    <p>When two UX teams merged, leadership conducted a basic skills survey to understand the combined team capabilities. The survey was surface-level and provided little actionable insight for project assignments or identifying skill gaps.</p>
+                    <p><strong>Team assignments were essentially based on guesswork</strong> rather than data-driven understanding of individual strengths, interests, and optimal team compositions.</p>
                 </div>
                 <div class="project-details">
                     <h3>Project Details</h3>
@@ -71,7 +72,7 @@
             </ul>
 
             <div class="highlight-box skills">
-                <p><strong>The Core Problem:</strong> A superficial skills inventory was producing data that felt authoritative but wasn't — and nobody had built the infrastructure to make it actually useful. I decided to fix that.</p>
+                <p><strong>The Core Problem:</strong> We needed to transform a superficial skills inventory into actionable team optimization insights that could drive real business decisions.</p>
             </div>
 
             <div class="cs-image-full">
@@ -86,7 +87,6 @@
             <div class="gaming-section">
                 <h3>From Overwatch to UX Team Optimization</h3>
                 <p>My expertise with Google Sheets' QUERY function came from an unexpected source: analyzing my own Overwatch gameplay statistics. I had built complex spreadsheets to track damage output, kill ratios, and survival metrics to identify improvement areas in my gaming performance.</p>
-                <p>When I saw the organizational problem, I recognized that the analytical structure was the same — multi-dimensional data about individual performance, sliced to find patterns and optimize composition. The domain was different. The system was identical.</p>
                 <h4>Key Skills Transfer:</h4>
                 <ul>
                     <li><strong>Multi-dimensional analysis:</strong> Gaming stats (damage/kills/survival) → UX skills (expertise/interest/role fit)</li>
@@ -103,7 +103,7 @@
             <p>I created a centralized data system capturing comprehensive skills assessment across <strong>120 different UX competencies</strong>. Each team member rated their expertise level and interest level for every skill, creating a rich multi-dimensional dataset.</p>
 
             <div class="data-structure">
-                <h4>Assessment Framework</h4>
+                <h3>Assessment Framework</h3>
                 <p><strong>Expertise Scale:</strong> No Experience | Working Knowledge | Mastered</p>
                 <p><strong>Interest Scale:</strong> Interested | Not Interested</p>
                 <p><strong>Scope:</strong> 120 UX skills covering technical, strategic, and domain expertise</p>
@@ -111,7 +111,7 @@
 
             <div class="cs-image-row">
                 <div class="cs-image-row-item">
-                    <img src="skills-wireframe03.png" alt="Google Sheets individual participant view — Participant 06 showing service offerings interest level, role fit averages, and full skill breakdown">
+                    <img src="skills-wireframe03.png" alt="Google Sheets individual participant view — Participant 06 showing service offerings interest level, role fit averages, and full skill breakdown across Interested/Not Interested/Regardless columns">
                     <p class="cs-caption">Individual participant view — service interest, role fit averages, and full 120-skill breakdown across proficiency and interest dimensions</p>
                 </div>
                 <div class="cs-image-row-item">
@@ -121,42 +121,42 @@
             </div>
 
             <h3>SQL-Powered Analysis Views</h3>
-            <p>Using Google Sheets' QUERY function extensively, I built multiple analytical views that could slice and dice the data without requiring any Sheets literacy from the people using it:</p>
+            <p>Using Google Sheets' QUERY function extensively, I built multiple analytical views that could slice and dice the data:</p>
 
             <div class="data-views">
                 <div class="data-view">
-                    <h5>Individual View</h5>
+                    <h4>Individual View</h4>
                     <p>Complete skill profiles for each team member</p>
                 </div>
                 <div class="data-view">
-                    <h5>Skill Analysis</h5>
+                    <h4>Skill Analysis</h4>
                     <p>How all teammates ranked across specific skills</p>
                 </div>
                 <div class="data-view">
-                    <h5>Role Definition</h5>
+                    <h4>Role Definition</h4>
                     <p>Weighted skill matching against role requirements</p>
                 </div>
                 <div class="data-view">
-                    <h5>Service Capability</h5>
+                    <h4>Service Capability</h4>
                     <p>Team capacity for four core service offerings</p>
                 </div>
                 <div class="data-view">
-                    <h5>Team Comparison</h5>
+                    <h4>Team Comparison</h4>
                     <p>Custom team builder with strength analysis</p>
                 </div>
                 <div class="data-view">
-                    <h5>Project-Specific</h5>
+                    <h4>Project-Specific</h4>
                     <p>Flexible skill matching beyond traditional roles</p>
                 </div>
             </div>
 
             <div class="cs-image-row">
                 <div class="cs-image-row-item">
-                    <img src="skills-wireframe02.png" alt="Google Sheets skill analysis view — Brand/Logo/Identity Design selected, showing all 21 participants sorted into Interested/Not Interested columns">
+                    <img src="skills-wireframe02.png" alt="Google Sheets skill analysis view — Brand/Logo/Identity Design selected, showing all 21 participants sorted into Interested/Not Interested columns with proficiency sub-columns and team averages">
                     <p class="cs-caption">Skill analysis view — select any skill to see all 21 teammates sorted by proficiency and interest, with team averages at the top</p>
                 </div>
                 <div class="cs-image-row-item">
-                    <img src="skills-wireframe01.png" alt="Google Sheets team builder — dropdown skill priority selectors with teammates automatically ranked by weighted match score">
+                    <img src="skills-wireframe01.png" alt="Google Sheets team builder — dropdown skill priority selectors for High and Low priority, with teammates automatically ranked by weighted match score">
                     <p class="cs-caption">Team builder — set high and low priority skills, and teammates are automatically ranked by weighted fit score for that project configuration</p>
                 </div>
             </div>
@@ -169,17 +169,15 @@
         <section class="content-section">
             <h2>Key Design Decisions</h2>
 
-            <h3>Confronting Self-Assessment Psychology</h3>
-            <p>As the tool got used, a predictable problem emerged: the data wasn't as reliable as it looked. I recognized the Dunning-Kruger effect playing out in the responses — team members with limited expertise were overrating their abilities, while highly skilled individuals who understood the depth of their knowledge gaps rated themselves more conservatively. True experts appeared less capable than novices on paper.</p>
-
+            <h3>Self-Assessment Psychology</h3>
             <div class="two-column">
                 <div class="insight-card skills">
-                    <h4>The Problem</h4>
-                    <p>Self-assessment data distortions meant the tool could actively mislead staffing decisions — exactly the opposite of what it was built to do. Someone who'd mastered a skill and knew its nuances might rate themselves lower than a junior who didn't know what they didn't know.</p>
+                    <h4>The Dunning-Kruger Effect in Practice</h4>
+                    <p>Team members with limited expertise often overrated their abilities, while highly skilled individuals who understood the depth of their knowledge gaps rated themselves more conservatively. This created data distortions where true experts appeared less capable than novices on paper.</p>
                 </div>
                 <div class="insight-card skills">
-                    <h4>The Solution I Built</h4>
-                    <p>I designed and built a dual-assessment framework: both the employee and their manager complete the assessment independently, then a comparison view surfaces the gaps. Rather than using the data to staff projects, you'd first use it to have a calibration conversation. I shipped it — though the org didn't end up adopting the workflow, the infrastructure was there.</p>
+                    <h4>Calibration Considerations</h4>
+                    <p>While I didn't implement peer validation in this version, recognizing these psychological patterns informed how leadership interpreted the results and highlighted the need for managerial context when making staffing decisions.</p>
                 </div>
             </div>
 
@@ -188,11 +186,11 @@
 
             <div class="cs-image-row">
                 <div class="cs-image-row-item">
-                    <img src="skills-ui01.png" alt="Team Talent Details tab — individual profile with service and role scores, searchable skill list">
+                    <img src="skills-ui01.png" alt="Team Talent Details tab — Reinhardt Wilhelm profile showing service scores and role scores, with sortable skill list showing proficiency level and interest per skill">
                     <p class="cs-caption">Details tab — individual profile with service and role scores, searchable and sortable skill list with proficiency level and interest indicator</p>
                 </div>
                 <div class="cs-image-row-item">
-                    <img src="skills-ui03.png" alt="Team Talent Overview tab — Typography skill selected, showing all teammates ranked by proficiency">
+                    <img src="skills-ui03.png" alt="Team Talent Overview tab — Typography skill selected, showing avg skill level 192 and avg interest level 190, with all teammates ranked by proficiency">
                     <p class="cs-caption">Overview tab — select any skill to see the full team ranked by proficiency, with interest indicators showing who actually wants to use it</p>
                 </div>
             </div>
@@ -201,20 +199,28 @@
             <p>The comparison view went through three distinct layouts before landing on the final approach. The challenge was representing two teams' skill levels against each other in a way that was scannable at a glance.</p>
 
             <div class="cs-image-full">
-                <img src="skills-comparison-iteration.png" alt="Three design iterations A, B, C of the team comparison view">
+                <img src="skills-comparison-iteration.png" alt="Three design iterations A, B, C of the team comparison view — A uses mirrored bar charts from center, B uses single-direction bars, C uses a more compact version of B">
                 <p class="cs-caption">Three comparison view iterations — A (mirrored bars from center), B (single direction with clearer labeling), C (refined spacing). B and C tested better for quick scanning.</p>
             </div>
 
             <div class="cs-image-row">
                 <div class="cs-image-row-item">
-                    <img src="skills-ui02.png" alt="Team Talent final comparison tab — Team 1 vs Team 2 with horizontal bar charts">
+                    <img src="skills-ui02.png" alt="Team Talent final comparison tab — Team 1 vs Team 2 with horizontal bar charts showing relative skill levels across multiple competencies">
                     <p class="cs-caption">Final comparison view — team members stacked per side, skills listed with bar charts showing relative proficiency. Add Teammate+ supports multi-person team comparisons.</p>
                 </div>
                 <div class="cs-image-row-item">
-                    <img src="skills-comparison-final.png" alt="Comparison view with sort filter open">
+                    <img src="skills-comparison-final.png" alt="Comparison view with sort filter open — sort by Team 1 or Team 2, Skill Rating, Ascending or Descending">
                     <p class="cs-caption">Sort and filter interaction — leadership could re-sort by either team's strength, making it easy to identify where one team significantly outperformed the other</p>
                 </div>
             </div>
+
+            <h3>Query Interface Design</h3>
+            <p>Rather than forcing non-technical stakeholders to write QUERY formulas, I created pre-built analytical views that automatically surfaced insights. Leadership could simply navigate between views to find answers like:</p>
+            <ul>
+                <li>"Which team members have mastered accessibility but aren't interested in research?"</li>
+                <li>"What's our team's overall capacity for usability testing projects?"</li>
+                <li>"How do these three potential team configurations compare for a complex research project?"</li>
+            </ul>
         </section>
 
         <section class="content-section">
@@ -245,12 +251,12 @@
 
             <div class="two-column">
                 <div class="insight-card skills">
-                    <h4>Hidden Technical Capabilities</h4>
+                    <h3>Hidden Technical Capabilities</h3>
                     <p>The assessment revealed that several team members had stronger development backgrounds than leadership realized, opening up new possibilities for technical UX work and cross-functional collaboration.</p>
                 </div>
                 <div class="insight-card skills">
-                    <h4>Real Staffing Impact</h4>
-                    <p>My manager used the tool regularly to build teams for new projects. It shifted staffing decisions from gut feel to a repeatable, data-informed process — which was the entire point of building it.</p>
+                    <h3>Strategic Decision Support</h3>
+                    <p>Assessment results informed Nielsen Norman Group course selections for the team, demonstrating how individual skill gaps could drive organizational learning investments.</p>
                 </div>
             </div>
         </section>
@@ -258,10 +264,14 @@
         <section class="content-section">
             <h2>What I'd Do Differently</h2>
             <ul>
-                <li><strong>Drive Adoption of the Dual Assessment:</strong> I built the manager/employee comparison view and shipped it, but the org never adopted it as a workflow. In retrospect I'd have paired the tool launch with a structured onboarding session specifically around that feature — the infrastructure was there, the behavior change wasn't.</li>
-                <li><strong>Automated Data Refresh:</strong> Bi-annual manual surveys created a maintenance burden. I'd integrate with HR systems to keep data fresher without requiring a full survey cycle.</li>
-                <li><strong>Calibration Exercises:</strong> Peer validation or structured calibration sessions at the start of each assessment cycle would reduce Dunning-Kruger distortion at the source rather than correcting for it downstream.</li>
+                <li><strong>Automated Data Refresh:</strong> Implement more sustainable data maintenance processes, possibly integrating with HR systems rather than relying on manual bi-annual surveys.</li>
+                <li><strong>Dual Assessment Framework:</strong> Build a system where both employees and managers complete assessments, then use the comparison view to facilitate career development conversations around discrepancies.</li>
+                <li><strong>Enhanced Validation:</strong> Consider peer validation for critical skills or implement calibration exercises to help team members understand skill level definitions more consistently.</li>
             </ul>
+
+            <div class="highlight-box skills">
+                <p><strong>Unrealized Potential:</strong> We could have used this for career progression conversations where both you and your manager assessed you, then used the comparison view to come together and discuss any differences — but I never built that feature.</p>
+            </div>
         </section>
 
         <section class="content-section">
@@ -270,18 +280,20 @@
                 <div class="skill-tag skills">Advanced Spreadsheet Engineering</div>
                 <div class="skill-tag skills">Data Architecture</div>
                 <div class="skill-tag skills">Google Sheets QUERY Functions</div>
-                <div class="skill-tag skills">Self-Initiated Problem Solving</div>
+                <div class="skill-tag skills">Stakeholder Research</div>
                 <div class="skill-tag skills">System Design</div>
                 <div class="skill-tag skills">Strategic HR Analytics</div>
                 <div class="skill-tag skills">Self-Directed Learning</div>
                 <div class="skill-tag skills">Weighted Algorithm Design</div>
                 <div class="skill-tag skills">Multi-dimensional Analysis</div>
                 <div class="skill-tag skills">Organizational Problem-Solving</div>
-                <div class="skill-tag skills">Behavioral Psychology</div>
+                <div class="skill-tag skills">Change Management</div>
                 <div class="skill-tag skills">Data-Driven Decision Making</div>
             </div>
         </section>
     </div>
+
+    </main>
 
     <div class="case-nav">
         <div class="container">

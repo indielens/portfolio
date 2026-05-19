@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <main id="main-content">
     <div class="case-header design-system">
         <div class="container">
             <a href="index.html" class="back-link">← Back to Portfolio</a>
@@ -25,7 +26,7 @@
                 <div class="overview-content">
                     <h2>Project Overview</h2>
                     <p>The design system faced a perfect storm of challenges following the merger of disparate UX/Design groups into one Enterprise UX organization. <strong>Documentation hadn't been updated since 2018</strong>, creating a massive knowledge gap serving 100,000+ employees across 50+ pharmaceutical brands.</p>
-                    <p>I drove this from research through redesign — identifying the gaps, designing the solution, recruiting a dedicated accessibility resource to build out the a11y documentation, and ultimately stepping into the Product Owner role to see it through. The result transformed outdated, development-focused documentation into a system that designers and developers actually wanted to use.</p>
+                    <p>Through comprehensive research and systematic redesign, I transformed outdated, development-focused documentation into a user-centered system that accelerated deployment cycles and reduced support requests.</p>
                 </div>
                 <div class="project-details">
                     <h3>Project Details</h3>
@@ -54,6 +55,7 @@
         </div>
     </div>
 
+    <!-- New portal — full component page, shows the redesigned end state -->
     <div class="cs-image-full">
         <img src="DesignPage.png" alt="Redesigned design system portal showing the Button component page with sidebar navigation, Design and Accessibility tabs, component variants, and right-rail anchor navigation">
         <p class="cs-caption">The redesigned portal — component overview with visual examples, tabbed Design/Accessibility split, and right-rail anchor navigation for deep pages</p>
@@ -79,23 +81,22 @@
 
         <section class="content-section">
             <h2>Research & Discovery</h2>
-            <p>I designed and executed the full research program — not as a handoff to another researcher, but end to end. I wrote the surveys, ran the interviews, facilitated the card sort, and synthesized the findings into the design brief.</p>
 
             <div class="research-grid">
                 <div class="research-method">
-                    <h4>Survey Research</h4>
+                    <h3>Survey Research</h3>
                     <p>Comprehensive assessment sent to 30+ teammates across disciplines using Microsoft Forms</p>
                 </div>
                 <div class="research-method">
-                    <h4>User Interviews</h4>
+                    <h3>User Interviews</h3>
                     <p>1:1 moderated interviews with designers, developers, and design system users</p>
                 </div>
                 <div class="research-method">
-                    <h4>Card Sort Analysis</h4>
+                    <h3>Card Sort Analysis</h3>
                     <p>Hybrid card sort to reveal user-preferred organizational models</p>
                 </div>
                 <div class="research-method">
-                    <h4>Industry Research</h4>
+                    <h3>Industry Research</h3>
                     <p>Competitive analysis of documentation patterns from leading design systems</p>
                 </div>
             </div>
@@ -104,21 +105,21 @@
 
             <div class="problems-grid">
                 <div class="problem-card">
-                    <h4>Missing Component States</h4>
+                    <h3>Missing Component States</h3>
                     <p>Component interaction states weren't documented anywhere.</p>
                     <div class="impact">Designers had to inspect code and manually convert RGB values to hex to understand hover, focus, and disabled states.</div>
                     <div class="solution">✓ Complete visual state documentation for every component</div>
                 </div>
 
                 <div class="problem-card">
-                    <h4>No Anatomical Alignment</h4>
+                    <h3>No Anatomical Alignment</h3>
                     <p>Designers and developers used different terminology for component elements.</p>
                     <div class="impact">Confusion and misalignment during handoffs, with no shared vocabulary between disciplines.</div>
                     <div class="solution">✓ Comprehensive anatomical labeling with numbered callouts</div>
                 </div>
 
                 <div class="problem-card">
-                    <h4>Structural Specifications Missing</h4>
+                    <h3>Structural Specifications Missing</h3>
                     <p>Internal and external component structure wasn't documented.</p>
                     <div class="impact">Designers had to reverse engineer or guess when customizing components for brand variations.</div>
                     <div class="solution">✓ Responsive spacing documentation with precise measurements</div>
@@ -145,7 +146,7 @@
             </div>
 
             <div class="cs-image-full">
-                <img src="DSP_newusage02.png" alt="New usage guidelines showing do and don't cards for icon button usage">
+                <img src="DSP_newusage02.png" alt="New usage guidelines showing do and don't cards for icon button usage — green cards for correct patterns, red cards for incorrect patterns">
                 <p class="cs-caption">Do/don't usage cards — a pattern absent from the legacy system entirely. Visual guidance replaced text-only rules, reducing misinterpretation across 50+ brand teams.</p>
             </div>
 
@@ -163,7 +164,7 @@
             </div>
 
             <div class="cs-image-full">
-                <img src="DSP_newa11y02.png" alt="New accessibility documentation showing anatomy callouts on a Download button with numbered indicators">
+                <img src="DSP_newa11y02.png" alt="New accessibility documentation showing anatomy callouts on a Download button with numbered indicators pointing to aria-hidden and icon elements, alongside code example">
                 <p class="cs-caption">Anatomy callouts in accessibility docs — numbered indicators connect visual components to their ARIA attributes and code implementation, bridging the designer-developer gap directly in the documentation.</p>
             </div>
 
@@ -189,40 +190,6 @@
                         <li>Structured Design + Accessibility tabs</li>
                         <li>Right-rail anchor navigation</li>
                     </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Design Advocacy</h2>
-
-            <div class="two-column">
-                <div class="phase-card design-system">
-                    <h4>The Anatomy Section</h4>
-                    <p>I pushed hard for a dedicated anatomy section — numbered callouts mapping every component element with precise specifications, so designers could recreate a component from concrete specs rather than reverse-engineering an existing one.</p>
-                    <p>There was organizational skepticism about the maintenance burden. I argued that the cost of maintaining clear specs was far lower than the ongoing cost of designer-developer misalignment on every handoff. I won the argument, partnered with a dedicated accessibility resource to build out a substantial portion, and got it into the portal — though a shift in priorities meant not all of it reached production. What did ship immediately reduced handoff questions.</p>
-                </div>
-                <div class="phase-card design-system">
-                    <h4>Accessibility as First-Class Documentation</h4>
-                    <p>The legacy portal treated accessibility as an afterthought — a tab with the same undifferentiated text layout as everything else. I advocated for giving accessibility its own structural treatment: right-rail anchors, WCAG criteria, keyboard behavior, screen reader notes.</p>
-                    <p>Getting dedicated resourcing for this took persuasion — accessibility work is often seen as a compliance checkbox rather than a documentation problem worth investing in. The resulting section became one of the most referenced parts of the redesigned portal.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Role Evolution Through the Project</h2>
-
-            <p>This project required me to shift roles as organizational needs changed — something I've come to see as a feature of working on complex systems rather than a detour from the design work.</p>
-
-            <div class="two-column">
-                <div class="phase-card design-system">
-                    <h4>Research Phase</h4>
-                    <p>I led the full research program — designing the study, facilitating interviews, running the card sort, and synthesizing findings into a design brief that gave us a clear, defensible direction. This wasn't handed off to a researcher. I ran it because I knew the resulting design would be better if I carried the user insights all the way through.</p>
-                </div>
-                <div class="phase-card design-system">
-                    <h4>Product Owner Phase</h4>
-                    <p>When a key team member went on maternity leave, I stepped into the Product Owner role without stepping back from design. I managed the backlog, ran stakeholder alignment sessions, and kept the project moving — while continuing to make design decisions. It reinforced something I already believed: the best design outcomes happen when the designer understands what surrounds the design work.</p>
                 </div>
             </div>
         </section>
@@ -263,6 +230,21 @@
         </section>
 
         <section class="content-section">
+            <h2>Role Evolution Through the Project</h2>
+
+            <div class="two-column">
+                <div class="phase-card design-system">
+                    <h3>Research Phase</h3>
+                    <p>Led comprehensive user research including surveys, interviews, card sorts, and heuristic analysis to identify critical documentation gaps across 30+ team members.</p>
+                </div>
+                <div class="phase-card design-system">
+                    <h4>Design & Product Phase</h4>
+                    <p>Transitioned to product owner during maternity leave coverage, managing backlog and stakeholder alignment while continuing design work — demonstrating adaptability from researcher to strategic leader.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
             <h2>Post-Launch & Sustainability</h2>
             <ul>
                 <li><strong>User Feedback Collection:</strong> Systematic gathering and analysis of feedback to identify areas for ongoing improvement</li>
@@ -281,12 +263,12 @@
                 <div class="skill-tag design-system">Product Management</div>
                 <div class="skill-tag design-system">Content Strategy</div>
                 <div class="skill-tag design-system">Stakeholder Management</div>
-                <div class="skill-tag design-system">Design Advocacy</div>
                 <div class="skill-tag design-system">User Interviews</div>
                 <div class="skill-tag design-system">Card Sort Analysis</div>
                 <div class="skill-tag design-system">Heuristic Analysis</div>
                 <div class="skill-tag design-system">Enterprise UX</div>
                 <div class="skill-tag design-system">Cross-functional Collaboration</div>
+                <div class="skill-tag design-system">Change Management</div>
                 <div class="skill-tag design-system">Accessibility</div>
                 <div class="skill-tag design-system">Technical Writing</div>
                 <div class="skill-tag design-system">International Design</div>
@@ -294,6 +276,8 @@
             </div>
         </section>
     </div>
+
+    </main>
 
     <div class="case-nav">
         <div class="container">

@@ -263,68 +263,6 @@ nav ul.nav-links a:hover { color: var(--accent); }
     color: var(--muted);
 }
 
-.work-list { display: flex; flex-direction: column; }
-
-.work-item {
-    display: grid;
-    grid-template-columns: 4rem 1fr 240px auto;
-    gap: 2rem;
-    align-items: center;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--border);
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-.work-item:last-child { border-bottom: none; }
-.work-item:hover .work-title { color: var(--accent); }
-.work-item:hover .work-arrow { transform: translate(4px, -4px); color: var(--accent); }
-
-.work-number {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    letter-spacing: 0.06em;
-    color: var(--border);
-    padding-top: 0.3rem;
-}
-
-.work-title {
-    font-family: var(--font-display);
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    letter-spacing: 0.04em;
-    color: var(--white);
-    line-height: 1;
-    margin-bottom: 0.75rem;
-    transition: color 0.2s ease;
-}
-
-.work-desc {
-    font-size: 0.93rem;
-    color: var(--muted);
-    line-height: 1.6;
-    max-width: 560px;
-    margin-bottom: 1rem;
-}
-
-.work-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-.work-tag {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    padding: 0.2rem 0.6rem;
-}
-
-.work-arrow {
-    font-size: 1.2rem;
-    color: var(--border);
-    transition: transform 0.2s ease, color 0.2s ease;
-    padding-top: 0.4rem;
-}
-
 /* =====================================================
    HOMEPAGE — CONTACT
    ===================================================== */
@@ -384,42 +322,9 @@ nav ul.nav-links a:hover { color: var(--accent); }
     border-bottom: 1px solid var(--border);
 }
 
-.about-hero-inner {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 var(--gutter);
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 4rem;
-    align-items: start;
-}
-
-.about-hero-text {
-    padding-top: 0.5rem;
-}
-
-.about-hero-photo {
-    width: 280px;
-    height: 360px;
-    overflow: hidden;
-    flex-shrink: 0;
-    border-top: 3px solid var(--accent);
-    border-left: 1px solid var(--border);
-    border-right: none;
-    border-bottom: none;
-}
-
-.about-hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-}
-
 .about-hero h1 {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 6vw, 6rem);
+    font-size: clamp(4rem, 8vw, 8rem);
     letter-spacing: 0.02em;
     color: var(--white);
     line-height: 0.95;
@@ -431,19 +336,8 @@ nav ul.nav-links a:hover { color: var(--accent); }
 .about-hero .lead {
     font-size: 1.1rem;
     color: var(--dim);
-    max-width: 560px;
+    max-width: 600px;
     line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-    .about-hero-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    .about-hero-photo {
-        width: 100%;
-        height: 260px;
-    }
 }
 
 .about-body { padding: 60px 0 80px; }
@@ -798,7 +692,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
     text-align: center;
 }
 
-.research-method h4 {
+.research-method h3 {
     font-family: var(--font-display);
     font-size: 1.1rem;
     letter-spacing: 0.04em;
@@ -844,7 +738,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 }
 
 .data-view { background: var(--mid); border: 1px solid var(--teal); padding: 1rem; text-align: center; }
-.data-view h5 { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.06em; color: var(--teal); margin-bottom: 0.35rem; }
+.data-view h4 { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.06em; color: var(--teal); margin-bottom: 0.35rem; }
 .data-view p  { font-size: 0.78rem; color: var(--muted); margin: 0; }
 
 /* =====================================================
@@ -938,8 +832,8 @@ nav ul.nav-links a:hover { color: var(--accent); }
     .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
     .stat-item:last-child { border-bottom: none; }
 
-    .work-item { grid-template-columns: 2.5rem 1fr; }
-    .work-arrow { display: none; }
+    
+    
 
     .two-column  { grid-template-columns: 1fr; }
     .comparison  { grid-template-columns: 1fr; }
@@ -962,20 +856,6 @@ nav ul.nav-links a:hover { color: var(--accent); }
 .case-studies {
     padding: 80px 0;
     border-bottom: 1px solid var(--border);
-}
-
-.section-title {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-}
-
-.section-subtitle {
-    font-size: 0.9rem;
-    color: var(--muted);
-    margin-bottom: 0;
 }
 
 .case-grid {
@@ -1007,15 +887,6 @@ nav ul.nav-links a:hover { color: var(--accent); }
     transition: transform 0.4s ease;
 }
 
-.case-image {
-    height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-}
-
 .case-image svg {
     width: 100%;
     height: 100%;
@@ -1023,9 +894,6 @@ nav ul.nav-links a:hover { color: var(--accent); }
 }
 
 .case-image.survivor      { background: #1a0a0a; }
-.case-image.skills        { background: #0a1a18; }
-.case-image.design-system { background: #f0f0f0; }
-.case-image.critterpedia  { background: #0a1a0a; }
 
 .case-content {
     padding: 1.75rem 2rem 2rem;
@@ -1120,20 +988,12 @@ nav ul.nav-links a:hover { color: var(--accent); }
 
 .about-text strong { color: var(--white); font-weight: 600; }
 
-.about .skills-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-}
-
 .skill-category {
     background: var(--dark);
     padding: 1.25rem;
 }
 
-.skill-category h4 {
+.skill-category h3 {
     font-family: var(--font-mono);
     font-size: 0.65rem;
     font-weight: 500;
@@ -1158,47 +1018,16 @@ nav ul.nav-links a:hover { color: var(--accent); }
     .about .skills-grid { grid-template-columns: 1fr; }
 }
 
-
-.case-image {
-    height: 260px;
-    display: block;
-    overflow: hidden;
-    position: relative;
-    background: #111;
-}
-
-.case-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-    transition: transform 0.4s ease;
-}
-
-.case-card:hover .case-image img {
-    transform: scale(1.03);
-}
+.case-card:hover 
 
 .case-image.survivor      { background: #1a0808; }
-.case-image.skills        { background: #0a1218; }
-.case-image.design-system { background: #f0f0f0; }
-.case-image.critterpedia  { background: #f5f0e0; }
+
 .case-image {
     height: 260px;
     display: block;
     overflow: hidden;
     position: relative;
     background: #111;
-}
-
-.case-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-    transition: transform 0.4s ease;
 }
 
 .case-card:hover .case-image img { transform: scale(1.03); }
@@ -1212,84 +1041,12 @@ nav ul.nav-links a:hover { color: var(--accent); }
    WORK LIST — THUMBNAILS
    ===================================================== */
 
-.work-thumb {
-    width: 240px;
-    height: 140px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    flex-shrink: 0;
-}
-
-.work-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-    transition: transform 0.4s ease;
-    filter: grayscale(20%);
-}
-
-.work-item:hover .work-thumb img {
-    transform: scale(1.05);
-    filter: grayscale(0%);
-}
+.work-item:hover 
 
 @media (max-width: 900px) {
-    .work-item {
-        grid-template-columns: 2.5rem 1fr;
-    }
-    .work-thumb { display: none; }
-    .work-arrow { display: none; }
-}
-
-/* =====================================================
-   CS-CAPTION — consistent 12px caption text
-   ===================================================== */
-
-/* =====================================================
-   CASE STUDY IMAGE CONTAINERS
-   ===================================================== */
-
-.cs-image-full {
-    width: 100%;
-    margin: 2rem 0;
-}
-
-.cs-image-full img {
-    width: 100%;
-    display: block;
-}
-
-.cs-image-contained {
-    margin: 2rem 0;
-    background: var(--dark);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-}
-
-.cs-image-contained img {
-    max-width: 100%;
-    display: block;
-}
-
-.cs-image-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.cs-image-row-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.cs-image-row-item img {
-    width: 100%;
-    display: block;
+    
+    
+    
 }
 
 /* =====================================================
@@ -1297,60 +1054,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
    ===================================================== */
 
 .cs-caption {
-    font-family: var(--font-body);
     font-size: 0.75rem;
     color: var(--dim);
     line-height: 1.6;
-    padding: 0.6rem var(--gutter) 0;
-    margin: 0;
-}
-
-.cs-image-contained .cs-caption {
-    padding: 0.6rem var(--gutter) 0;
-}
-
-/* =====================================================
-   CS-IMAGE-ROW-3 — 3-column layout for portrait phone screenshots
-   ===================================================== */
-
-.cs-image-row-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.cs-image-row-3 .cs-image-row-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.cs-image-row-3 .cs-image-row-item img {
-    width: 100%;
-    display: block;
-}
-
-/* Single portrait phone — centered, max-width constrained */
-.cs-image-phone {
-    margin: 2rem auto;
-    max-width: 320px;
-    display: flex;
-    flex-direction: column;
-}
-
-.cs-image-phone img {
-    width: 100%;
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .cs-image-row-3 {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .cs-image-row-3 {
-        grid-template-columns: 1fr;
-    }
 }
