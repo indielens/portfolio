@@ -1080,6 +1080,33 @@ nav ul.nav-links a:hover { color: var(--accent); }
 }
 
 /* =====================================================
+   CS-IMAGE-ROW — 2-column layout for side-by-side images
+   ===================================================== */
+
+.cs-image-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.cs-image-row-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-image-row-item img {
+    width: 100%;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .cs-image-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================================
    PORTRAIT PHONE IMAGE LAYOUTS
    ===================================================== */
 
