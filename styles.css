@@ -1080,6 +1080,47 @@ nav ul.nav-links a:hover { color: var(--accent); }
 }
 
 /* =====================================================
+   CS-IMAGE CONTAINERS
+   ===================================================== */
+
+.cs-image-full {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.cs-image-full img {
+    width: 100%;
+    display: block;
+}
+
+.cs-image-full .cs-caption,
+.cs-image-row .cs-caption,
+.cs-image-row-3 .cs-caption {
+    padding: 0.6rem var(--gutter) 0;
+}
+
+.cs-image-contained {
+    margin: 2rem auto;
+    max-width: 600px;
+    background: var(--dark);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cs-image-contained img {
+    max-width: 100%;
+    display: block;
+}
+
+.cs-image-contained .cs-caption {
+    padding: 0.6rem 0 0;
+    text-align: center;
+}
+
+/* =====================================================
    CS-IMAGE-ROW — 2-column layout for side-by-side images
    ===================================================== */
 
