@@ -73,13 +73,8 @@
             background: var(--dark);
             overflow: hidden;
             position: relative;
-            aspect-ratio: 3 / 2;
+            aspect-ratio: 4 / 3;
             cursor: pointer;
-        }
-
-        /* Portrait orientation override — taller cells */
-        .photo-item.portrait {
-            aspect-ratio: 2 / 3;
         }
 
         /* Wide/panoramic override */
@@ -197,6 +192,11 @@
 
         /* ── Responsive ── */
 
+        @media (max-width: 900px) {
+            .photo-grid { grid-template-columns: repeat(2, 1fr); }
+            .photo-item.wide { grid-column: span 2; }
+        }
+
         @media (max-width: 768px) {
             .photo-hero-inner {
                 flex-direction: column;
@@ -204,13 +204,11 @@
                 gap: 1.5rem;
             }
             .photo-intro { max-width: 100%; }
-            .photo-grid { grid-template-columns: repeat(2, 1fr); }
-            .photo-item.wide { grid-column: span 2; }
         }
 
         @media (max-width: 480px) {
             .photo-grid { grid-template-columns: 1fr; }
-            .photo-item.wide { grid-column: span 1; aspect-ratio: 3 / 2; }
+            .photo-item.wide { grid-column: span 1; }
         }
     </style>
 </head>
@@ -248,38 +246,68 @@
             <div class="container">
                 <div class="photo-grid" id="photo-grid">
 
-                    <!-- 
-                        HOW TO ADD PHOTOS:
-                        
-                        Standard landscape (3:2):
-                        <div class="photo-item" data-src="your-photo.jpg">
-                            <img src="your-photo.jpg" alt="Brief description" loading="lazy">
-                        </div>
 
-                        Portrait (2:3):
-                        <div class="photo-item portrait" data-src="your-photo.jpg">
-                            <img src="your-photo.jpg" alt="Brief description" loading="lazy">
-                        </div>
+                    <div class="photo-item" data-src="gt_02.JPG">
+                        <img src="gt_02.JPG" alt="Wide landscape — open sky, horizontal sweep" loading="lazy">
+                    </div>
+                    <div class="photo-item" data-src="gt_12.JPG">
+                        <img src="gt_12.JPG" alt="Street scene, horizontal" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_01.JPG">
+                        <img src="gt_01.JPG" alt="Figure, vertical frame" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_21.jpg">
+                        <img src="gt_21.jpg" alt="Street portrait, natural light" loading="lazy">
+                    </div>
+                    <div class="photo-item" data-src="gt_33.JPG">
+                        <img src="gt_33.JPG" alt="Expansive scene, wide frame" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_14.JPG">
+                        <img src="gt_14.JPG" alt="Vertical composition, strong light" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_30.JPG">
+                        <img src="gt_30.JPG" alt="Street scene, portrait frame" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_32.JPG">
+                        <img src="gt_32.JPG" alt="Urban geometry, vertical" loading="lazy">
+                    </div>
+                    <div class="photo-item" data-src="gt_17.JPG">
+                        <img src="gt_17.JPG" alt="Bright exterior, horizontal" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_19.JPG">
+                        <img src="gt_19.JPG" alt="Dark tones, portrait orientation" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_03.JPG">
+                        <img src="gt_03.JPG" alt="Intimate, close frame" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_35.JPG">
+                        <img src="gt_35.JPG" alt="Vertical street frame" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_36.JPG">
+                        <img src="gt_36.JPG" alt="Portrait orientation, strong shadow" loading="lazy">
+                    </div>
+                    <div class="photo-item" data-src="gt_13.jpg">
+                        <img src="gt_13.jpg" alt="Landscape frame, quieter moment" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_29.JPG">
+                        <img src="gt_29.JPG" alt="Brighter exposure, vertical" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_10.JPG">
+                        <img src="gt_10.JPG" alt="High contrast, portrait frame" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_16.JPG">
+                        <img src="gt_16.JPG" alt="Dark atmospheric vertical" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_28.JPG">
+                        <img src="gt_28.JPG" alt="Street, vertical frame" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_24.JPG">
+                        <img src="gt_24.JPG" alt="Portrait composition" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait" data-src="gt_23.JPG">
+                        <img src="gt_23.JPG" alt="Street detail, vertical" loading="lazy">
+                    </div>
 
-                        Wide/panoramic (spans 2 columns):
-                        <div class="photo-item wide" data-src="your-photo.jpg">
-                            <img src="your-photo.jpg" alt="Brief description" loading="lazy">
-                        </div>
-                    -->
-
-                    <!-- PLACEHOLDER SLOTS — replace each with a real photo div -->
-                    <div class="photo-item placeholder" data-slot="Photo 01"></div>
-                    <div class="photo-item placeholder" data-slot="Photo 02"></div>
-                    <div class="photo-item placeholder" data-slot="Photo 03"></div>
-                    <div class="photo-item placeholder" data-slot="Photo 04"></div>
-                    <div class="photo-item placeholder" data-slot="Photo 05"></div>
-                    <div class="photo-item placeholder" data-slot="Photo 06"></div>
-                    <div class="photo-item placeholder" data-slot="Photo 07"></div>
-                    <div class="photo-item placeholder" data-slot="Photo 08"></div>
-                    <div class="photo-item placeholder" data-slot="Photo 09"></div>
-                    <div class="photo-item placeholder" data-slot="Photo 10"></div>
-                    <div class="photo-item placeholder" data-slot="Photo 11"></div>
-                    <div class="photo-item placeholder" data-slot="Photo 12"></div>
 
                 </div>
             </div>
