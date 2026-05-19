@@ -20,6 +20,11 @@
                     <li><a href="index.html#contact">Contact</a></li>
                     <li><a href="photography.html">Photography</a></li>
                 </ul>
+                <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -320,5 +325,41 @@
             </div>
         </div>
     </div>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile-menu" id="nav-mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+        <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Close menu">Close ✕</button>
+        <a href="index.html#work" onclick="closeMobileMenu()">Work</a>
+        <a href="about.html" onclick="closeMobileMenu()">About</a>
+        <a href="index.html#contact" onclick="closeMobileMenu()">Contact</a>
+        <a href="photography.html" onclick="closeMobileMenu()">Photography</a>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('nav-hamburger');
+        const mobileMenu = document.getElementById('nav-mobile-menu');
+        const mobileClose = document.getElementById('nav-mobile-close');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            hamburger.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            mobileClose.focus();
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', openMobileMenu);
+        mobileClose.addEventListener('click', closeMobileMenu);
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeMobileMenu();
+        });
+    </script>
+
 </body>
 </html>

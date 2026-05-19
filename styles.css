@@ -1210,3 +1210,85 @@ nav ul.nav-links a:hover { color: var(--accent); }
     border-top: 1px solid var(--border);
     font-family: var(--font-body);
 }
+/* =====================================================
+   MOBILE NAV — HAMBURGER MENU
+   ===================================================== */
+
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+}
+
+.nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--white);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    transform-origin: center;
+}
+
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.nav-mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--black);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-mobile-menu.open {
+    display: flex;
+}
+
+.nav-mobile-menu a {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-mobile-menu a:hover {
+    color: var(--accent);
+}
+
+.nav-mobile-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-mobile-close:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .nav-hamburger { display: flex; }
+}
