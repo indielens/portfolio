@@ -402,8 +402,11 @@ nav ul.nav-links a:hover { color: var(--accent); }
     width: 280px;
     height: 360px;
     overflow: hidden;
-    border: 1px solid var(--border);
     flex-shrink: 0;
+    border-top: 3px solid var(--accent);
+    border-left: 1px solid var(--border);
+    border-right: none;
+    border-bottom: none;
 }
 
 .about-hero-photo img {
