@@ -428,10 +428,10 @@ nav ul.nav-links a:hover { color: var(--accent); }
     margin-bottom: 1rem;
 }
 
-.case-header.survivor     .case-eyebrow { color: var(--red); }
-.case-header.skills       .case-eyebrow { color: var(--teal); }
-.case-header.design-system .case-eyebrow { color: var(--purple); }
-.case-header.critterpedia  .case-eyebrow { color: var(--olive); }
+.case-header.survivor     .case-eyebrow { color: var(--accent); }
+.case-header.skills       .case-eyebrow { color: var(--accent); }
+.case-header.design-system .case-eyebrow { color: var(--accent); }
+.case-header.critterpedia  .case-eyebrow { color: var(--accent); }
 
 .case-header h1 {
     font-family: var(--font-display);
@@ -556,10 +556,10 @@ nav ul.nav-links a:hover { color: var(--accent); }
 
 .highlight-box p { margin-bottom: 0; font-size: 1rem; color: var(--dim); }
 
-.highlight-box.survivor      { border-color: var(--red); }
-.highlight-box.skills        { border-color: var(--teal); }
-.highlight-box.design-system { border-color: var(--purple); }
-.highlight-box.critterpedia  { border-color: var(--olive); }
+.highlight-box.survivor      { border-color: var(--accent); }
+.highlight-box.skills        { border-color: var(--accent); }
+.highlight-box.design-system { border-color: var(--accent); }
+.highlight-box.critterpedia  { border-color: var(--accent); }
 
 /* =====================================================
    TWO COLUMN
@@ -583,10 +583,10 @@ nav ul.nav-links a:hover { color: var(--accent); }
     text-transform: none;
 }
 
-.phase-card.survivor,     .insight-card.survivor     { border-top: 3px solid var(--red); }
-.phase-card.skills,       .insight-card.skills       { border-top: 3px solid var(--teal); }
-.phase-card.design-system,.insight-card.design-system{ border-top: 3px solid var(--purple); }
-.phase-card.critterpedia, .insight-card.critterpedia { border-top: 3px solid var(--olive); }
+.phase-card.survivor,     .insight-card.survivor     { border-top: 3px solid var(--accent); }
+.phase-card.skills,       .insight-card.skills       { border-top: 3px solid var(--accent); }
+.phase-card.design-system,.insight-card.design-system{ border-top: 3px solid var(--accent); }
+.phase-card.critterpedia, .insight-card.critterpedia { border-top: 3px solid var(--accent); }
 
 /* =====================================================
    RESULTS GRID
@@ -606,10 +606,10 @@ nav ul.nav-links a:hover { color: var(--accent); }
     text-align: center;
 }
 
-.result-card.survivor     { border-top: 3px solid var(--red); }
-.result-card.skills       { border-top: 3px solid var(--teal); }
-.result-card.design-system{ border-top: 3px solid var(--purple); }
-.result-card.critterpedia { border-top: 3px solid var(--olive); }
+.result-card.survivor     { border-top: 3px solid var(--accent); }
+.result-card.skills       { border-top: 3px solid var(--accent); }
+.result-card.design-system{ border-top: 3px solid var(--accent); }
+.result-card.critterpedia { border-top: 3px solid var(--accent); }
 
 .result-number {
     font-family: var(--font-display);
@@ -619,10 +619,10 @@ nav ul.nav-links a:hover { color: var(--accent); }
     margin-bottom: 0.4rem;
 }
 
-.result-number.survivor      { color: var(--red); }
-.result-number.skills        { color: var(--teal); }
-.result-number.design-system { color: var(--purple); }
-.result-number.critterpedia  { color: var(--olive); }
+.result-number.survivor      { color: var(--accent); }
+.result-number.skills        { color: var(--accent); }
+.result-number.design-system { color: var(--accent); }
+.result-number.critterpedia  { color: var(--accent); }
 
 .result-icon { font-size: 2rem; margin-bottom: 0.75rem; }
 
@@ -645,9 +645,9 @@ nav ul.nav-links a:hover { color: var(--accent); }
 .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
 
 .before, .after { padding: 1.5rem; background: var(--dark); border: 1px solid var(--border); }
-.before { border-left: 3px solid var(--red); }
+.before { border-left: 3px solid var(--accent); }
 .after  { border-left: 3px solid #2a7a4f; }
-.before h4 { color: var(--red); }
+.before h4 { color: var(--accent); }
 .after  h4 { color: #2a7a4f; }
 
 /* =====================================================
@@ -664,11 +664,11 @@ nav ul.nav-links a:hover { color: var(--accent); }
 .problem-card {
     background: var(--dark);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--red);
+    border-left: 3px solid var(--accent);
     padding: 1.5rem;
 }
 
-.problem-card h4 { color: var(--red); }
+.problem-card h4 { color: var(--accent); }
 
 .problem-card .impact {
     background: var(--mid);
@@ -701,7 +701,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
 .research-method {
     background: var(--dark);
     border: 1px solid var(--border);
-    border-top: 3px solid var(--purple);
+    border-top: 3px solid var(--accent);
     padding: 1.5rem;
     text-align: center;
 }
@@ -724,12 +724,12 @@ nav ul.nav-links a:hover { color: var(--accent); }
 
 .gaming-section {
     background: var(--dark);
-    border-left: 3px solid var(--teal);
+    border-left: 3px solid var(--accent);
     padding: 1.75rem 2rem;
     margin: 2rem 0;
 }
 
-.gaming-section h3 { color: var(--teal); margin-top: 0; }
+.gaming-section h3 { color: var(--accent); margin-top: 0; }
 
 .data-structure { background: var(--dark); border: 1px solid var(--border); padding: 1.75rem; margin: 2rem 0; }
 
@@ -751,8 +751,8 @@ nav ul.nav-links a:hover { color: var(--accent); }
     margin-top: 1rem;
 }
 
-.data-view { background: var(--mid); border: 1px solid var(--teal); padding: 1rem; text-align: center; }
-.data-view h4 { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.06em; color: var(--teal); margin-bottom: 0.35rem; }
+.data-view { background: var(--mid); border: 1px solid var(--accent); padding: 1rem; text-align: center; }
+.data-view h4 { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 0.35rem; }
 .data-view p  { font-size: 0.78rem; color: var(--muted); margin: 0; }
 
 /* =====================================================
@@ -1329,4 +1329,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
         font-size: clamp(2.5rem, 12vw, 5rem);
     }
 }
+.case-image.date-picker   { background: #0e0e12; }
+
+.case-image.color-system  { background: #0a0a10; }
 .case-image.date-picker   { background: #0e0e12; }
