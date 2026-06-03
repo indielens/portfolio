@@ -10,6 +10,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script>
+        // ── PASSWORD GATE ──────────────────────────────────────────
+        // Change "kerning-is-not-tracking" to your preferred password.
+        // Users enter once per browser session — sessionStorage handles the rest.
+        (function() {
+            var PASSWORD = "kerning-is-not-tracking";
+            var KEY      = "gt_portfolio_access";
+            if (sessionStorage.getItem(KEY) !== "granted") {
+                var attempt = prompt("Password required:");
+                if (attempt === PASSWORD) {
+                    sessionStorage.setItem(KEY, "granted");
+                } else {
+                    document.body.innerHTML = "";
+                    alert("Incorrect password.");
+                    location.reload();
+                }
+            }
+        })();
+        // ───────────────────────────────────────────────────────────
+    </script>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <nav role="navigation" aria-label="Main navigation">
