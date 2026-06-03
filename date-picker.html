@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker Redesign - Case Study | Grant Thomas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .case-header.date-picker .case-eyebrow { color: var(--accent); }
+        .highlight-box.date-picker   { border-color: var(--accent); }
+        .phase-card.date-picker,
+        .insight-card.date-picker    { border-top: 3px solid var(--accent); }
+        .result-card.date-picker     { border-top: 3px solid var(--accent); }
+        .result-number.date-picker   { color: var(--accent); }
+        .skill-tag.date-picker:hover { border-color: var(--accent); color: var(--accent); }
+
+        .problem-area {
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--accent);
+            padding: 1.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .problem-area-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .problem-area-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            letter-spacing: 0.04em;
+            color: var(--accent);
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .problem-area-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            letter-spacing: 0.04em;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .problem-meta {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-meta-label {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .problem-meta-value {
+            font-size: 0.9rem;
+            color: var(--dim);
+            line-height: 1.5;
+        }
+
+        .tradeoff-card {
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--muted);
+            padding: 1.5rem 1.75rem;
+            margin: 1.25rem 0;
+        }
+
+        .tradeoff-label {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .tradeoff-card p {
+            font-size: 0.95rem;
+            color: var(--dim);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .problem-meta { grid-template-columns: 1fr; gap: 0.75rem; }
+            .problem-area-number { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Grant Thomas</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#work">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="photography.html">Photography</a></li>
+                </ul>
+                <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <div class="case-header date-picker">
+            <div class="container">
+                <a href="index.html" class="back-link">← Back to Portfolio</a>
+                <p class="case-eyebrow">Component Redesign · Design Systems · Accessibility</p>
+                <h1>Date Picker Redesign</h1>
+                <p class="subtitle">A systematic audit and redesign of an enterprise date picker component — addressing alignment, state inconsistencies, and usability gaps across a global design system.</p>
+            </div>
+        </div>
+
+        <div class="overview">
+            <div class="container">
+                <div class="overview-grid">
+                    <div class="overview-content">
+                        <h2>Project Overview</h2>
+                        <p>Following a visual refresh of the enterprise design system, I conducted a thorough audit of the date picker component and identified four distinct categories of problems: alignment issues, state inconsistencies, an incorrectly styled button, and several usability gaps.</p>
+                        <p>What started as a cleanup became a more considered redesign — balancing visual polish, accessibility standards, and real-world development constraints. The result shipped to production and applied across every brand in the system.</p>
+                    </div>
+                    <div class="project-details">
+                        <h3>Project Details</h3>
+                        <div class="detail-item">
+                            <div class="detail-label">Role</div>
+                            <div class="detail-value">Solo UX Designer — audit, redesign, documentation, dev handoff</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Collaborators</div>
+                            <div class="detail-value">Development team, Accessibility team, Design System PO</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Timeline</div>
+                            <div class="detail-value">~2 weeks from audit to production</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Tools</div>
+                            <div class="detail-value">Figma</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Impact</div>
+                            <div class="detail-value">Shipped to production across all brands in the design system</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary image -->
+        <div class="cs-image-full">
+            <img src="date-picker-summary.png" alt="Side-by-side comparison of the date picker before and after the redesign">
+            <p class="cs-caption">Before and after: the redesigned date picker component</p>
+        </div>
+
+        <div class="container">
+
+            <section class="content-section">
+                <h2>How We Got Here</h2>
+                <p>The design system had recently gone through a visual refresh — updated typography, color tokens, and component styles across the board. After the refresh landed, I ran a component-by-component audit to identify anything that hadn't carried through cleanly.</p>
+                <p>The date picker surfaced four distinct problem categories. None were catastrophic in isolation, but together they created a component that felt misaligned with the rest of the refreshed system — both visually and behaviorally.</p>
+
+                <div class="highlight-box date-picker">
+                    <p><strong>Scope:</strong> Because this component lives in the core design system, every fix applied immediately across all brands and products. There was no partial rollout — getting it right mattered from the start.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>The Problems</h2>
+                <p>Four problem categories were identified and addressed. Each is documented below with the specific issues found, their impact, and how they were resolved.</p>
+
+                <!-- Problem 1 -->
+                <div class="problem-area">
+                    <div class="problem-area-header">
+                        <span class="problem-area-number">01</span>
+                        <span class="problem-area-title">Alignment Issues</span>
+                    </div>
+                    <div class="problem-meta">
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Problem</div>
+                            <div class="problem-meta-value">Multiple alignment and visual balance issues throughout the component — unbalanced spacing between the input field and calendar, misaligned navigation arrows, unbalanced typography in the month/year header, and a left-aligned "Today" button creating visual asymmetry.</div>
+                        </div>
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Impact</div>
+                            <div class="problem-meta-value">Inconsistencies created visual distractions and an unprofessional appearance, undermining the credibility of the refreshed design system.</div>
+                        </div>
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Solution</div>
+                            <div class="problem-meta-value">Tightened spacing throughout, corrected typographic alignment in the header, balanced the field and button layout, and centered the "Today" button to create visual equilibrium across the component.</div>
+                        </div>
+                    </div>
+                    <div class="cs-image-full">
+                        <img src="date-picker-alignment.png" alt="Annotated diagram showing alignment issues in the original date picker and the corrected version">
+                        <p class="cs-caption">Alignment issues identified during audit (left) and corrected in the redesign (right)</p>
+                    </div>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="problem-area">
+                    <div class="problem-area-header">
+                        <span class="problem-area-number">02</span>
+                        <span class="problem-area-title">State Inconsistencies</span>
+                    </div>
+                    <div class="problem-meta">
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Problem</div>
+                            <div class="problem-meta-value">Interactive states within the component were either missing or unbranded — the calendar icon button had no selected state, hover states on selected dates were absent, and focus indicators on selected items were difficult to perceive.</div>
+                        </div>
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Impact</div>
+                            <div class="problem-meta-value">Inconsistent states created a disjointed experience and fell short of accessibility expectations, particularly around focus visibility and keyboard navigation feedback.</div>
+                        </div>
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Solution</div>
+                            <div class="problem-meta-value">Designed and documented all missing states — selected, hover on selected, and focus — using branded color tokens consistent with other components across the system.</div>
+                        </div>
+                    </div>
+                    <div class="cs-image-full">
+                        <img src="date-picker-states.png" alt="Component states before and after — showing missing states filled in with branded design">
+                        <p class="cs-caption">Missing and unbranded states identified and corrected</p>
+                    </div>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="problem-area">
+                    <div class="problem-area-header">
+                        <span class="problem-area-number">03</span>
+                        <span class="problem-area-title">Link-Styled Button</span>
+                    </div>
+                    <div class="problem-meta">
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Problem</div>
+                            <div class="problem-meta-value">The "Today" shortcut was styled as a text link using an outdated, off-brand color. Link styling signals navigation, not action — which misrepresents what this control actually does.</div>
+                        </div>
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Impact</div>
+                            <div class="problem-meta-value">Usability confusion around the control's affordance, and visual inconsistency with how actions are styled elsewhere in the design system.</div>
+                        </div>
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Solution</div>
+                            <div class="problem-meta-value">Changed the "Today" control to a ghost button using the system's current brand color, correctly communicating its function as an action and aligning with the broader component library.</div>
+                        </div>
+                    </div>
+                    <div class="cs-image-full">
+                        <img src="date-picker-button.png" alt="The Today button before (link style) and after (ghost button style)">
+                        <p class="cs-caption">"Today" control changed from link styling to a properly styled ghost button</p>
+                    </div>
+                </div>
+
+                <!-- Problem 4 -->
+                <div class="problem-area">
+                    <div class="problem-area-header">
+                        <span class="problem-area-number">04</span>
+                        <span class="problem-area-title">Usability Issues</span>
+                    </div>
+                    <div class="problem-meta">
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Problem</div>
+                            <div class="problem-meta-value">The date format hint was culturally specific to English/American conventions (MM/DD/YYYY), limiting international usability. The year input field also served only a narrow use case in its existing form.</div>
+                        </div>
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Impact</div>
+                            <div class="problem-meta-value">The component wasn't flexible enough to serve the system's international audience without creating confusion around date entry conventions.</div>
+                        </div>
+                        <div class="problem-meta-item">
+                            <div class="problem-meta-label">Solution</div>
+                            <div class="problem-meta-value">Made the date format display clearer and more flexible. Added variant functionality to the year field to accommodate a wider range of use cases.</div>
+                        </div>
+                    </div>
+                    <div class="cs-image-full">
+                        <img src="date-picker-usability.png" alt="Date format and year field updates shown in the redesigned component">
+                        <p class="cs-caption">Date format clarified and year field expanded with variant functionality</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Constraints &amp; Tradeoffs</h2>
+                <p>Not every identified improvement made it into the shipped component. Two items were scoped out due to development complexity and timeline, and moved into documentation instead — a deliberate decision made in collaboration with the development team.</p>
+
+                <div class="tradeoff-card">
+                    <div class="tradeoff-label">Moved to documentation — development complexity</div>
+                    <p>The date hint field is currently a custom field and not programmatically generated. Full internationalization of date formats was prohibitively complex to implement within the release timeline. Rather than delay the core improvements, we documented the constraint and provided guidance for teams working across locales.</p>
+                </div>
+
+                <div class="tradeoff-card">
+                    <div class="tradeoff-label">Reconsidered — accessibility edge case</div>
+                    <p>We initially explored removing the previous/next month navigation arrows, citing accessibility concerns around redundant controls. However, depending on how a month falls — particularly when the last day lands on a Saturday — users wouldn't be guaranteed visibility of adjacent months in the calendar grid. The arrows were retained to preserve navigability across all calendar configurations.</p>
+                </div>
+
+                <div class="highlight-box date-picker">
+                    <p><strong>Design principle at work:</strong> Moving items to documentation rather than blocking a release is a legitimate product decision — it keeps real improvements shipping while being transparent about known limitations. The goal is progress, not perfection held hostage by edge cases.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Outcome</h2>
+                <p>The redesigned date picker shipped to production within roughly two weeks of the audit, applying across every brand in the design system simultaneously. The component now aligns with the visual standards of the refreshed system, meets accessibility expectations for interactive states, and communicates its controls with appropriate affordances.</p>
+
+                <div class="results-grid">
+                    <div class="result-card date-picker">
+                        <div class="result-number date-picker">4</div>
+                        <div class="result-label">Problem Categories</div>
+                        <div class="result-description">Alignment, states, button styling, and usability — all addressed in a single release</div>
+                    </div>
+                    <div class="result-card date-picker">
+                        <div class="result-number date-picker">~2wk</div>
+                        <div class="result-label">Audit to Production</div>
+                        <div class="result-description">From initial audit findings to shipped component</div>
+                    </div>
+                    <div class="result-card date-picker">
+                        <div class="result-number date-picker">All</div>
+                        <div class="result-label">Brands Impacted</div>
+                        <div class="result-description">Improvements applied universally across the entire design system</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Skills Demonstrated</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag date-picker">Component Audit</div>
+                    <div class="skill-tag date-picker">Design Systems</div>
+                    <div class="skill-tag date-picker">Accessibility</div>
+                    <div class="skill-tag date-picker">Interaction Design</div>
+                    <div class="skill-tag date-picker">State Design</div>
+                    <div class="skill-tag date-picker">Dev Handoff</div>
+                    <div class="skill-tag date-picker">Figma</div>
+                    <div class="skill-tag date-picker">Documentation</div>
+                    <div class="skill-tag date-picker">Constraint Management</div>
+                    <div class="skill-tag date-picker">Stakeholder Collaboration</div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div class="case-nav">
+        <div class="container">
+            <h3>View More Case Studies</h3>
+            <div class="case-nav-links">
+                <a href="survivor-game.html" class="nav-link">Survivor Social Game</a>
+                <a href="skills-assessment.html" class="nav-link">Skills Assessment Tool</a>
+                <a href="design-system.html" class="nav-link">Design System Portal</a>
+                <a href="critterpedia.html" class="nav-link">Critterpedia</a>
+                <a href="index.html" class="nav-link">Back to Portfolio</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile-menu" id="nav-mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+        <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Close menu">Close ✕</button>
+        <a href="index.html#work" onclick="closeMobileMenu()">Work</a>
+        <a href="about.html" onclick="closeMobileMenu()">About</a>
+        <a href="index.html#contact" onclick="closeMobileMenu()">Contact</a>
+        <a href="photography.html" onclick="closeMobileMenu()">Photography</a>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('nav-hamburger');
+        const mobileMenu = document.getElementById('nav-mobile-menu');
+        const mobileClose = document.getElementById('nav-mobile-close');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            hamburger.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            mobileClose.focus();
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', openMobileMenu);
+        mobileClose.addEventListener('click', closeMobileMenu);
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeMobileMenu();
+        });
+    </script>
+
+</body>
+</html>

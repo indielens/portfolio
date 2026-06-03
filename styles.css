@@ -1326,3 +1326,4 @@ nav ul.nav-links a:hover { color: var(--accent); }
         font-size: clamp(2.5rem, 12vw, 5rem);
     }
 }
+.case-image.date-picker   { background: #0e0e12; }
