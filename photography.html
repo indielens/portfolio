@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Street photography by Grant Thomas — inspired by Vivian Maier and Henri Cartier-Bresson.">
+    <meta property="og:title" content="Photography — Grant Thomas">
+    <meta property="og:description" content="Street photography inspired by Vivian Maier and Henri Cartier-Bresson.">
+    <meta property="og:type" content="website">
     <title>Photography — Grant Thomas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -213,134 +217,7 @@
     </style>
 </head>
 <body>
-    <!-- ── PASSWORD GATE ─────────────────────────────────────────── -->
-    <!-- Change "kerning-is-not-tracking" to your preferred password. -->
-    <style>
-        #gt-gate {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background: #0a0a0a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'DM Sans', sans-serif;
-        }
-        #gt-gate-inner {
-            width: 100%;
-            max-width: 420px;
-            padding: 0 24px;
-        }
-        #gt-gate-logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.6rem;
-            letter-spacing: 0.08em;
-            color: #f5f2ee;
-            margin-bottom: 2.5rem;
-        }
-        #gt-gate-label {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.68rem;
-            font-weight: 500;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: #666666;
-            margin-bottom: 0.75rem;
-        }
-        #gt-gate-input {
-            width: 100%;
-            background: #111111;
-            border: 1px solid #2e2e2e;
-            color: #f5f2ee;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.95rem;
-            padding: 0.85rem 1rem;
-            outline: none;
-            margin-bottom: 0.75rem;
-            transition: border-color 0.2s ease;
-            box-sizing: border-box;
-        }
-        #gt-gate-input:focus {
-            border-color: #e8d5b0;
-        }
-        #gt-gate-input::placeholder {
-            color: #444444;
-        }
-        #gt-gate-btn {
-            width: 100%;
-            background: #e8d5b0;
-            color: #0a0a0a;
-            border: none;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            padding: 0.85rem 1rem;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-        #gt-gate-btn:hover {
-            background: #f5f2ee;
-        }
-        #gt-gate-error {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.68rem;
-            letter-spacing: 0.08em;
-            color: #c94a2a;
-            margin-top: 0.6rem;
-            min-height: 1em;
-            display: none;
-        }
-    </style>
-    <div id="gt-gate">
-        <div id="gt-gate-inner">
-            <div id="gt-gate-logo">Grant Thomas</div>
-            <div id="gt-gate-label">Password Required</div>
-            <input id="gt-gate-input" type="password" placeholder="Enter password" autocomplete="current-password">
-            <button id="gt-gate-btn">Enter</button>
-            <div id="gt-gate-error">Incorrect password — try again.</div>
-        </div>
-    </div>
-    <script>
-        (function() {
-            var PASSWORD = "kerning-is-not-tracking";
-            var KEY      = "gt_portfolio_access";
-            var gate     = document.getElementById("gt-gate");
 
-            // Already authenticated this session — hide gate immediately
-            if (sessionStorage.getItem(KEY) === "granted") {
-                gate.style.display = "none";
-                return;
-            }
-
-            // Hide page content behind the gate
-            document.body.style.overflow = "hidden";
-
-            function attempt() {
-                var val = document.getElementById("gt-gate-input").value;
-                if (val === PASSWORD) {
-                    sessionStorage.setItem(KEY, "granted");
-                    gate.style.opacity = "0";
-                    gate.style.transition = "opacity 0.3s ease";
-                    document.body.style.overflow = "";
-                    setTimeout(function() { gate.remove(); }, 300);
-                } else {
-                    var err = document.getElementById("gt-gate-error");
-                    err.style.display = "block";
-                    var input = document.getElementById("gt-gate-input");
-                    input.value = "";
-                    input.focus();
-                }
-            }
-
-            document.getElementById("gt-gate-btn").addEventListener("click", attempt);
-            document.getElementById("gt-gate-input").addEventListener("keydown", function(e) {
-                if (e.key === "Enter") attempt();
-            });
-        })();
-    </script>
-    <!-- ─────────────────────────────────────────────────────────── -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <nav role="navigation" aria-label="Main navigation">
@@ -542,6 +419,7 @@
         <a href="about.html" onclick="closeMobileMenu()">About</a>
         <a href="index.html#contact" onclick="closeMobileMenu()">Contact</a>
         <a href="photography.html" onclick="closeMobileMenu()">Photography</a>
+        <a href="https://www.linkedin.com/in/grantrileythomas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
 
     <script>
