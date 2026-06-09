@@ -187,24 +187,40 @@
             </div>
         </div>
 
-        <div class="cs-image-full">
-            <img src="CS_ColorPreview.png" alt="Full Lilly Design System color library — complete tonal palette across all brand hues">
-            <p class="cs-caption">The full LDS color library — a tonal palette spanning every brand hue, built on the HCT color space</p>
-        </div>
 
-        <!-- ── W+K PLACEHOLDER ───────────────────────────────────── -->
+        <!-- ── W+K SECTION ────────────────────────────────────────── -->
         <section class="content-section"><div class="container">
-            <h2>When the Agency Brings a Red You Can't Ship</h2>
-            <p>Wieden+Kennedy proposed a bold new brand red as part of a corporate identity refresh. The color was distinctive, confident, and on-brand. It also failed WCAG accessibility contrast requirements — and sat uncomfortably close to a major competitor's signature red.</p>
-            <p>Rather than simply rejecting the proposal, I used HCT to demonstrate exactly why it failed and to propose an alternative that preserved the competitive differentiation they were going for. The conversation wasn't about overriding the agency — it was about giving them data to make a better call.</p>
+            <h2>From Print Palette to Digital System</h2>
+            <p>The brand's existing palette was designed for print — rich, saturated colors that looked authoritative on paper and in marketing materials. The agency had done their job well. But print colors don't translate directly to screens. What reads as bold in a magazine fails contrast requirements on a button, and what feels differentiated in a campaign can blur uncomfortably close to a competitor's identity in a digital interface.</p>
+            <p>The full brand palette needed to be converted to digital equivalents — close enough to the originals to maintain brand recognition, but adjusted for the accessibility and visual requirements of a large-scale design system.</p>
 
-            <div class="highlight-box color-system">
-                <p><strong>The outcome:</strong> A new brand red that passed accessibility standards, maintained visual distance from the competitor's palette, and held enough similarity to the original proposal that the agency could stand behind it. The Lilly logo retained its original <strong>#E1251A</strong>.</p>
+            <div class="cs-image-full">
+                <img src="CS_W_K2.png" alt="Brand print palette compared to the converted brand digital palette">
+                <p class="cs-caption">Brand print palette (top) vs. brand digital palette (bottom) — each color converted for screen while preserving brand identity</p>
             </div>
 
-            <!-- REPLACE: Add W+K story images here when ready -->
-            <div class="cs-image-placeholder" style="background: var(--dark); border: 1px dashed var(--border); padding: 3rem; text-align: center; margin-top: 2rem;">
-                <p style="font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);">W+K story images coming</p>
+            <h3>The Red Problem</h3>
+            <p>The brand red was the most contested color in the system. The agency's proposed digital red failed WCAG accessibility contrast requirements — and several iterations of it sat too close in hue to a major competitor's signature brand color. This wasn't a minor tweak; it was a back-and-forth process of proposal, evaluation, and refinement.</p>
+            <p>Each candidate was tested against accessibility standards and evaluated for competitive differentiation. Going lighter in the tonal space to get closer to the original brand red reintroduced accessibility failures. The resolution was to go one tonal step darker than the previously proposed red — accessible, differentiated, and close enough to the original brand identity that it could be defended.</p>
+
+            <div class="cs-image-full">
+                <img src="CS_W_K.png" alt="Comparison of brand red candidates — showing inaccessible options, the J&J conflict, and the final approved color">
+                <p class="cs-caption">The red iteration process — from the original inaccessible brand red through multiple candidates to the final approved digital Lilly Red (#D31710)</p>
+            </div>
+
+            <div class="highlight-box color-system">
+                <p><strong>The outcome:</strong> A digital brand red that passed WCAG, maintained clear distance from the competitor's palette, and preserved enough of the original brand character that the agency could stand behind it. The Lilly logo retained its original <strong>#E1251A</strong> — the system red and the logo red serve different functions and don't compete.</p>
+            </div>
+        </div></section>
+
+        <section class="content-section"><div class="container">
+            <h2>Mapping the Full Red Spectrum</h2>
+            <p>Once the digital brand red was resolved, it needed to be mapped across the complete tonal scale — from near-black at tone 9 through to near-white at tone 95. This scale powers every component state in the system: dark backgrounds, light backgrounds, hover states, focus rings, disabled states, and everything in between.</p>
+            <p>The HCT framework made this tractable. With hue held constant at 27, the full tonal range was generated perceptually — each step representing a proportional change in perceived lightness rather than a mathematical one. The result is a scale where the accessible range is clearly bounded: tone 24 and below works with light text, tone 72 and above works with dark text.</p>
+
+            <div class="cs-image-full">
+                <img src="CS_LillyRed.png" alt="Full tonal spectrum of the brand red — from darkest to lightest, with accessible ranges marked">
+                <p class="cs-caption">The complete Lilly Red tonal scale — accessible ranges clearly defined for both light and dark text combinations</p>
             </div>
         </div></section>
 
@@ -258,6 +274,11 @@
             <h2>The System That Came Out the Other Side</h2>
             <p>The result was a complete tonal color library spanning every brand hue — each one mapped, stepped, and validated for accessibility. The framework wasn't built for one brand. It was built to onboard any brand in the portfolio by dropping their hues into the same stepping system and generating a compliant, consistent palette automatically.</p>
             <p>Component states across the entire design system — hover, active, focus, disabled — are now driven by predictable tonal steps rather than ad hoc color decisions. Designers and developers work from the same source of truth. New brands don't start from scratch; they inherit the infrastructure.</p>
+
+            <div class="cs-image-full">
+                <img src="CS_ColorPreview.png" alt="Full Lilly Design System color library — complete tonal palette across all brand hues">
+                <p class="cs-caption">The complete LDS color library — every brand hue mapped, stepped, and validated across the full tonal range</p>
+            </div>
 
             <div class="results-grid">
                 <div class="result-card color-system">
