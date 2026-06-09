@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Color System Built to Scale Across a Global Brand Portfolio — Grant Thomas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ── PASSWORD GATE ─────────────────────────────────────────── -->
+    <!-- Change "kerning-is-not-tracking" to your preferred password. -->
+    <style>
+        #gt-gate {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Sans', sans-serif;
+        }
+        #gt-gate-inner {
+            width: 100%;
+            max-width: 420px;
+            padding: 0 24px;
+        }
+        #gt-gate-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 0.08em;
+            color: #f5f2ee;
+            margin-bottom: 2.5rem;
+        }
+        #gt-gate-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #666666;
+            margin-bottom: 0.75rem;
+        }
+        #gt-gate-input {
+            width: 100%;
+            background: #111111;
+            border: 1px solid #2e2e2e;
+            color: #f5f2ee;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.95rem;
+            padding: 0.85rem 1rem;
+            outline: none;
+            margin-bottom: 0.75rem;
+            transition: border-color 0.2s ease;
+            box-sizing: border-box;
+        }
+        #gt-gate-input:focus { border-color: #e8d5b0; }
+        #gt-gate-input::placeholder { color: #444444; }
+        #gt-gate-btn {
+            width: 100%;
+            background: #e8d5b0;
+            color: #0a0a0a;
+            border: none;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.85rem 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        #gt-gate-btn:hover { background: #f5f2ee; }
+        #gt-gate-error {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            color: #c94a2a;
+            margin-top: 0.6rem;
+            min-height: 1em;
+            display: none;
+        }
+    </style>
+    <div id="gt-gate">
+        <div id="gt-gate-inner">
+            <div id="gt-gate-logo">Grant Thomas</div>
+            <div id="gt-gate-label">Password Required</div>
+            <input id="gt-gate-input" type="password" placeholder="Enter password" autocomplete="current-password">
+            <button id="gt-gate-btn">Enter</button>
+            <div id="gt-gate-error">Incorrect password — try again.</div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            var PASSWORD = "kerning-is-not-tracking";
+            var KEY      = "gt_portfolio_access";
+            var gate     = document.getElementById("gt-gate");
+            if (sessionStorage.getItem(KEY) === "granted") {
+                gate.style.display = "none";
+                return;
+            }
+            document.body.style.overflow = "hidden";
+            function attempt() {
+                var val = document.getElementById("gt-gate-input").value;
+                if (val === PASSWORD) {
+                    sessionStorage.setItem(KEY, "granted");
+                    gate.style.opacity = "0";
+                    gate.style.transition = "opacity 0.3s ease";
+                    document.body.style.overflow = "";
+                    setTimeout(function() { gate.remove(); }, 300);
+                } else {
+                    document.getElementById("gt-gate-error").style.display = "block";
+                    var input = document.getElementById("gt-gate-input");
+                    input.value = "";
+                    input.focus();
+                }
+            }
+            document.getElementById("gt-gate-btn").addEventListener("click", attempt);
+            document.getElementById("gt-gate-input").addEventListener("keydown", function(e) {
+                if (e.key === "Enter") attempt();
+            });
+        })();
+    </script>
+    <!-- ─────────────────────────────────────────────────────────── -->
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Grant Thomas</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#work">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="photography.html">Photography</a></li>
+                </ul>
+                <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <div class="case-header color-system">
+            <div class="container">
+                <a href="index.html" class="back-link">← Back to Portfolio</a>
+                <p class="case-eyebrow">Color Systems · Design Systems · Accessibility · Brand</p>
+                <h1>A Color System Built to Scale Across a Global Brand Portfolio</h1>
+                <p class="subtitle">HCT-based palette architecture designed for accessibility, built to maintain brand integrity, and deployed across a pharmaceutical brand family reaching millions of patients.</p>
+            </div>
+        </div>
+
+        <div class="overview">
+            <div class="container">
+                <div class="overview-grid">
+                    <div class="overview-content">
+                        <h2>Project Overview</h2>
+                        <p>A global pharmaceutical company's brand colors were designed for print. When it came time to build a scalable digital color system, those colors failed accessibility standards — and one high-profile brand red was flagged as too close to a major competitor's identity.</p>
+                        <p>Using HCT (Hue, Chroma, Tone) — a perceptually accurate color space that models how humans actually see color — I built a tonal palette framework that resolved both problems. The brand stayed recognizable. The system passed WCAG. And it scaled to every product in the portfolio.</p>
+                    </div>
+                    <div class="project-details">
+                        <h3>Project Details</h3>
+                        <div class="detail-item">
+                            <div class="detail-label">Role</div>
+                            <div class="detail-value">Lead Designer — color architecture, accessibility validation, system integration</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Collaborators</div>
+                            <div class="detail-value">Wieden+Kennedy, Accessibility team, Design System PO</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Tools</div>
+                            <div class="detail-value">Figma, HCT Color Picker Plugin, Material Color Utilities</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Impact</div>
+                            <div class="detail-value">WCAG-compliant palette deployed across entire design system and brand portfolio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cs-image-full">
+            <img src="CS_ColorPreview.png" alt="Full Lilly Design System color library — complete tonal palette across all brand hues">
+            <p class="cs-caption">The full LDS color library — a tonal palette spanning every brand hue, built on the HCT color space</p>
+        </div>
+
+        <!-- ── W+K PLACEHOLDER ───────────────────────────────────── -->
+        <section class="content-section"><div class="container">
+            <h2>When the Agency Brings a Red You Can't Ship</h2>
+            <p>Wieden+Kennedy proposed a bold new brand red as part of a corporate identity refresh. The color was distinctive, confident, and on-brand. It also failed WCAG accessibility contrast requirements — and sat uncomfortably close to a major competitor's signature red.</p>
+            <p>Rather than simply rejecting the proposal, I used HCT to demonstrate exactly why it failed and to propose an alternative that preserved the competitive differentiation they were going for. The conversation wasn't about overriding the agency — it was about giving them data to make a better call.</p>
+
+            <div class="highlight-box color-system">
+                <p><strong>The outcome:</strong> A new brand red that passed accessibility standards, maintained visual distance from the competitor's palette, and held enough similarity to the original proposal that the agency could stand behind it. The Lilly logo retained its original <strong>#E1251A</strong>.</p>
+            </div>
+
+            <!-- REPLACE: Add W+K story images here when ready -->
+            <div class="cs-image-placeholder" style="background: var(--dark); border: 1px dashed var(--border); padding: 3rem; text-align: center; margin-top: 2rem;">
+                <p style="font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);">W+K story images coming</p>
+            </div>
+        </div></section>
+
+        <section class="content-section"><div class="container">
+            <h2>Why HCT — and Why It Matters</h2>
+            <p>Traditional color spaces like HSL describe color mathematically, but they don't reflect how humans perceive it. Two colors at the same HSL lightness can look dramatically different in brightness. This creates a problem when you're trying to build a system where color relationships are predictable and accessible by design.</p>
+            <p>HCT — Hue, Chroma, Tone — is a perceptually uniform color space developed by Google as part of Material You. Tone corresponds to actual perceived lightness, which means you can step colors across a tonal scale and trust that each step will look like a proportional change to the human eye. For accessibility, this is the difference between guessing and knowing.</p>
+
+            <div class="highlight-box color-system">
+                <p><strong>The practical upshot:</strong> By working in HCT, we could take any brand color, map it to its correct position in the tonal scale, and generate accessible light and dark variants with confidence — without losing the hue or vibrancy that made the color feel on-brand.</p>
+            </div>
+        </div></section>
+
+        <section class="content-section"><div class="container">
+            <h2>Building the Digital Palette</h2>
+            <p>The brand's print palette was the starting point — not the destination. Print colors are designed for ink on paper, with different perceptual rules than light on a screen. The first task was converting those colors into their correct HCT equivalents and understanding where they sat in the tonal space.</p>
+            <p>Hue-matching within each color's own space was critical. Brand colors that appeared close in print sometimes diverged significantly in digital. By aligning them within the HCT framework, we created a palette where tonal transitions between shades feel seamless — colors relate to each other the way a system should, not the way a print swatch book does.</p>
+
+            <div class="cs-image-full">
+                <img src="CS_01.png" alt="HCT color picker showing candidate brand hues during the exploration phase">
+                <p class="cs-caption">Exploration phase — using the HCT color picker to analyze candidate hues and understand their position in the color space</p>
+            </div>
+
+            <div class="cs-image-full">
+                <img src="CS_02.png" alt="Brand hue grid showing tonal scales mapped across hue and tone axes">
+                <p class="cs-caption">Tonal mapping — plotting brand hues across the HCT grid to identify accessible tone values for each color family</p>
+            </div>
+        </div></section>
+
+        <section class="content-section"><div class="container">
+            <h2>Refining Lilly Red</h2>
+            <p>The brand's primary red presented the most nuanced challenge. A slight modification was needed to fit within the LDS color-stepping framework — the tonal scale used to generate component states like hover, active, focus, and disabled.</p>
+            <p>The original chroma values produced tonal steps that were inconsistent with the rest of the palette. By adjusting chroma while holding the hue constant, we arrived at a red that stepped cleanly through the scale, matched the visual weight of adjacent colors, and remained unmistakably on-brand.</p>
+
+            <div class="cs-image-full">
+                <img src="CS_03.png" alt="Side-by-side comparison of original and updated chroma values for the brand red">
+                <p class="cs-caption">Original vs. updated chroma — adjusting chroma while holding hue constant to produce consistent tonal steps</p>
+            </div>
+
+            <h3>Knowing When to Merge</h3>
+            <p>One of the less obvious decisions in building a tonal system is knowing when two steps are close enough to collapse into one. Adjacent tones that are perceptually indistinguishable create redundancy in the system — extra tokens that developers have to manage without any meaningful visual payoff.</p>
+            <p>Using HCT's perceptual accuracy, we were able to make this call with confidence rather than intuition. Where two tones were functionally equivalent to human perception, we merged them — simplifying the system without sacrificing fidelity.</p>
+
+            <div class="cs-image-full">
+                <img src="CS_04.png" alt="Final tone selection showing two tones merged into one step">
+                <p class="cs-caption">Confident tone consolidation — where perceptual difference was negligible, steps were merged to keep the system clean</p>
+            </div>
+        </div></section>
+
+        <section class="content-section"><div class="container">
+            <h2>The System That Came Out the Other Side</h2>
+            <p>The result was a complete tonal color library spanning every brand hue — each one mapped, stepped, and validated for accessibility. The framework wasn't built for one brand. It was built to onboard any brand in the portfolio by dropping their hues into the same stepping system and generating a compliant, consistent palette automatically.</p>
+            <p>Component states across the entire design system — hover, active, focus, disabled — are now driven by predictable tonal steps rather than ad hoc color decisions. Designers and developers work from the same source of truth. New brands don't start from scratch; they inherit the infrastructure.</p>
+
+            <div class="results-grid">
+                <div class="result-card color-system">
+                    <div class="result-number color-system">WCAG</div>
+                    <div class="result-label">Compliant</div>
+                    <div class="result-description">Every color in the system validated against accessibility contrast requirements</div>
+                </div>
+                <div class="result-card color-system">
+                    <div class="result-number color-system">All</div>
+                    <div class="result-label">Brands Served</div>
+                    <div class="result-description">One framework onboards every brand in the portfolio</div>
+                </div>
+                <div class="result-card color-system">
+                    <div class="result-number color-system">HCT</div>
+                    <div class="result-label">Color Space</div>
+                    <div class="result-description">Perceptually accurate stepping — no guessing, no manual validation per shade</div>
+                </div>
+            </div>
+        </div></section>
+
+        <section class="content-section"><div class="container">
+            <h2>Skills Demonstrated</h2>
+            <div class="skills-grid">
+                <div class="skill-tag color-system">Color Architecture</div>
+                <div class="skill-tag color-system">Accessibility</div>
+                <div class="skill-tag color-system">Design Systems</div>
+                <div class="skill-tag color-system">Brand Consultation</div>
+                <div class="skill-tag color-system">WCAG Compliance</div>
+                <div class="skill-tag color-system">Figma</div>
+                <div class="skill-tag color-system">Stakeholder Management</div>
+                <div class="skill-tag color-system">Agency Collaboration</div>
+                <div class="skill-tag color-system">Perceptual Color Theory</div>
+                <div class="skill-tag color-system">Token Architecture</div>
+            </div>
+        </div></section>
+
+    </main>
+
+    <div class="case-nav">
+        <div class="container">
+            <h3>View More Case Studies</h3>
+            <div class="case-nav-links">
+                <a href="design-system.html" class="nav-link">Design System Portal</a>
+                <a href="date-picker.html" class="nav-link">Date Picker Redesign</a>
+                <a href="skills-assessment.html" class="nav-link">Skills Assessment</a>
+                <a href="survivor-game.html" class="nav-link">Survivor Social Game</a>
+                <a href="critterpedia.html" class="nav-link">Critterpedia</a>
+                <a href="index.html" class="nav-link">Back to Portfolio</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-mobile-menu" id="nav-mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+        <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Close menu">Close ✕</button>
+        <a href="index.html#work" onclick="closeMobileMenu()">Work</a>
+        <a href="about.html" onclick="closeMobileMenu()">About</a>
+        <a href="index.html#contact" onclick="closeMobileMenu()">Contact</a>
+        <a href="photography.html" onclick="closeMobileMenu()">Photography</a>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        const hamburger = document.getElementById('nav-hamburger');
+        const mobileMenu = document.getElementById('nav-mobile-menu');
+        const mobileClose = document.getElementById('nav-mobile-close');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            hamburger.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            mobileClose.focus();
+        }
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        hamburger.addEventListener('click', openMobileMenu);
+        mobileClose.addEventListener('click', closeMobileMenu);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
+    </script>
+
+</body>
+</html>

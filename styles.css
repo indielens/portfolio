@@ -428,10 +428,12 @@ nav ul.nav-links a:hover { color: var(--accent); }
     margin-bottom: 1rem;
 }
 
-.case-header.survivor     .case-eyebrow { color: var(--accent); }
-.case-header.skills       .case-eyebrow { color: var(--accent); }
+.case-header.survivor      .case-eyebrow { color: var(--accent); }
+.case-header.skills        .case-eyebrow { color: var(--accent); }
 .case-header.design-system .case-eyebrow { color: var(--accent); }
 .case-header.critterpedia  .case-eyebrow { color: var(--accent); }
+.case-header.date-picker   .case-eyebrow { color: var(--accent); }
+.case-header.color-system  .case-eyebrow { color: var(--accent); }
 
 .case-header h1 {
     font-family: var(--font-display);
