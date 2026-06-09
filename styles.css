@@ -454,7 +454,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
    CASE STUDY — OVERVIEW
    ===================================================== */
 
-.overview { padding: 60px 0; border-bottom: 1px solid var(--border); }
+.overview { padding: 72px 0; background: var(--off-black); border-bottom: 1px solid var(--border); }
 
 .overview-grid {
     display: grid;
@@ -471,7 +471,7 @@ nav ul.nav-links a:hover { color: var(--accent); }
     margin-bottom: 1rem;
 }
 
-.overview-content p { font-size: 1rem; color: var(--dim); line-height: 1.7; margin-bottom: 1rem; }
+.overview-content p { font-size: 1.05rem; color: var(--dim); line-height: 1.8; margin-bottom: 1rem; }
 
 .project-details {
     background: var(--dark);
@@ -507,8 +507,12 @@ nav ul.nav-links a:hover { color: var(--accent); }
    CASE STUDY — CONTENT SECTIONS
    ===================================================== */
 
-.content-section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+.content-section { padding: 72px 0; border-bottom: 1px solid var(--border); }
 .content-section:last-child { border-bottom: none; }
+
+/* Alternating section backgrounds for breathing room */
+.content-section:nth-child(odd)  { background: var(--black); }
+.content-section:nth-child(even) { background: var(--dark); }
 
 .content-section h2 {
     font-family: var(--font-display);
